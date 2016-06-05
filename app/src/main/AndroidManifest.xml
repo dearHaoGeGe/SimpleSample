@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.my.simplesampletest">
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--EventBus-->
+        <activity android:name=".eventbus.EventBusActivity"/>
+        <activity android:name=".eventbus.EventBus2Activity"/>
+        <!--测试string装换成JSONObject-->
+        <activity android:name=".jsonobjecttostring.JSONObjectActivity"/>
+        <!--自动隐藏键盘Demo-->
+        <activity android:name=".autohideime.AutoHideIMEActivity"/>
+        <!--自定义View继承LinearLayout-->
+        <activity android:name=".coupondisplayview.CouponDisplayActivity"/>
+
+    </application>
+
+</manifest>
