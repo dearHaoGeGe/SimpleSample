@@ -19,4 +19,11 @@
         android:layout_below="@id/btn_return_ReceiveAct"
         android:textSize="20sp" />
 
+    <EditText
+        android:id="@+id/ed_ReceiveAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_ReceiveAct"
+        android:hint="填一个值finish这个ACT值将传到上一个ACT" />
+
 </RelativeLayout>

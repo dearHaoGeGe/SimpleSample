@@ -10,11 +10,26 @@
         android:layout_height="wrap_content"
         android:text="向下一个ACT发送对象" />
 
+    <Button
+        android:id="@+id/btn_returnValues_PostAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_sendObject_PostAct"
+        android:text="ACT返回传值" />
+
     <TextView
-        android:textSize="20sp"
         android:id="@+id/tv_PostAct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_sendObject_PostAct" />
+        android:layout_below="@id/btn_returnValues_PostAct"
+        android:textSize="20sp" />
+
+    <TextView
+        android:text="暂时无值"
+        android:id="@+id/tv2_PostAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_PostAct"
+        android:textSize="20sp" />
 
 </RelativeLayout>

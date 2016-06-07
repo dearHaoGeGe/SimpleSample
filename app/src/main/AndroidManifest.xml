@@ -29,6 +29,8 @@
         <!--activity之间传递对象-->
         <activity android:name=".activitypostobject.PostActivity"/>
         <activity android:name=".activitypostobject.ReceiveActivity"/>
+        <!--TabLayout配合ViewPager可以滑动-->
+        <activity android:name=".tablayout.TLTrunkActivity"/>
 
     </application>
 
