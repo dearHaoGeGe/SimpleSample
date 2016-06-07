@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.my.simplesampletest.activitypostobject.PostActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.R;
@@ -63,7 +64,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("测试string装换成JSONObject");
         data.add("Android快速实现点击任意位置收缩键盘");
         data.add("android自定义控件—边缘凹凸的View");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("activity之间传递对象");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -112,6 +113,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 3:
                 startActivity(new Intent(this, CouponDisplayActivity.class));
+                break;
+
+            case 4:
+                startActivity(new Intent(this, PostActivity.class));
                 break;
         }
     }

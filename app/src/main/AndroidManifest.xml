@@ -26,6 +26,9 @@
         <activity android:name=".autohideime.AutoHideIMEActivity"/>
         <!--自定义View继承LinearLayout-->
         <activity android:name=".coupondisplayview.CouponDisplayActivity"/>
+        <!--activity之间传递对象-->
+        <activity android:name=".activitypostobject.PostActivity"/>
+        <activity android:name=".activitypostobject.ReceiveActivity"/>
 
     </application>
 

@@ -25,6 +25,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
-    //Android快速实现点击任意位置收缩键盘
-//    compile 'org.loader:autohideime:1.0'
 }
