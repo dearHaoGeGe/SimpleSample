@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
+import com.my.simplesampletest.L;
+import com.my.simplesampletest.LogUtils;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 
@@ -21,12 +24,22 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
     private ViewPager viewPager_TLTrunkAct;
     private MyTBLFragmentPagerAdapter adapter;
     private TabLayout.Tab one, two, three, four;
-    private String[] titles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tltrunk);
+
+        L.v("vv没有TAG");
+        L.v("测试L","vv有TAG");
+        L.d("dd没有TAG");
+        L.d("测试L","dd有TAG");
+        L.i("ii没有TAG");
+        L.i("测试L","ii有TAG");
+        L.w("ww没有TAG");
+        L.w("测试L","ww有TAG");
+        L.e("ee没有TAG");
+        L.e("测试L","ee有TAG");
 
         initView();
         initData();
@@ -40,7 +53,6 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
 
     @Override
     public void initData() {
-        //titles=new String[]{"唐僧","大师兄","二师兄","沙和尚"};
         adapter = new MyTBLFragmentPagerAdapter(getSupportFragmentManager(), new String[]{"唐僧", "大师兄", "二师兄", "沙和尚"});
         viewPager_TLTrunkAct.setAdapter(adapter);
         tabLayout_TLTrunkAct.setupWithViewPager(viewPager_TLTrunkAct);
