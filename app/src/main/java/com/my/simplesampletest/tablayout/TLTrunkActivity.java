@@ -6,12 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.widget.Toast;
 
-import com.my.simplesampletest.L;
-import com.my.simplesampletest.LogUtils;
+import com.my.simplesampletest.utils.L;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.utils.To;
 
 /**
  * TrunkActivity的上面有4个fragment
@@ -30,6 +30,8 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tltrunk);
 
+//        Toast.makeText(TLTrunkActivity.this, "", Toast.LENGTH_SHORT).show();
+        To.showShort(this,"哈哈");
         L.v("vv没有TAG");
         L.v("测试L","vv有TAG");
         L.d("dd没有TAG");

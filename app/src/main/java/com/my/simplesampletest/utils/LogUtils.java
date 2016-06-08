@@ -1,4 +1,4 @@
-package com.my.simplesampletest;
+package com.my.simplesampletest.utils;
 
 import android.text.TextUtils;
 import android.util.Log;

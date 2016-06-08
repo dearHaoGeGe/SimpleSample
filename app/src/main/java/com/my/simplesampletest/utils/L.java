@@ -1,14 +1,14 @@
-package com.my.simplesampletest;
+package com.my.simplesampletest.utils;
 
 import android.util.Log;
 
 /**
  * Log工具
  * isDebug  控制是否打印Log
- *
+ * <p>
  * SHOW_LOG_INFO    控制是否打印LogInfo
- *
- * Created by 衣景浩 on 2016/6/8.
+ * <p>
+ * Created by YJH on 2016/6/8.
  */
 public class L {
 
@@ -17,9 +17,9 @@ public class L {
      */
     public static boolean isDebug = true;
     /**
-     * 控制是否打印LogInfo  1为显示  0为不显示   其他值为不显示
+     * 控制是否打印LogInfo  1为显示  其他值为不显示
      */
-    private static int SHOW_LOG_INFO = 1;
+    private static int SHOW_LOG_INFO = 8;
     public static final String SEPARATOR = ",";
     private static final String TAG = "Log工具----->";
 
@@ -37,10 +37,6 @@ public class L {
         if (isDebug) {
 
             switch (SHOW_LOG_INFO) {
-                case 0:
-                    Log.v(TAG, msg);
-                    break;
-
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.v(TAG, msg + getLogInfo(stackTraceElement));
@@ -63,11 +59,7 @@ public class L {
     public static void v(String tag, String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.v(tag, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.v(tag, msg + getLogInfo(stackTraceElement));
@@ -89,11 +81,7 @@ public class L {
     public static void d(String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.d(TAG, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.d(TAG, msg + getLogInfo(stackTraceElement));
@@ -116,11 +104,7 @@ public class L {
     public static void d(String tag, String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.d(tag, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.d(tag, msg + getLogInfo(stackTraceElement));
@@ -142,11 +126,7 @@ public class L {
     public static void i(String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.i(TAG, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.i(TAG, msg + getLogInfo(stackTraceElement));
@@ -169,11 +149,7 @@ public class L {
     public static void i(String tag, String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.i(tag, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.i(tag, msg + getLogInfo(stackTraceElement));
@@ -195,11 +171,7 @@ public class L {
     public static void w(String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.w(TAG, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.w(TAG, msg + getLogInfo(stackTraceElement));
@@ -222,11 +194,7 @@ public class L {
     public static void w(String tag, String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.w(tag, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.w(tag, msg + getLogInfo(stackTraceElement));
@@ -248,11 +216,7 @@ public class L {
     public static void e(String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.e(TAG, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.e(TAG, msg + getLogInfo(stackTraceElement));
@@ -275,11 +239,7 @@ public class L {
     public static void e(String tag, String msg) {
         if (isDebug) {
 
-            switch (SHOW_LOG_INFO){
-                case 0:
-                    Log.e(tag, msg);
-                    break;
-
+            switch (SHOW_LOG_INFO) {
                 case 1:
                     StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
                     Log.e(tag, msg + getLogInfo(stackTraceElement));
