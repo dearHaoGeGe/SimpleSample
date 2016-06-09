@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.my.simplesampletest.activitypostobject.PostActivity;
+import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.R;
@@ -67,7 +68,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("android自定义控件—边缘凹凸的View");
         data.add("activity之间传递对象");
         data.add("TabLayout配合ViewPager可以滑动");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("广播BroadCast");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -82,13 +83,11 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
     @Override
     public void onItemClick(View view, int position) {
-        //Toast.makeText(MainActivity.this, "点击事件！"+position, Toast.LENGTH_SHORT).show();
         clickJumpActivity(view, position);
     }
 
     @Override
     public void onItemLongClick(View view, int position) {
-        //Toast.makeText(MainActivity.this, "长按事件！"+position, Toast.LENGTH_SHORT).show();
         clickLongJumpActivity(view, position);
     }
 
@@ -100,28 +99,32 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
      */
     private void clickJumpActivity(View view, int position) {
         switch (position) {
-            case 0:
+            case 0: //EventBus传递事件
                 startActivity(new Intent(this, EventBusActivity.class));
                 break;
 
-            case 1:
+            case 1: //测试string装换成JSONObject
                 startActivity(new Intent(this, JSONObjectActivity.class));
                 break;
 
-            case 2:
+            case 2: //Android快速实现点击任意位置收缩键盘
                 startActivity(new Intent(this, AutoHideIMEActivity.class));
                 break;
 
-            case 3:
+            case 3: //android自定义控件—边缘凹凸的View
                 startActivity(new Intent(this, CouponDisplayActivity.class));
                 break;
 
-            case 4:
+            case 4: //activity之间传递对象
                 startActivity(new Intent(this, PostActivity.class));
                 break;
 
-            case 5:
+            case 5: //TabLayout配合ViewPager可以滑动
                 startActivity(new Intent(this, TLTrunkActivity.class));
+                break;
+
+            case 6: //广播BroadCast
+                startActivity(new Intent(this, BroadCastActivity.class));
                 break;
         }
     }

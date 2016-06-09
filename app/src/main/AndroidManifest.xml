@@ -32,6 +32,18 @@
         <!--TabLayout配合ViewPager可以滑动-->
         <activity android:name=".tablayout.TLTrunkActivity"/>
 
+        <!--广播activity-->
+        <activity android:name=".broadcast.BroadCastActivity"/>
+
+        <!-- 在AndroidManifest中注册广播 -->
+        <receiver android:name=".broadcast.AirPlaneModeReceiver">
+            <intent-filter>
+                <!-- 我们要监听的广播名字 -->
+                <!-- 注意action里的内容不要写错 包括大小写 -->
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
