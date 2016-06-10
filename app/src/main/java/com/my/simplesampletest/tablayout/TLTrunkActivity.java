@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.my.simplesampletest.utils.L;
@@ -15,6 +17,7 @@ import com.my.simplesampletest.utils.To;
 
 /**
  * TrunkActivity的上面有4个fragment
+ *
  * <p>
  * Created by YJH on 2016/6/7.
  */
@@ -29,19 +32,6 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tltrunk);
-
-//        Toast.makeText(TLTrunkActivity.this, "", Toast.LENGTH_SHORT).show();
-        To.showShort(this,"哈哈");
-        L.v("vv没有TAG");
-        L.v("测试L","vv有TAG");
-        L.d("dd没有TAG");
-        L.d("测试L","dd有TAG");
-        L.i("ii没有TAG");
-        L.i("测试L","ii有TAG");
-        L.w("ww没有TAG");
-        L.w("测试L","ww有TAG");
-        L.e("ee没有TAG");
-        L.e("测试L","ee有TAG");
 
         initView();
         initData();
@@ -146,6 +136,19 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
         @Override
         public CharSequence getPageTitle(int position) {
             return mTitle[position];
+        }
+
+
+        /**
+         * 防止fragment被销毁
+         * 参考：http://www.th7.cn/Program/Android/201412/333619.shtml
+         * @param container
+         * @param position
+         * @param object
+         */
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            //super.destroyItem(container, position, object);
         }
     }
 

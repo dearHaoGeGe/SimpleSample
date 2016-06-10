@@ -8,22 +8,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.my.simplesampletest.R;
+import com.my.simplesampletest.utils.L;
 
 /**
+ *
  * Created by YJH on 2016/6/7.
  */
 public class FourTabLFragment extends Fragment {
 
-    private static final String TAG="Fragment--->";
+    private static final String TAG="Fragment>4<--->";
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        L.e(TAG,"onAttach");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_four_tabl,container,false);
+        L.e(TAG,"onCreateView");
         return view;
     }
 
