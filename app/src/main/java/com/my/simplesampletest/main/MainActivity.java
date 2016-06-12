@@ -14,6 +14,8 @@ import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
+import com.my.simplesampletest.picasso.PicassoActivity;
+import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
 
 import java.util.ArrayList;
@@ -69,8 +71,8 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("activity之间传递对象");
         data.add("TabLayout配合ViewPager可以滑动");
         data.add("广播BroadCast");
-        data.add("5s1d6a165a1ds515c15d1c5d");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("PicassoDemo");
+        data.add("Picasso的简单使用");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -125,6 +127,14 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 6: //广播BroadCast
                 startActivity(new Intent(this, BroadCastActivity.class));
+                break;
+
+            case 7: //Picasso
+                startActivity(new Intent(this, PicassoDemoActivity.class));
+                break;
+
+            case 8: //Picasso的简单使用
+                startActivity(new Intent(this, PicassoActivity.class));
                 break;
         }
     }

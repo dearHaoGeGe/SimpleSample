@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.my.simplesampletest">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -31,9 +33,12 @@
         <activity android:name=".activitypostobject.ReceiveActivity"/>
         <!--TabLayout配合ViewPager可以滑动-->
         <activity android:name=".tablayout.TLTrunkActivity"/>
-
         <!--广播activity-->
         <activity android:name=".broadcast.BroadCastActivity"/>
+        <!--PicassoDemo-->
+        <activity android:name=".picasso.PicassoDemoActivity"/>
+        <!--Picasso的简单使用-->
+        <activity android:name=".picasso.PicassoActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
