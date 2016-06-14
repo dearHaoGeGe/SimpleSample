@@ -40,6 +40,19 @@ public class PicassoUtils {
     }
 
     /**
+     * Place holders-空白或者错误占位图片：picasso提供了两种占位图片，未加载完成或者加载发生错误的时需要一张图片作为提示
+     *
+     * @param context
+     * @param url
+     * @param resIDH
+     * @param resIDE
+     * @param imageView
+     */
+    public static void loadImageWithHodlerAndError(Context context, String url, int resIDH,int resIDE, ImageView imageView){
+        Picasso.with(context).load(url).fit().placeholder(resIDH).error(resIDE).centerCrop().into(imageView);
+    }
+
+    /**
      * 裁剪图片
      *
      * @param context
