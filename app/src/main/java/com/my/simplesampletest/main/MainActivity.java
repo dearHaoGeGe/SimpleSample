@@ -13,8 +13,10 @@ import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.eventbus.EventBusActivity;
+import com.my.simplesampletest.imagecache.DiskLruCacheAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
+import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
@@ -75,8 +77,8 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("PicassoDemo");
         data.add("Picasso的简单使用");
         data.add("Logger工具");
-        data.add("5s1d6a165a1ds515c15d1c5d");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("ListView更新单条数据，刷新");
+        data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -140,6 +142,14 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 9: //Logger工具
                 startActivity(new Intent(this, LoggerActivity.class));
+                break;
+
+            case 10://ListView更新单条数据，刷新
+                startActivity(new Intent(this,LVUpdateSingleAct.class));
+                break;
+
+            case 11://Android DiskLruCache完全解析，硬盘缓存的最佳方案
+                startActivity(new Intent(this, DiskLruCacheAct.class));
                 break;
         }
     }

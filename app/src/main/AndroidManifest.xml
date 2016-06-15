@@ -42,9 +42,12 @@
         <activity android:name=".picasso.PicassoDemoActivity"/>
         <!--Picasso的简单使用-->
         <activity android:name=".picasso.PicassoActivity"/>
-
         <!--Logger工具-->
         <activity android:name=".logger.LoggerActivity"/>
+        <!--ListView更新单条数据，刷新-->
+        <activity android:name=".lvupdatesingledata.LVUpdateSingleAct"/>
+        <!--Android DiskLruCache完全解析，硬盘缓存的最佳方案-->
+        <activity android:name=".imagecache.DiskLruCacheAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
