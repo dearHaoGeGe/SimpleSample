@@ -43,6 +43,9 @@
         <!--Picasso的简单使用-->
         <activity android:name=".picasso.PicassoActivity"/>
 
+        <!--Logger工具-->
+        <activity android:name=".logger.LoggerActivity"/>
+
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
             <intent-filter>

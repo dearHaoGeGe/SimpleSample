@@ -14,6 +14,7 @@ import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
+import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
@@ -73,7 +74,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("广播BroadCast");
         data.add("PicassoDemo");
         data.add("Picasso的简单使用");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("Logger工具");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -135,6 +136,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 8: //Picasso的简单使用
                 startActivity(new Intent(this, PicassoActivity.class));
+                break;
+
+            case 9: //Logger工具
+                startActivity(new Intent(this, LoggerActivity.class));
                 break;
         }
     }
