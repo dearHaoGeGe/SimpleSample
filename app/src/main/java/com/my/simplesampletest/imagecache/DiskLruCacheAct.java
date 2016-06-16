@@ -24,6 +24,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
+ *
  * Created by YJH on 2016/6/15.
  */
 public class DiskLruCacheAct extends BaseActivity implements View.OnClickListener {

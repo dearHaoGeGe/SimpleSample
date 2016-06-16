@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct">
+
+    <com.my.simplesampletest.imageswitchview.Image3DSwitchView
+        android:id="@+id/image_switch_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image1"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image1"/>
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image2"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image2"/>
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image3"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image3"/>
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image4"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image4"/>
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image5"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image5"/>
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image6"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image6"/>
+
+        <com.my.simplesampletest.imageswitchview.Image3DView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image7"
+            android:scaleType="fitXY"
+            android:src="@mipmap/image7"/>
+
+    </com.my.simplesampletest.imageswitchview.Image3DSwitchView>
+
+</RelativeLayout>

@@ -48,6 +48,8 @@
         <activity android:name=".lvupdatesingledata.LVUpdateSingleAct"/>
         <!--Android DiskLruCache完全解析，硬盘缓存的最佳方案-->
         <activity android:name=".imagecache.DiskLruCacheAct"/>
+        <!--3D图片滚动-->
+        <activity android:name=".imageswitchview.Image3DSwitchViewAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

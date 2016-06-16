@@ -14,6 +14,7 @@ import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.imagecache.DiskLruCacheAct;
+import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
@@ -79,7 +80,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Logger工具");
         data.add("ListView更新单条数据，刷新");
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("3D图片滚动");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -150,6 +151,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 11://Android DiskLruCache完全解析，硬盘缓存的最佳方案
                 startActivity(new Intent(this, DiskLruCacheAct.class));
+                break;
+
+            case 12://3D图片滚动
+                startActivity(new Intent(this, Image3DSwitchViewAct.class));
                 break;
         }
     }
