@@ -6,8 +6,15 @@
 
     <Button
         android:id="@+id/btn_add_ORMLiteAct"
-        android:text="学习ORMLite数据库"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="学习ORMLite数据库" />
+
+    <Button
+        android:id="@+id/btn_update_ORMLiteAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_add_ORMLiteAct"
+        android:text="修改数据" />
 
 </RelativeLayout>

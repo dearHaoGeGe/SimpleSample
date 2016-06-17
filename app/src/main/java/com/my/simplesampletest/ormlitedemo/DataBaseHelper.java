@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * ORMLite工具类的简单封装
- *
+ * <p/>
  * Created by YJH on 2016/6/17.
  */
 public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
@@ -26,7 +26,7 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
     //使用单例模式（一般对数据库的访问都是单例模式）
     private static DataBaseHelper instance;
 
-    private static synchronized DataBaseHelper getInstance(Context context) {
+    public static synchronized DataBaseHelper getInstance(Context context) {
         if (instance == null) {
             synchronized (DataBaseHelper.class) {
                 if (instance == null) {
@@ -43,13 +43,18 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
      * @param cls
      * @return
      */
-    public synchronized Dao getDao(Class cls) throws SQLException {
+    public synchronized Dao getDao(Class cls) {
         Dao dao = null;
         String className = cls.getSimpleName();   //通过反射获得类的名称
         if (maps.containsKey(className)) {   //此方法是判断map中是否有这样的key值
             dao = maps.get(className);
-        } else {
-            super.getDao(cls);
+        }
+        if (dao == null) {
+            try {
+                dao = super.getDao(cls);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             maps.put(className, dao);
         }
         return dao;

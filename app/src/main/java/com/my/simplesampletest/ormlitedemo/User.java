@@ -10,8 +10,8 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "user_info")     //定义表名
 public class User {
 
-    @DatabaseField(generatedId = true)
-    private long id;    //数据库的主键primary key
+    @DatabaseField(generatedId = true)  //id自动生成的
+    private Long id;    //数据库的主键primary key
 
     @DatabaseField(columnName = "name")
     private String name;
@@ -19,8 +19,10 @@ public class User {
     @DatabaseField(columnName = "desc")
     private String desc;
 
-    public User(long id, String name, String desc) {
-        this.id = id;
+    public User() {
+    }
+
+    public User(String name, String desc) {
         this.name = name;
         this.desc = desc;
     }
