@@ -50,6 +50,8 @@
         <activity android:name=".imagecache.DiskLruCacheAct"/>
         <!--3D图片滚动-->
         <activity android:name=".imageswitchview.Image3DSwitchViewAct"/>
+        <!--学习ORMLite数据库-->
+        <activity android:name=".ormlitedemo.ORMLiteActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

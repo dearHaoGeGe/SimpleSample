@@ -18,6 +18,7 @@ import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
+import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
@@ -81,7 +82,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("ListView更新单条数据，刷新");
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
         data.add("3D图片滚动");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("学习ORMLite数据库");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -155,6 +156,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 12://3D图片滚动
                 startActivity(new Intent(this, Image3DSwitchViewAct.class));
+                break;
+
+            case 13://学习ORMLite数据库
+                startActivity(new Intent(this, ORMLiteActivity.class));
                 break;
         }
     }

@@ -37,6 +37,7 @@ public class PicassoDemoActivity extends BaseActivity implements View.OnClickLis
     public void initView() {
         btn_loadPic_PicassoDemoAct= (Button) findViewById(R.id.btn_loadPic_PicassoDemoAct);
         iv_PicassoDemoAct= (ImageView) findViewById(R.id.iv_PicassoDemoAct);
+//        iv_PicassoDemoAct.callOnClick();
 
         btn_loadPic_PicassoDemoAct.setOnClickListener(this);
     }
