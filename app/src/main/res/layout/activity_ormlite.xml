@@ -8,7 +8,7 @@
         android:id="@+id/btn_add_ORMLiteAct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="学习ORMLite数据库" />
+        android:text="学习ORMLite数据库_添加数据" />
 
     <Button
         android:id="@+id/btn_update_ORMLiteAct"
@@ -16,5 +16,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_add_ORMLiteAct"
         android:text="修改数据" />
+
+    <Button
+        android:id="@+id/btn_updateById_ORMLiteAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_update_ORMLiteAct"
+        android:text="通过ID来更新USR" />
+
+    <!--android:textAllCaps="false"  设置英文不大写-->
+    <Button
+        android:id="@+id/btn_updateID_1_ORMLiteAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_updateById_ORMLiteAct"
+        android:text="修改id=1的name"
+        android:textAllCaps="false" />
 
 </RelativeLayout>

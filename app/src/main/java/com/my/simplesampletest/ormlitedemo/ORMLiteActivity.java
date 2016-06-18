@@ -6,13 +6,15 @@ import android.widget.Button;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.orhanobut.logger.Logger;
 
 /**
  * Created by YJH on 2016/6/17.
  */
 public class ORMLiteActivity extends BaseActivity implements View.OnClickListener {
 
-    private Button btn_add_ORMLiteAct,btn_update_ORMLiteAct;
+    private Button btn_add_ORMLiteAct,btn_update_ORMLiteAct,btn_updateById_ORMLiteAct,
+            btn_updateID_1_ORMLiteAct;
     private UserDao userDao;
 
     @Override
@@ -28,9 +30,13 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
     public void initView() {
         btn_add_ORMLiteAct = (Button) findViewById(R.id.btn_add_ORMLiteAct);
         btn_update_ORMLiteAct= (Button) findViewById(R.id.btn_update_ORMLiteAct);
+        btn_updateById_ORMLiteAct= (Button) findViewById(R.id.btn_updateById_ORMLiteAct);
+        btn_updateID_1_ORMLiteAct= (Button) findViewById(R.id.btn_updateID_1_ORMLiteAct);
 
         btn_update_ORMLiteAct.setOnClickListener(this);
         btn_add_ORMLiteAct.setOnClickListener(this);
+        btn_updateById_ORMLiteAct.setOnClickListener(this);
+        btn_updateID_1_ORMLiteAct.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +67,19 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
                 User user7 = new User("张学友","香港");
                 user7.setId(1);
                 userDao.updateUser(user7);
+                break;
+
+            case R.id.btn_updateById_ORMLiteAct:
+                Logger.d("哈哈",""+6999);
+                User user8 = new User("周YK","蛀虫");
+                user8.setId(6L);
+                userDao.updateUserByID(user8,10L);
+                break;
+
+            case R.id.btn_updateID_1_ORMLiteAct:
+                User user9 = new User("解决了","id = 1");
+                user9.setId(1L);
+                userDao.updateUserByBuilder(user9);
                 break;
         }
     }
