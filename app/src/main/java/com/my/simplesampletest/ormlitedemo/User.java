@@ -27,6 +27,15 @@ public class User {
         this.desc = desc;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
+
     public long getId() {
         return id;
     }
