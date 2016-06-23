@@ -52,6 +52,9 @@
         <activity android:name=".imageswitchview.Image3DSwitchViewAct"/>
         <!--学习ORMLite数据库-->
         <activity android:name=".ormlitedemo.ORMLiteActivity"/>
+        <!--Activity的生命周期-->
+        <activity android:name=".act_life_cycle.LifeCycleActivity"/>
+        <activity android:name=".act_life_cycle.LifeCycle2Activity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

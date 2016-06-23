@@ -14,14 +14,14 @@ import java.util.List;
 
 /**
  * 官网：http://ormlite.com/
- *
+ * <p/>
  * Created by YJH on 2016/6/17.
  */
 public class ORMLiteActivity extends BaseActivity implements View.OnClickListener {
 
-    private Button btn_add_ORMLiteAct,btn_update_ORMLiteAct,btn_updateById_ORMLiteAct,
-            btn_updateID_1_ORMLiteAct,btn_del_one_ORMLiteAct,btn_del_List_ORMLiteAct,
-            btn_del_ListID_ORMLiteAct,btn_QueryBuilder_ORMLiteAct,btn_QueryBuilder2_ORMLiteAct,
+    private Button btn_add_ORMLiteAct, btn_update_ORMLiteAct, btn_updateById_ORMLiteAct,
+            btn_updateID_1_ORMLiteAct, btn_del_one_ORMLiteAct, btn_del_List_ORMLiteAct,
+            btn_del_ListID_ORMLiteAct, btn_QueryBuilder_ORMLiteAct, btn_QueryBuilder2_ORMLiteAct,
             btn_orderBy_ORMLiteAct;
     private UserDao userDao;
 
@@ -37,15 +37,15 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void initView() {
         btn_add_ORMLiteAct = (Button) findViewById(R.id.btn_add_ORMLiteAct);
-        btn_update_ORMLiteAct= (Button) findViewById(R.id.btn_update_ORMLiteAct);
-        btn_updateById_ORMLiteAct= (Button) findViewById(R.id.btn_updateById_ORMLiteAct);
-        btn_updateID_1_ORMLiteAct= (Button) findViewById(R.id.btn_updateID_1_ORMLiteAct);
-        btn_del_one_ORMLiteAct= (Button) findViewById(R.id.btn_del_one_ORMLiteAct);
-        btn_del_List_ORMLiteAct= (Button) findViewById(R.id.btn_del_List_ORMLiteAct);
-        btn_del_ListID_ORMLiteAct= (Button) findViewById(R.id.btn_del_ListID_ORMLiteAct);
-        btn_QueryBuilder_ORMLiteAct= (Button) findViewById(R.id.btn_QueryBuilder_ORMLiteAct);
-        btn_QueryBuilder2_ORMLiteAct= (Button) findViewById(R.id.btn_QueryBuilder2_ORMLiteAct);
-        btn_orderBy_ORMLiteAct= (Button) findViewById(R.id.btn_orderBy_ORMLiteAct);
+        btn_update_ORMLiteAct = (Button) findViewById(R.id.btn_update_ORMLiteAct);
+        btn_updateById_ORMLiteAct = (Button) findViewById(R.id.btn_updateById_ORMLiteAct);
+        btn_updateID_1_ORMLiteAct = (Button) findViewById(R.id.btn_updateID_1_ORMLiteAct);
+        btn_del_one_ORMLiteAct = (Button) findViewById(R.id.btn_del_one_ORMLiteAct);
+        btn_del_List_ORMLiteAct = (Button) findViewById(R.id.btn_del_List_ORMLiteAct);
+        btn_del_ListID_ORMLiteAct = (Button) findViewById(R.id.btn_del_ListID_ORMLiteAct);
+        btn_QueryBuilder_ORMLiteAct = (Button) findViewById(R.id.btn_QueryBuilder_ORMLiteAct);
+        btn_QueryBuilder2_ORMLiteAct = (Button) findViewById(R.id.btn_QueryBuilder2_ORMLiteAct);
+        btn_orderBy_ORMLiteAct = (Button) findViewById(R.id.btn_orderBy_ORMLiteAct);
 
         btn_update_ORMLiteAct.setOnClickListener(this);
         btn_add_ORMLiteAct.setOnClickListener(this);
@@ -68,12 +68,12 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_add_ORMLiteAct:
-                User user = new User("张三","大连人");
-                User user2 = new User("李四","湖北人");
-                User user3 = new User("Tom","加州人");
-                User user4 = new User("张三","大连人");
-                User user5 = new User("孙先生","台湾人");
-                User user6 = new User("周永康","。。。");
+                User user = new User("张三", "大连人");
+                User user2 = new User("李四", "湖北人");
+                User user3 = new User("Tom", "加州人");
+                User user4 = new User("张三", "大连人");
+                User user5 = new User("孙先生", "台湾人");
+                User user6 = new User("周YK", "。。。");
 
                 userDao.addUser(user);
                 userDao.addUser(user2);
@@ -84,39 +84,43 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
                 break;
 
             case R.id.btn_update_ORMLiteAct:
-                User user7 = new User("张学友","香港");
+                User user7 = new User("张学友", "香港");
                 user7.setId(1);
                 userDao.updateUser(user7);
                 break;
 
             case R.id.btn_updateById_ORMLiteAct:
-                Logger.d("哈哈",""+6999);
-                User user8 = new User("周YK","蛀虫");
+                Logger.d("哈哈", "" + 6999);
+                User user8 = new User("周YK", "ZU虫");
                 user8.setId(6L);
-                userDao.updateUserByID(user8,10L);
+                userDao.updateUserByID(user8, 10L);
                 break;
 
             case R.id.btn_updateID_1_ORMLiteAct:
-                User user9 = new User("解决了","id = 1");
+                User user9 = new User("解决了", "id = 1");
                 user9.setId(1L);
                 userDao.updateUserByBuilder(user9);
                 break;
 
             case R.id.btn_del_one_ORMLiteAct:
                 Toast.makeText(ORMLiteActivity.this, "点击了~", Toast.LENGTH_SHORT).show();
-                User user10=new User("周永康","。。。");
+                User user10 = new User("周YK", "。。。");
                 user10.setId(6L);
                 userDao.deleteUser(user10);
                 break;
 
             case R.id.btn_del_List_ORMLiteAct:
                 Toast.makeText(ORMLiteActivity.this, "点击了~", Toast.LENGTH_SHORT).show();
-                List<User> userList=new ArrayList<>();
+                List<User> userList = new ArrayList<>();
 
-                User user11 = new User("张三","大连人");user11.setId(1L);
-                User user12 = new User("Tom","加州人");user12.setId(3L);
-                User user13 = new User("张三","大连人");user13.setId(4L);
-                User user14 = new User("孙先生","台湾人");user14.setId(5L);
+                User user11 = new User("张三", "大连人");
+                user11.setId(1L);
+                User user12 = new User("Tom", "加州人");
+                user12.setId(3L);
+                User user13 = new User("张三", "大连人");
+                user13.setId(4L);
+                User user14 = new User("孙先生", "台湾人");
+                user14.setId(5L);
                 userList.add(user11);
                 userList.add(user12);
                 userList.add(user13);
@@ -129,7 +133,7 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_del_ListID_ORMLiteAct:
                 Toast.makeText(ORMLiteActivity.this, "点击了！", Toast.LENGTH_SHORT).show();
 
-                List<Long> ids=new ArrayList<>();
+                List<Long> ids = new ArrayList<>();
                 ids.add(2L);
                 ids.add(6L);
 
@@ -139,19 +143,19 @@ public class ORMLiteActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_QueryBuilder_ORMLiteAct:
                 Toast.makeText(ORMLiteActivity.this, "点击了！", Toast.LENGTH_SHORT).show();
                 List<User> list = userDao.queryBuilder1();
-                Logger.d("查询条件一",""+list.toString());
+                Logger.d("查询条件一", "" + list.toString());
                 break;
 
             case R.id.btn_QueryBuilder2_ORMLiteAct:
                 Toast.makeText(ORMLiteActivity.this, "点击了！", Toast.LENGTH_SHORT).show();
                 List<User> list2 = userDao.queryBuilder2();
-                Logger.d("查询条件二",""+list2.toString());
+                Logger.d("查询条件二", "" + list2.toString());
                 break;
 
             case R.id.btn_orderBy_ORMLiteAct:
                 Toast.makeText(ORMLiteActivity.this, "点击了！", Toast.LENGTH_SHORT).show();
                 List<User> list3 = userDao.queryBuilder3();
-                Logger.d("排序",""+list3.toString());
+                Logger.d("排序", "" + list3.toString());
                 break;
         }
     }

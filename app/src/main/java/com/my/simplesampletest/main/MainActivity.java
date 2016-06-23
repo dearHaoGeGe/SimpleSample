@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.my.simplesampletest.act_life_cycle.LifeCycleActivity;
 import com.my.simplesampletest.activitypostobject.PostActivity;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
@@ -83,7 +84,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
         data.add("3D图片滚动");
         data.add("学习ORMLite数据库");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("Activity的生命周期");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
     }
@@ -160,6 +161,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 13://学习ORMLite数据库
                 startActivity(new Intent(this, ORMLiteActivity.class));
+                break;
+
+            case 14://Activity的生命周期
+                startActivity(new Intent(this, LifeCycleActivity.class));
                 break;
         }
     }
