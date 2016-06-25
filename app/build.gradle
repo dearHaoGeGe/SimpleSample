@@ -30,6 +30,7 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.3.1'
     compile files('libs/universal-image-loader-1.9.5.jar')
     compile 'com.orhanobut:logger:1.3'
+    //ORMLite所需要的两个架包
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
 }

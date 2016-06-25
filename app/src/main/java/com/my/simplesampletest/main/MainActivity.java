@@ -23,6 +23,7 @@ import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
+import com.my.simplesampletest.zxing.QRCodeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +86,13 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("3D图片滚动");
         data.add("学习ORMLite数据库");
         data.add("Activity的生命周期");
+        data.add("用zxing做的生成二维码，并且扫码");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
     }
@@ -165,6 +173,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 14://Activity的生命周期
                 startActivity(new Intent(this, LifeCycleActivity.class));
+                break;
+
+            case 15://用zxing做的生成二维码，并且扫码
+                startActivity(new Intent(this, QRCodeActivity.class));
                 break;
         }
     }
