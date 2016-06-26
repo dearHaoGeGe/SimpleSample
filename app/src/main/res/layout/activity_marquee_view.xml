@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#5677fc">
+
+        <com.my.simplesampletest.marqueeview.MarqueeView
+            android:id="@+id/marqueeView1_MarqueeViewAct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/xml_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv1_MarqueeViewAct"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_red_loudspeaker"/>
+
+        <com.my.simplesampletest.marqueeview.MarqueeView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:id="@+id/marqueeView2_MarqueeViewAct"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/iv1_MarqueeViewAct"
+            app:mvAnimDuration="500"
+            app:mvInterval="2000"
+            app:mvTextColor="#ff5555"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/xml_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv2_MarqueeViewAct"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_red_loudspeaker"/>
+
+        <com.my.simplesampletest.marqueeview.MarqueeView
+            android:id="@+id/marqueeView3_MarqueeViewAct"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv2_MarqueeViewAct"
+            app:mvAnimDuration="500"
+            app:mvInterval="2000"
+            app:mvTextColor="#ff5555"
+            app:mvGravity="right"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/xml_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv3_MarqueeViewAct"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_loudspeaker"/>
+
+        <com.my.simplesampletest.marqueeview.MarqueeView
+            android:id="@+id/marqueeView4_MarqueeViewAct"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv3_MarqueeViewAct"
+            app:mvAnimDuration="1000"
+            app:mvInterval="3000"
+            app:mvTextColor="#FFFFFF"
+            app:mvTextSize="14sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/xml_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv4_MarqueeViewAct"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_loudspeaker"/>
+
+        <com.my.simplesampletest.marqueeview.MarqueeView
+            android:id="@+id/marqueeView5_MarqueeViewAct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv4_MarqueeViewAct"/>
+    </RelativeLayout>
+
+</LinearLayout>

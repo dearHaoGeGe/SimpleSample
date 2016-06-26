@@ -19,6 +19,8 @@ import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
+import com.my.simplesampletest.marqueeview.MarqueeView;
+import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
@@ -87,7 +89,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习ORMLite数据库");
         data.add("Activity的生命周期");
         data.add("用zxing做的生成二维码，并且扫码");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("自定义跑马灯效果(广告)");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -177,6 +179,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 15://用zxing做的生成二维码，并且扫码
                 startActivity(new Intent(this, QRCodeActivity.class));
+                break;
+
+            case 16://自定义跑马灯效果(广告)
+                startActivity(new Intent(this, MarqueeViewActivity.class));
                 break;
         }
     }

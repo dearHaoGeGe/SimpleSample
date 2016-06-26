@@ -61,6 +61,8 @@
         <!--用zxing做的生成二维码，并且扫码-->
         <activity android:name=".zxing.QRCodeActivity"/>
         <activity android:name=".zxing.ScanActivity"/>
+        <!--自定义跑马灯效果(广告)-->
+        <activity android:name=".marqueeview.MarqueeViewActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
