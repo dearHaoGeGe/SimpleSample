@@ -1,7 +1,9 @@
 package com.my.simplesampletest.zxing;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.LayoutInflater;
@@ -53,14 +55,15 @@ public class QRCodeActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_generate_QRCodeAct:   //生成二维码
-                if (ed_QRCodeAct.getText().toString()!=null&&ed_QRCodeAct.getText().toString().equals("")){
+                if (ed_QRCodeAct.getText().toString() != null && !ed_QRCodeAct.getText().toString().equals("")) {
                     showQRCodeDialog();
-                }else {
+                } else {
                     Toast.makeText(QRCodeActivity.this, "请输入内容!", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
             case R.id.btn_scan_QRCodeAct:   //扫描二维码
+                startActivity(new Intent(this,ScanActivity.class));
                 break;
         }
     }
@@ -68,13 +71,14 @@ public class QRCodeActivity extends BaseActivity implements View.OnClickListener
     /**
      * 生成二维码
      */
-    private void showQRCodeDialog(){
-        final AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        final View view= LayoutInflater.from(this).inflate(R.layout.dialog_create_qrcode_personal_data_activity,null);
-        final ImageView iv_head_QRCode_Dialog= (ImageView) view.findViewById(R.id.iv_head_QRCode_Dialog);
-        final TextView tv_username_QRCode_Dialog= (TextView) view.findViewById(R.id.tv_username_QRCode_Dialog);
-        final AppCompatImageView iv_QRCode_Dialog= (AppCompatImageView) view.findViewById(R.id.iv_QRCode_Dialog);
-        final String QRCodeText=ed_QRCodeAct.getText().toString();
+    private void showQRCodeDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final View view = LayoutInflater.from(this).inflate(R.layout.dialog_create_qrcode_personal_data_activity, null);
+        final ImageView iv_head_QRCode_Dialog = (ImageView) view.findViewById(R.id.iv_head_QRCode_Dialog);
+        final TextView tv_username_QRCode_Dialog = (TextView) view.findViewById(R.id.tv_username_QRCode_Dialog);
+        final AppCompatImageView iv_QRCode_Dialog = (AppCompatImageView) view.findViewById(R.id.iv_QRCode_Dialog);
+        final String QRCodeText = ed_QRCodeAct.getText().toString();
+        //CreateQRCode.createQRImage(QRCodeText, "QRCode",800,800, BitmapFactory.decodeResource(getResources(),R.mipmap.kung_fu_panda),
         CreateQRCode.createQRImage(QRCodeText, "QRCode",
                 new CreateQRCode.OnCreateQRListener() {
                     @Override

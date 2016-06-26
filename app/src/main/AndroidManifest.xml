@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <!--写入SD卡-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--相机的权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:name=".base.BaseApplication"
@@ -57,6 +60,7 @@
         <activity android:name=".act_life_cycle.LifeCycle2Activity"/>
         <!--用zxing做的生成二维码，并且扫码-->
         <activity android:name=".zxing.QRCodeActivity"/>
+        <activity android:name=".zxing.ScanActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
