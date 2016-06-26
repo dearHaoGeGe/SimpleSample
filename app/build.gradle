@@ -33,4 +33,5 @@ dependencies {
     //ORMLite所需要的两个架包
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
 }
