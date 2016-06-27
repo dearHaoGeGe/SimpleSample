@@ -21,6 +21,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import java.io.File;
@@ -30,6 +31,7 @@ import java.io.File;
  * 以后的项目中不建议使用
  *
  * http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661949&idx=1&sn=09aececd879bd8b4635e6a63a8249808&scene=0#wechat_redirect
+ * http://blog.csdn.net/xiaanming/article/details/26810303
  *
  * Created by YJH on 2016/6/27.
  */
@@ -94,6 +96,19 @@ public class ImageLoaderActivity extends BaseActivity{
                 .build();   // 构建完成
 
         imageLoader=ImageLoader.getInstance();
+
+        /**
+         * 快速滑动GridView，ListView，我们希望能停止图片的加载，
+         * 而在GridView，ListView停止滑动的时候加载当前界面的图片，
+         * 这个框架当然也提供这个功能，使用起来也很简单，
+         * 它提供了PauseOnScrollListener这个类来控制ListView,GridView滑动过程中停止去加载图片
+         *
+         * 第一个参数就是我们的图片加载对象ImageLoader,
+         * 第二个是控制是否在滑动过程中暂停加载图片，如果需要暂停传true就行了，
+         * 第三个参数控制猛的滑动界面的时候图片是否加载
+         */
+        lv_ImageLoaderAct.setOnScrollListener(new PauseOnScrollListener(imageLoader,true,true));
+
         adapter=new ImageLoaderAdapter(images,this,imageLoader,options);
         lv_ImageLoaderAct.setAdapter(adapter);
     }
