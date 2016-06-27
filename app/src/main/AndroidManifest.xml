@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <!--写入SD卡-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--相机的权限-->
+    <!--相机的权限(扫描二维码用到)-->
     <uses-permission android:name="android.permission.CAMERA" />
 
 
@@ -63,6 +63,8 @@
         <activity android:name=".zxing.ScanActivity"/>
         <!--自定义跑马灯效果(广告)-->
         <activity android:name=".marqueeview.MarqueeViewActivity"/>
+        <!--学习使用universal-image-loader-1.9.5-->
+        <activity android:name=".imageloader.ImageLoaderActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

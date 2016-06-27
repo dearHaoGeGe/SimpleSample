@@ -19,7 +19,8 @@ import java.util.List;
 
 
 /**
- * 测试String转换成JSONObject
+ * 测试String转换成JSONObject,
+ * 解析JSONObject
  * <p>
  * Created by YJH on 2016/6/5.
  */

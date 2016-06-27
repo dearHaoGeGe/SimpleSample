@@ -15,6 +15,7 @@ import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.imagecache.DiskLruCacheAct;
+import com.my.simplesampletest.imageloader.ImageLoaderActivity;
 import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
@@ -90,7 +91,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Activity的生命周期");
         data.add("用zxing做的生成二维码，并且扫码");
         data.add("自定义跑马灯效果(广告)");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("学习使用universal-image-loader-1.9.5");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -183,6 +184,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 16://自定义跑马灯效果(广告)
                 startActivity(new Intent(this, MarqueeViewActivity.class));
+                break;
+
+            case 17://学习使用universal-image-loader-1.9.5
+                startActivity(new Intent(this, ImageLoaderActivity.class));
                 break;
         }
     }
