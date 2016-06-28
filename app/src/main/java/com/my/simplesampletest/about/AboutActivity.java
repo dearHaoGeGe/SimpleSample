@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -70,7 +71,7 @@ public class AboutActivity extends BaseActivity{
         webView_AboutAct.setOverScrollMode(View.SCROLLBARS_INSIDE_OVERLAY); // 取消滚动条白边效果
         webView_AboutAct.requestFocus();    //调用这个尝试将焦点设置到一个特定的视图或它的后代之一
 
-        webView_AboutAct.loadUrl("http://fanyi.baidu.com/#en/zh/sample");
+        webView_AboutAct.loadUrl("https://github.com/dearHaoGeGe");
         webView_AboutAct.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -78,6 +79,15 @@ public class AboutActivity extends BaseActivity{
                 return true;
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && webView_AboutAct.canGoBack()) {  //canGoBack()得到这个WebView是否有回来的历史项目
+            webView_AboutAct.goBack();  //返回上一页面
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     // 获取当前应用的版本号
