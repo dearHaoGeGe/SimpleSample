@@ -65,6 +65,8 @@
         <activity android:name=".marqueeview.MarqueeViewActivity"/>
         <!--学习使用universal-image-loader-1.9.5-->
         <activity android:name=".imageloader.ImageLoaderActivity"/>
+        <!--关于的activity-->
+        <activity android:name=".about.AboutActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

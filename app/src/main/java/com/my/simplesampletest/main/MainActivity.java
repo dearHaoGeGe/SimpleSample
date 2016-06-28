@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.my.simplesampletest.about.AboutActivity;
 import com.my.simplesampletest.act_life_cycle.LifeCycleActivity;
 import com.my.simplesampletest.activitypostobject.PostActivity;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
@@ -44,7 +47,6 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
         initData();
     }
@@ -67,6 +69,24 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         rcView_main.setAdapter(adapter);
         adapter.setOnClickListener(this);
         adapter.setOnLongClickListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item_menu_app:
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**
