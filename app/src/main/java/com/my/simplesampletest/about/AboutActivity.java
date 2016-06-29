@@ -110,43 +110,4 @@ public class AboutActivity extends BaseActivity {
         return "";
     }
 
-
-    /**
-     * Read file from asset directory
-     *
-     * <pre>
-     * File: asset/html/template.html
-     * Example: readAssetFile("html/template.html")
-     * </pre>
-     *
-     * @param filePath
-     * @return
-     */
-//    public static String readAssetFile(String filePath,Context context) {
-//        String content = "";
-//        InputStreamReader inputReader = null;
-//        try {
-//            StringBuffer result = new StringBuffer();
-//            inputReader = new InputStreamReader(CoreApplication.getCoreApplication().getAssets().open(filePath));
-//            BufferedReader bufReader = new BufferedReader(inputReader);
-//            String line="";
-//            while((line = bufReader.readLine()) != null){
-//                result.append(EncodingUtils.getString(line.getBytes(), "UTF-8"));
-//            }
-//            content = result.toString();
-//        } catch (IOException e) {
-//            //CoreLoger.e(TAG, e);
-//            throw new RuntimeException("Can't load file [" + filePath + "]");
-//        } finally {
-//            if (inputReader != null) {
-//                try {
-//                    inputReader.close();
-//                } catch (IOException e) {
-//                    //CoreLoger.e(TAG, e);
-//                }
-//            }
-//        }
-//        return content;
-//    }
-
 }
