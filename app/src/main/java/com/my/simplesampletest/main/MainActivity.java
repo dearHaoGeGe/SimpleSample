@@ -28,6 +28,7 @@ import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
+import com.my.simplesampletest.read_config_properties.ConfigPropertiesAct;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
 import com.my.simplesampletest.zxing.QRCodeActivity;
 
@@ -112,7 +113,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("用zxing做的生成二维码，并且扫码");
         data.add("自定义跑马灯效果(广告)");
         data.add("学习使用universal-image-loader-1.9.5");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("读取assets文件夹下的config.properties文件");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -208,6 +209,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 17://学习使用universal-image-loader-1.9.5
                 startActivity(new Intent(this, ImageLoaderActivity.class));
+                break;
+
+            case 18://读取assets文件夹下的config.properties文件
+                startActivity(new Intent(this, ConfigPropertiesAct.class));
                 break;
         }
     }

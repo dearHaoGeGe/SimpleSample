@@ -15,12 +15,17 @@ import android.webkit.WebViewClient;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 /**
  * 从MainActivity点击菜单关于
- *
+ * <p/>
  * Created by YJH on 2016/6/28.
  */
-public class AboutActivity extends BaseActivity{
+public class AboutActivity extends BaseActivity {
 
     private WebView webView_AboutAct;
     private WebSettings settings;
@@ -29,7 +34,7 @@ public class AboutActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        setTitle("关于(V"+getVersionName(this)+")");
+        setTitle("关于(V" + getVersionName(this) + ")");
 
         initView();
         initData();
@@ -37,12 +42,12 @@ public class AboutActivity extends BaseActivity{
 
     @Override
     public void initView() {
-        webView_AboutAct= (WebView) findViewById(R.id.webView_AboutAct);
+        webView_AboutAct = (WebView) findViewById(R.id.webView_AboutAct);
     }
 
     @Override
     public void initData() {
-        settings=webView_AboutAct.getSettings();
+        settings = webView_AboutAct.getSettings();
         settings.setJavaScriptEnabled(true);    //如果访问的页面中有Javascript，则WebView必须设置支持Javascript
         settings.setJavaScriptCanOpenWindowsAutomatically(true);    //告诉JavaScript来自动打开的窗口。这适用于JavaScript函数window.open()。默认的是假的。
         settings.setSupportZoom(true);  //支持缩放
@@ -50,11 +55,11 @@ public class AboutActivity extends BaseActivity{
         settings.setDisplayZoomControls(false); //是否显示缩放按钮
 
         // >= 19(SDK4.4)启动硬件加速，否则启动软件加速
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
-            webView_AboutAct.setLayerType(View.LAYER_TYPE_SOFTWARE,null);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            webView_AboutAct.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             settings.setLoadsImagesAutomatically(true);     //支持自动加载图片
-        }else {
-            webView_AboutAct.setLayerType(View.LAYER_TYPE_HARDWARE,null);
+        } else {
+            webView_AboutAct.setLayerType(View.LAYER_TYPE_HARDWARE, null);
             settings.setLoadsImagesAutomatically(false);     //支持自动加载图片
         }
 
@@ -71,8 +76,8 @@ public class AboutActivity extends BaseActivity{
         webView_AboutAct.setOverScrollMode(View.SCROLLBARS_INSIDE_OVERLAY); // 取消滚动条白边效果
         webView_AboutAct.requestFocus();    //调用这个尝试将焦点设置到一个特定的视图或它的后代之一
 
-        webView_AboutAct.loadUrl("https://github.com/dearHaoGeGe");
-        webView_AboutAct.setWebViewClient(new WebViewClient(){
+        webView_AboutAct.loadUrl("file:///android_asset/about.html");
+        webView_AboutAct.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
@@ -94,7 +99,7 @@ public class AboutActivity extends BaseActivity{
     public static String getVersionName(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();
-            PackageInfo packInfo = packageManager.getPackageInfo(context.getPackageName(),0);
+            PackageInfo packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
             String version = packInfo.versionName;
             if (!TextUtils.isEmpty(version)) {
                 return version;
@@ -104,4 +109,44 @@ public class AboutActivity extends BaseActivity{
         }
         return "";
     }
+
+
+    /**
+     * Read file from asset directory
+     *
+     * <pre>
+     * File: asset/html/template.html
+     * Example: readAssetFile("html/template.html")
+     * </pre>
+     *
+     * @param filePath
+     * @return
+     */
+//    public static String readAssetFile(String filePath,Context context) {
+//        String content = "";
+//        InputStreamReader inputReader = null;
+//        try {
+//            StringBuffer result = new StringBuffer();
+//            inputReader = new InputStreamReader(CoreApplication.getCoreApplication().getAssets().open(filePath));
+//            BufferedReader bufReader = new BufferedReader(inputReader);
+//            String line="";
+//            while((line = bufReader.readLine()) != null){
+//                result.append(EncodingUtils.getString(line.getBytes(), "UTF-8"));
+//            }
+//            content = result.toString();
+//        } catch (IOException e) {
+//            //CoreLoger.e(TAG, e);
+//            throw new RuntimeException("Can't load file [" + filePath + "]");
+//        } finally {
+//            if (inputReader != null) {
+//                try {
+//                    inputReader.close();
+//                } catch (IOException e) {
+//                    //CoreLoger.e(TAG, e);
+//                }
+//            }
+//        }
+//        return content;
+//    }
+
 }
