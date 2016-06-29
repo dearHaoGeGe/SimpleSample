@@ -11,12 +11,4 @@
         android:text="读取config.properties文件"
         android:textAllCaps="false" />
 
-    <TextView
-        android:id="@+id/tv_ConfigPropertiesAct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="内容"
-        android:textSize="30sp" />
-
 </LinearLayout>
