@@ -58,17 +58,17 @@ public class ConfigPropertiesAct extends BaseActivity implements View.OnClickLis
     @Override
     public void initData() {
 
-        int a=0;
-        a=a+1;
-        a=a+2;
-        a=a+3;
-        a=a+4;
-        a=a+5;
-        a=a+6;
-        a=a+7;
-        a=a+8;
-        a=a+9;
-        Log.d(TAG,a+"");
+        int a = 0;
+        a = a + 1;
+        a = a + 2;
+        a = a + 3;
+        a = a + 4;
+        a = a + 5;
+        a = a + 6;
+        a = a + 7;
+        a = a + 8;
+        a = a + 9;
+        Log.d(TAG, a + "");
     }
 
     @Override
@@ -76,7 +76,7 @@ public class ConfigPropertiesAct extends BaseActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.btn_ConfigPropertiesAct:
                 properties = getProperties(this, "config.properties");
-                Toast.makeText(ConfigPropertiesAct.this, ""+getProperty("app.cc"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ConfigPropertiesAct.this, "" + getProperty("app.cc"), Toast.LENGTH_SHORT).show();
                 break;
         }
     }

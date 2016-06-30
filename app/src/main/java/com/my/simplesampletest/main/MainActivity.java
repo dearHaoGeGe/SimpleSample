@@ -25,6 +25,7 @@ import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.marqueeview.MarqueeView;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
+import com.my.simplesampletest.okhttp.OKHttpActivity;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
@@ -114,7 +115,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("自定义跑马灯效果(广告)");
         data.add("学习使用universal-image-loader-1.9.5");
         data.add("读取assets文件夹下的config.properties文件");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("学习使用OKHttp");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -213,6 +214,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 18://读取assets文件夹下的config.properties文件
                 startActivity(new Intent(this, ConfigPropertiesAct.class));
+                break;
+
+            case 19://学习使用OKHttp
+                startActivity(new Intent(this, OKHttpActivity.class));
                 break;
         }
     }

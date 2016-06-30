@@ -69,6 +69,8 @@
         <activity android:name=".about.AboutActivity"/>
         <!--读取assets文件夹下的config.properties文件-->
         <activity android:name=".read_config_properties.ConfigPropertiesAct"/>
+        <!--学习使用OKHttp-->
+        <activity android:name=".okhttp.OKHttpActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
