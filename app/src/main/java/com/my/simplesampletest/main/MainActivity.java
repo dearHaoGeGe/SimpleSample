@@ -16,6 +16,7 @@ import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.download_apk.DownloadAPKAct;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.imagecache.DiskLruCacheAct;
 import com.my.simplesampletest.imageloader.ImageLoaderActivity;
@@ -116,7 +117,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习使用universal-image-loader-1.9.5");
         data.add("读取assets文件夹下的config.properties文件");
         data.add("学习使用OKHttp");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("Android 快速实现文件下载（只有4行代码）");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -218,6 +219,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 19://学习使用OKHttp
                 startActivity(new Intent(this, OKHttpActivity.class));
+                break;
+
+            case 20://Android 快速实现文件下载（只有4行代码）
+                startActivity(new Intent(this, DownloadAPKAct.class));
                 break;
         }
     }

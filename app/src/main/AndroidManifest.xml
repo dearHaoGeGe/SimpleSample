@@ -71,6 +71,8 @@
         <activity android:name=".read_config_properties.ConfigPropertiesAct"/>
         <!--学习使用OKHttp-->
         <activity android:name=".okhttp.OKHttpActivity"/>
+        <!--Android 快速实现文件下载（只有4行代码）-->
+        <activity android:name=".download_apk.DownloadAPKAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
