@@ -21,10 +21,11 @@ import com.orhanobut.logger.Logger;
 import java.io.File;
 
 /**
- * 调用Android原生的DownloadManager下载文件，自动打开apk
+ * 调用Android原生的DownloadManager下载文件，自动打开apk，这个一般写在服务中
+ *
  * http://mp.weixin.qq.com/s?__biz=MzA3MDMyMjkzNg==&mid=2652261781&idx=1&sn=fdaaeec5be125044648bb08ec6b02b7b&scene=0&ptlang=2052&ADUIN=2791077217&ADSESSION=1467533718&ADTAG=CLIENT.QQ.5473_.0&ADPUBNO=26569#wechat_redirect
  * http://www.jianshu.com/p/46fd1c253701
- * 
+ *
  * Created by YJH on 2016/7/3.
  */
 public class DownloadAPKAct extends BaseActivity implements View.OnClickListener {
@@ -32,6 +33,8 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
     private Button btn_DownloadAPKAct;
     private DownloadManager downloadManager;
     private long mTaskId;
+    //豌豆荚apk
+    private String downloadUrl="https://sm.wdjcdn.com/release/files/jupiter/5.17.1.12029/wandoujia-web_seo_baidu_homepage.apk";
     //广播接受者，接收下载状态
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -39,8 +42,7 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
             checkDownloadStatus();//检查下载状态
         }
     };
-    //豌豆荚apk
-    String downloadUrl="https://sm.wdjcdn.com/release/files/jupiter/5.17.1.12029/wandoujia-web_seo_baidu_homepage.apk";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,12 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_DownloadAPKAct:
@@ -71,17 +79,6 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
                 downloadAPK(downloadUrl,"WDJ.apk");
                 break;
         }
-    }
-
-    private void downloadAPK() {
-        //创建下载任务,downloadUrl就是下载链接
-        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(downloadUrl));
-        //指定下载路径和下载文件名
-        request.setDestinationInExternalPublicDir("/download/", "WDJ");
-        //获取下载管理器
-        //DownloadManager downloadManager = (DownloadManager) this.getSystemService(Context.DOWNLOAD_SERVICE);
-        //将下载任务加入下载队列，否则不会进行下载
-        downloadManager.enqueue(request);
     }
 
     //使用系统下载器下载
@@ -98,6 +95,7 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
         //在通知栏中显示，默认就是显示的
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
         request.setVisibleInDownloadsUi(true);
+        request.setTitle("豌豆荚最新版本正在下载...");
 
         //sdcard的目录下的download文件夹，必须设置
         request.setDestinationInExternalPublicDir("/download/", versionName);

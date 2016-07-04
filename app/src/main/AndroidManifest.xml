@@ -13,7 +13,7 @@
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/github"
+        android:icon="@mipmap/android_studio"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
