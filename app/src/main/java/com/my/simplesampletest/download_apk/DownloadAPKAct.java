@@ -26,6 +26,8 @@ import java.io.File;
  * http://mp.weixin.qq.com/s?__biz=MzA3MDMyMjkzNg==&mid=2652261781&idx=1&sn=fdaaeec5be125044648bb08ec6b02b7b&scene=0&ptlang=2052&ADUIN=2791077217&ADSESSION=1467533718&ADTAG=CLIENT.QQ.5473_.0&ADPUBNO=26569#wechat_redirect
  * http://www.jianshu.com/p/46fd1c253701
  *
+ * 总Context实例个数 = Service个数 + Activity个数 + 1（Application对应的Context实例）
+ *
  * Created by YJH on 2016/7/3.
  */
 public class DownloadAPKAct extends BaseActivity implements View.OnClickListener {
