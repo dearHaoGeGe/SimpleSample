@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4644aa">
+
+    <com.my.simplesampletest.material_text_field.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="20dp"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_hasFocus="false"
+        app:mtf_image="@mipmap/ic_mail_grey600_24dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="邮箱"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textColorHint="#666"
+            android:textSize="15sp" />
+
+    </com.my.simplesampletest.material_text_field.MaterialTextField>
+
+</LinearLayout>

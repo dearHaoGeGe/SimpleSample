@@ -73,6 +73,8 @@
         <activity android:name=".okhttp.OKHttpActivity"/>
         <!--Android 快速实现文件下载（只有4行代码）-->
         <activity android:name=".download_apk.DownloadAPKAct"/>
+        <!--登录动画效果-->
+        <activity android:name=".material_text_field.MaterialTextFieldAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

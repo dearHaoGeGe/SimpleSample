@@ -26,6 +26,7 @@ import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.marqueeview.MarqueeView;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
+import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
@@ -118,7 +119,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("读取assets文件夹下的config.properties文件");
         data.add("学习使用OKHttp");
         data.add("Android 快速实现文件下载（只有4行代码）");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("登录动画效果");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
     }
@@ -223,6 +224,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 20://Android 快速实现文件下载（只有4行代码）
                 startActivity(new Intent(this, DownloadAPKAct.class));
+                break;
+
+            case 21://登录动画效果
+                startActivity(new Intent(this, MaterialTextFieldAct.class));
                 break;
         }
     }
