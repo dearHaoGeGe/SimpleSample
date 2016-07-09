@@ -32,6 +32,7 @@ import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.read_config_properties.ConfigPropertiesAct;
+import com.my.simplesampletest.segment_view.SegmentViewActivity;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
 import com.my.simplesampletest.zxing.QRCodeActivity;
 
@@ -120,7 +121,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习使用OKHttp");
         data.add("Android 快速实现文件下载（只有4行代码）");
         data.add("登录动画效果");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("RadioGroup实现类似ios的分段选择(UISegmentedControl)控件");
         data.add("5s1d6a165a1ds515c15d1c5d");
     }
 
@@ -228,6 +229,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 21://登录动画效果
                 startActivity(new Intent(this, MaterialTextFieldAct.class));
+                break;
+
+            case 22://RadioGroup实现类似ios的分段选择(UISegmentedControl)控件
+                startActivity(new Intent(this, SegmentViewActivity.class));
                 break;
         }
     }

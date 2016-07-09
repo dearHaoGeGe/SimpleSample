@@ -75,6 +75,8 @@
         <activity android:name=".download_apk.DownloadAPKAct"/>
         <!--登录动画效果-->
         <activity android:name=".material_text_field.MaterialTextFieldAct"/>
+        <!--RadioGroup实现类似ios的分段选择(UISegmentedControl)控件-->
+        <activity android:name=".segment_view.SegmentViewActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

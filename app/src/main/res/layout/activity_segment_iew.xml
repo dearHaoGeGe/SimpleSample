@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.my.simplesampletest.segment_view.SegmentedGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        app:sc_border_width="2dp"
+        app:sc_corner_radius="10dp">
+
+        <RadioButton
+            android:id="@+id/radioBtn1_SegmentedGroupAct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/RadioButton"
+            android:text="One"/>
+
+        <RadioButton
+            android:id="@+id/radioBtn2_SegmentedGroupAct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/RadioButton"
+            android:text="Two"/>
+
+        <RadioButton
+            android:id="@+id/radioBtn3_SegmentedGroupAct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/RadioButton"
+            android:text="Three"/>
+
+    </com.my.simplesampletest.segment_view.SegmentedGroup>
+    
+</LinearLayout>

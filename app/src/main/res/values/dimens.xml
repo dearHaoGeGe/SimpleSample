@@ -5,4 +5,7 @@
 
     <dimen name="mtf_cardHeight_initial">4dp</dimen>
     <dimen name="mtf_cardHeight_final">55dp</dimen>
+
+    <dimen name="radio_button_conner_radius">5dp</dimen>
+    <dimen name="radio_button_stroke_border">1dp</dimen>
 </resources>
