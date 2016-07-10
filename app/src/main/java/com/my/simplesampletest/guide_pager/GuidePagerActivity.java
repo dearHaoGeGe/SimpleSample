@@ -26,7 +26,7 @@ import java.util.List;
  *
  * Created by YJH on 2016/7/10.
  */
-public class GuidePagerActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     private ViewPager viewPager_GuidePagerAct;
 
@@ -72,7 +72,7 @@ public class GuidePagerActivity extends AppCompatActivity implements ViewPager.O
         initData();
     }
 
-
+    @Override
     public void initView() {
         btn_GuidePagerAct= (Button) findViewById(R.id.btn_GuidePagerAct);
 
@@ -85,7 +85,7 @@ public class GuidePagerActivity extends AppCompatActivity implements ViewPager.O
         });
     }
 
-
+    @Override
     public void initData() {
         initViewpager();    //加载ViewPager
 
