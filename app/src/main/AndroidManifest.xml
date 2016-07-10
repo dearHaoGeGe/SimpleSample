@@ -77,6 +77,8 @@
         <activity android:name=".material_text_field.MaterialTextFieldAct"/>
         <!--RadioGroup实现类似ios的分段选择(UISegmentedControl)控件-->
         <activity android:name=".segment_view.SegmentViewActivity"/>
+        <!--app带圆点指示的引导页-->
+        <activity android:name=".guide_pager.GuidePagerActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

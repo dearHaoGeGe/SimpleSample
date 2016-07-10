@@ -18,6 +18,7 @@ import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.download_apk.DownloadAPKAct;
 import com.my.simplesampletest.eventbus.EventBusActivity;
+import com.my.simplesampletest.guide_pager.GuidePagerActivity;
 import com.my.simplesampletest.imagecache.DiskLruCacheAct;
 import com.my.simplesampletest.imageloader.ImageLoaderActivity;
 import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
@@ -122,6 +123,12 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Android 快速实现文件下载（只有4行代码）");
         data.add("登录动画效果");
         data.add("RadioGroup实现类似ios的分段选择(UISegmentedControl)控件");
+        data.add("app带圆点指示的引导页");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
     }
 
@@ -233,6 +240,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 22://RadioGroup实现类似ios的分段选择(UISegmentedControl)控件
                 startActivity(new Intent(this, SegmentViewActivity.class));
+                break;
+
+            case 23://app带圆点指示的引导页
+                startActivity(new Intent(this, GuidePagerActivity.class));
                 break;
         }
     }
