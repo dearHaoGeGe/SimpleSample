@@ -34,6 +34,7 @@ import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.read_config_properties.ConfigPropertiesAct;
 import com.my.simplesampletest.segment_view.SegmentViewActivity;
+import com.my.simplesampletest.swipe_refresh_layout.SwipeRefreshLayoutAct;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
 import com.my.simplesampletest.zxing.QRCodeActivity;
 
@@ -124,7 +125,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("登录动画效果");
         data.add("RadioGroup实现类似ios的分段选择(UISegmentedControl)控件");
         data.add("app带圆点指示的引导页");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("SwipeRefreshLayout Google官方下拉刷新组件");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -244,6 +245,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 23://app带圆点指示的引导页
                 startActivity(new Intent(this, GuidePagerActivity.class));
+                break;
+
+            case 24://SwipeRefreshLayout   Google官方下拉刷新组件
+                startActivity(new Intent(this, SwipeRefreshLayoutAct.class));
                 break;
         }
     }
