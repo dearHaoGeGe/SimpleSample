@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * SwipeRefreshLayout Google官方下拉刷新组件
+ *
+ * 转自:https://github.com/stormzhang/SwipeRefreshLayoutDemo/
+ *
  * Created by YJH on 2016/7/11.
  */
 public class SwipeRefreshLayoutAct extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
