@@ -20,6 +20,15 @@ import com.my.simplesampletest.base.BaseActivity;
  *
  * 参考：http://mp.weixin.qq.com/s?__biz=MzA3MDMyMjkzNg==&mid=2652261804&idx=1&sn=384dd2a1b45f8651f084dc4e6942d8ac&scene=0#wechat_redirect
  *
+ * 一下是自动轮播图
+ * http://mp.weixin.qq.com/s?__biz=MzAwOTUyNzI3Ng==&mid=2652071391&idx=1&sn=2f67c658ccb2f1efaddff4f6c4225844&scene=0#wechat_redirect
+ *
+ * https://github.com/imbryk/LoopingViewPager
+ * https://github.com/wanliyang1990/AdViewPager
+ * https://github.com/Trinea/android-auto-scroll-view-pager
+ * https://github.com/Jude95/RollViewPager
+ * https://github.com/FlyRecker/FlyBanner
+ *
  * Created by YJH on 2016/7/12.
  */
 public class SnackbarActivity extends BaseActivity implements View.OnClickListener {

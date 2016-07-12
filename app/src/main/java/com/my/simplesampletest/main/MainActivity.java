@@ -16,6 +16,7 @@ import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
 import com.my.simplesampletest.download_apk.DownloadAPKAct;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.guide_pager.GuidePagerActivity;
@@ -128,7 +129,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("app带圆点指示的引导页");
         data.add("SwipeRefreshLayout Google官方下拉刷新组件");
         data.add("学习使用Snackbar");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("循环显示超长图片");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -255,6 +256,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 25://学习使用Snackbar
                 startActivity(new Intent(this, SnackbarActivity.class));
+                break;
+
+            case 26://循环显示超长图片
+                startActivity(new Intent(this, CylinderImageViewAct.class));
                 break;
         }
     }

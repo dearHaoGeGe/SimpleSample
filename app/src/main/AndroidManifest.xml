@@ -83,6 +83,8 @@
         <activity android:name=".swipe_refresh_layout.SwipeRefreshLayoutAct"/>
         <!--学习使用Snackbar-->
         <activity android:name=".snackbar.SnackbarActivity"/>
+        <!--循环显示超长图片-->
+        <activity android:name=".cylinderImage_view.CylinderImageViewAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
