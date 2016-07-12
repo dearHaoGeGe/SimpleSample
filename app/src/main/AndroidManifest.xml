@@ -81,6 +81,8 @@
         <activity android:name=".guide_pager.GuidePagerActivity"/>
         <!--SwipeRefreshLayout Google官方下拉刷新组件-->
         <activity android:name=".swipe_refresh_layout.SwipeRefreshLayoutAct"/>
+        <!--学习使用Snackbar-->
+        <activity android:name=".snackbar.SnackbarActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

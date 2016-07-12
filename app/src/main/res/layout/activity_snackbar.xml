@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn1_SnackbarAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="没有点击的Snackbar"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/but2_SnackbarAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn1_SnackbarAct"
+        android:layout_centerHorizontal="true"
+        android:text="有点击的Snackbar"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/but3_SnackbarAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/but2_SnackbarAct"
+        android:layout_centerHorizontal="true"
+        android:text="SnackBar关于show和dismiss的回调方法"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/but4_SnackbarAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/but3_SnackbarAct"
+        android:layout_centerHorizontal="true"
+        android:text="自定义Snackbar显示的背景色"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/but5_SnackbarAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/but4_SnackbarAct"
+        android:layout_centerHorizontal="true"
+        android:text="加icon的Snackbar"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="检测位置" />
+
+</RelativeLayout>
