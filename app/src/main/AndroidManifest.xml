@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--相机的权限(扫描二维码用到)-->
     <uses-permission android:name="android.permission.CAMERA" />
+    <!--允许程序禁用键盘锁-->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
 
 
     <application
