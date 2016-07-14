@@ -50,14 +50,14 @@ public class PagerFragmentLazyLoadAct extends BaseActivity {
         fragmentList.add(VPFLLFiveFragment.newInstance());
 
         //添加Title
-        titles=new ArrayList<>();
+        titles = new ArrayList<>();
         titles.add("第一个Fragment");
         titles.add("第二个Fragment");
         titles.add("第三个Fragment");
         titles.add("第四个Fragment");
         titles.add("第五个Fragment");
 
-        adapter=new VPFLLPagerAdapter(getSupportFragmentManager(),fragmentList,titles);
+        adapter = new VPFLLPagerAdapter(getSupportFragmentManager(), fragmentList, titles);
         viewPager_VPFLLAct.setAdapter(adapter);
 
         pagerSlidingTabStrip_VPFLLAct.setViewPager(viewPager_VPFLLAct);
