@@ -85,6 +85,8 @@
         <activity android:name=".snackbar.SnackbarActivity"/>
         <!--循环显示超长图片-->
         <activity android:name=".cylinderImage_view.CylinderImageViewAct"/>
+        <!--学习ViewPager+Fragment LazyLoad-->
+        <activity android:name=".viewpager_fragment_lazyload.PagerFragmentLazyLoadAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

@@ -38,6 +38,7 @@ import com.my.simplesampletest.segment_view.SegmentViewActivity;
 import com.my.simplesampletest.snackbar.SnackbarActivity;
 import com.my.simplesampletest.swipe_refresh_layout.SwipeRefreshLayoutAct;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
+import com.my.simplesampletest.viewpager_fragment_lazyload.PagerFragmentLazyLoadAct;
 import com.my.simplesampletest.zxing.QRCodeActivity;
 
 import java.util.ArrayList;
@@ -130,7 +131,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("SwipeRefreshLayout Google官方下拉刷新组件");
         data.add("学习使用Snackbar");
         data.add("循环显示超长图片");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("学习ViewPager+Fragment LazyLoad");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -260,6 +261,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 26://循环显示超长图片
                 startActivity(new Intent(this, CylinderImageViewAct.class));
+                break;
+
+            case 27://学习ViewPager+Fragment LazyLoad
+                startActivity(new Intent(this, PagerFragmentLazyLoadAct.class));
                 break;
         }
     }
