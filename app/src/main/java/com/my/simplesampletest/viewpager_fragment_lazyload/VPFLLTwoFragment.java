@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.my.simplesampletest.R;
 
@@ -14,7 +15,9 @@ import com.my.simplesampletest.R;
  */
 public class VPFLLTwoFragment extends BasePageFragment{
 
-    private static final String TAG = "Two";
+    private static final String TAG = "VPFLL___2";
+
+    private TextView tv_VPFLLAct,tv_VPFLLTwoFragment;
 
     public static VPFLLTwoFragment newInstance(){
         VPFLLTwoFragment fragment = new VPFLLTwoFragment();
@@ -37,6 +40,7 @@ public class VPFLLTwoFragment extends BasePageFragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.e(TAG,"onCreateView");
         View view=inflater.inflate(R.layout.fragment_vpfll_two,container,false);
+        tv_VPFLLTwoFragment= (TextView) view.findViewById(R.id.tv_VPFLLTwoFragment);
         return view;
     }
 
@@ -44,6 +48,15 @@ public class VPFLLTwoFragment extends BasePageFragment{
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.e(TAG,"onActivityCreated");
+
+        tv_VPFLLAct= (TextView) getActivity().findViewById(R.id.tv_VPFLLAct);
+
+        tv_VPFLLTwoFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_VPFLLAct.setText("AK47");
+            }
+        });
     }
 
     @Override

@@ -27,7 +27,8 @@ public class VPFLLPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return fragmentList.size();
+        //return fragmentList.size();
+        return 5;
     }
 
     @Override

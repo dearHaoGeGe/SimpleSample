@@ -14,7 +14,7 @@ import com.my.simplesampletest.R;
  */
 public class VPFLLFiveFragment extends BasePageFragment {
 
-    private static final String TAG = "Five";
+    private static final String TAG = "VPFLL___5";
 
     public static VPFLLFiveFragment newInstance(){
         VPFLLFiveFragment fragment = new VPFLLFiveFragment();

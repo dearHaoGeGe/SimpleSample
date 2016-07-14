@@ -7,6 +7,7 @@
     android:background="#C1FFC1">
 
     <TextView
+        android:id="@+id/tv_VPFLLTwoFragment"
         android:textSize="30sp"
         android:text="这是第二个Fragment"
         android:layout_width="wrap_content"

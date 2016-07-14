@@ -3,6 +3,7 @@ package com.my.simplesampletest.viewpager_fragment_lazyload;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.my.simplesampletest.R;
@@ -21,6 +22,7 @@ public class PagerFragmentLazyLoadAct extends BaseActivity {
     private List<Fragment> fragmentList;
     private List<String> titles;
     private VPFLLPagerAdapter adapter;
+    private TextView tv_VPFLLAct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
