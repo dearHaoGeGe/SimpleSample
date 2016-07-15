@@ -102,7 +102,7 @@ public class JSONObjectActivity extends BaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        Toast.makeText(JSONObjectActivity.this, "555~", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(JSONObjectActivity.this, "555~", Toast.LENGTH_SHORT).show();
         if (keyCode==event.KEYCODE_HOME){
             Snackbar.make(tv_JSONObjectAct,"点击Home键~",Snackbar.LENGTH_SHORT).show();
             return false;

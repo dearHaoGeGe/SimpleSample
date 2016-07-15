@@ -1,6 +1,8 @@
 package com.my.simplesampletest.autohideime;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
@@ -14,6 +16,8 @@ import com.my.simplesampletest.base.BaseActivity;
  */
 public class AutoHideIMEActivity extends BaseActivity{
 
+    private Button btn_AutoHideAct;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +27,14 @@ public class AutoHideIMEActivity extends BaseActivity{
 
     @Override
     public void initView() {
+        btn_AutoHideAct= (Button) findViewById(R.id.btn_AutoHideAct);
 
+        btn_AutoHideAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

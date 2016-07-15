@@ -11,6 +11,7 @@ import android.view.View;
 import com.my.simplesampletest.about.AboutActivity;
 import com.my.simplesampletest.act_life_cycle.LifeCycleActivity;
 import com.my.simplesampletest.activitypostobject.PostActivity;
+import com.my.simplesampletest.autohideime.UseEditTextAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
@@ -132,6 +133,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习使用Snackbar");
         data.add("循环显示超长图片");
         data.add("学习ViewPager+Fragment LazyLoad");
+        data.add("Android EditText 的使用及值得注意的地方");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -265,6 +270,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 27://学习ViewPager+Fragment LazyLoad
                 startActivity(new Intent(this, PagerFragmentLazyLoadAct.class));
+                break;
+
+            case 28://Android EditText 的使用及值得注意的地方
+                startActivity(new Intent(this, UseEditTextAct.class));
                 break;
         }
     }

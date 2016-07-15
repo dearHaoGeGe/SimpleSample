@@ -89,6 +89,8 @@
         <activity android:name=".cylinderImage_view.CylinderImageViewAct"/>
         <!--学习ViewPager+Fragment LazyLoad-->
         <activity android:name=".viewpager_fragment_lazyload.PagerFragmentLazyLoadAct"/>
+        <!--Android EditText 的使用及值得注意的地方-->
+        <activity android:name=".autohideime.UseEditTextAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
