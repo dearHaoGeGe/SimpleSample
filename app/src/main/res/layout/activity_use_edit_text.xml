@@ -161,6 +161,38 @@
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/view4"
+            android:layout_below="@+id/ll4"
+            android:background="#9C9C9C"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <LinearLayout
+            android:layout_below="@+id/view4"
+            android:id="@+id/ll5"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:text="限制输入内容"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ed_InputTxtFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
     </RelativeLayout>
 
 </ScrollView>
