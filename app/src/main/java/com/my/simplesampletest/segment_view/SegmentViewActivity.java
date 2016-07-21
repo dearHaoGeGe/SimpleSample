@@ -22,7 +22,7 @@ import com.my.simplesampletest.base.BaseActivity;
  */
 public class SegmentViewActivity extends BaseActivity implements View.OnClickListener {
 
-    private TextView approveAgreeTV,approveDisagreeTV;
+    private TextView approveAgreeTV,approveDisagreeTV,defaultTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,11 @@ public class SegmentViewActivity extends BaseActivity implements View.OnClickLis
     public void initView() {
         approveAgreeTV= (TextView) findViewById(R.id.approveAgreeTV);
         approveDisagreeTV= (TextView) findViewById(R.id.approveDisagreeTV);
+        defaultTV= (TextView) findViewById(R.id.defaultTV);
 
         approveAgreeTV.setOnClickListener(this);
         approveDisagreeTV.setOnClickListener(this);
+        defaultTV.setOnClickListener(this);
     }
 
     @Override
@@ -51,21 +53,40 @@ public class SegmentViewActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.approveAgreeTV:
+                initButtonState();
                 approveAgreeTV.setBackgroundResource(R.drawable.button_left_press);
-                approveDisagreeTV.setBackgroundResource(R.drawable.button_right_release);
                 approveAgreeTV.setTextColor(Color.parseColor("#ffffff"));
-                approveDisagreeTV.setTextColor(Color.parseColor("#6FD5FC"));
 
                 Snackbar.make(approveAgreeTV,"同意",Snackbar.LENGTH_SHORT).show();
                 break;
 
             case R.id.approveDisagreeTV:
+                initButtonState();
                 approveDisagreeTV.setBackgroundResource(R.drawable.button_right_press);
-                approveAgreeTV.setBackgroundResource(R.drawable.button_left_release);
                 approveDisagreeTV.setTextColor(Color.parseColor("#ffffff"));
-                approveAgreeTV.setTextColor(Color.parseColor("#6FD5FC"));
+
                 Snackbar.make(approveAgreeTV,"不同意",Snackbar.LENGTH_SHORT).show();
                 break;
+
+            case R.id.defaultTV:
+                initButtonState();
+                defaultTV.setBackgroundResource(R.drawable.button_default_press);
+                defaultTV.setTextColor(Color.parseColor("#ffffff"));
+                Snackbar.make(approveAgreeTV,"默认",Snackbar.LENGTH_SHORT).show();
+                break;
         }
+    }
+
+    /**
+     * 初始化默认的按钮的状态
+     */
+    private void initButtonState(){
+        approveAgreeTV.setBackgroundResource(R.drawable.button_left_release);
+        approveDisagreeTV.setBackgroundResource(R.drawable.button_right_release);
+        defaultTV.setBackgroundResource(R.drawable.button_default_release);
+
+        approveAgreeTV.setTextColor(Color.parseColor("#6FD5FC"));
+        approveDisagreeTV.setTextColor(Color.parseColor("#6FD5FC"));
+        defaultTV.setTextColor(Color.parseColor("#6FD5FC"));
     }
 }
