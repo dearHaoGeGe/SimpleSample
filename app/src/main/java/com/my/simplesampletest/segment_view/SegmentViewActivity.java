@@ -1,6 +1,10 @@
 package com.my.simplesampletest.segment_view;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.view.View;
+import android.widget.TextView;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
@@ -16,7 +20,9 @@ import com.my.simplesampletest.base.BaseActivity;
  *
  * Created by YJH on 2016/7/9.
  */
-public class SegmentViewActivity extends BaseActivity {
+public class SegmentViewActivity extends BaseActivity implements View.OnClickListener {
+
+    private TextView approveAgreeTV,approveDisagreeTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +35,37 @@ public class SegmentViewActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        approveAgreeTV= (TextView) findViewById(R.id.approveAgreeTV);
+        approveDisagreeTV= (TextView) findViewById(R.id.approveDisagreeTV);
 
+        approveAgreeTV.setOnClickListener(this);
+        approveDisagreeTV.setOnClickListener(this);
     }
 
     @Override
     public void initData() {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.approveAgreeTV:
+                approveAgreeTV.setBackgroundResource(R.drawable.button_left_press);
+                approveDisagreeTV.setBackgroundResource(R.drawable.button_right_release);
+                approveAgreeTV.setTextColor(Color.parseColor("#ffffff"));
+                approveDisagreeTV.setTextColor(Color.parseColor("#6FD5FC"));
+
+                Snackbar.make(approveAgreeTV,"同意",Snackbar.LENGTH_SHORT).show();
+                break;
+
+            case R.id.approveDisagreeTV:
+                approveDisagreeTV.setBackgroundResource(R.drawable.button_right_press);
+                approveAgreeTV.setBackgroundResource(R.drawable.button_left_release);
+                approveDisagreeTV.setTextColor(Color.parseColor("#ffffff"));
+                approveAgreeTV.setTextColor(Color.parseColor("#6FD5FC"));
+                Snackbar.make(approveAgreeTV,"不同意",Snackbar.LENGTH_SHORT).show();
+                break;
+        }
     }
 }
