@@ -20,6 +20,7 @@ import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
 import com.my.simplesampletest.download_apk.DownloadAPKAct;
 import com.my.simplesampletest.eventbus.EventBusActivity;
+import com.my.simplesampletest.girdview.GridViewActivity;
 import com.my.simplesampletest.guide_pager.GuidePagerActivity;
 import com.my.simplesampletest.imagecache.DiskLruCacheAct;
 import com.my.simplesampletest.imageloader.ImageLoaderActivity;
@@ -134,7 +135,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("循环显示超长图片");
         data.add("学习ViewPager+Fragment LazyLoad");
         data.add("Android EditText 的使用及值得注意的地方");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("学习使用GridView");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -274,6 +275,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 28://Android EditText 的使用及值得注意的地方
                 startActivity(new Intent(this, UseEditTextAct.class));
+                break;
+
+            case 29://学习使用GridView
+                startActivity(new Intent(this, GridViewActivity.class));
                 break;
         }
     }
