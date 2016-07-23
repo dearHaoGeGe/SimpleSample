@@ -24,6 +24,9 @@ import com.my.simplesampletest.R;
 
 import java.util.HashMap;
 
+/**
+ * RadioGroup实现类似ios的分段选择(UISegmentedControl)控件
+ */
 public class SegmentedGroup extends RadioGroup {
 
     private int mMarginDp;

@@ -1,14 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
+    //编译SDK版本
     compileSdkVersion 23
+    //build tools 版本
     buildToolsVersion "23.0.3"
 
     defaultConfig {
+        //应用的包名
         applicationId "com.my.simplesampletest"
+        //最小支持的SDK版本
         minSdkVersion 15
+        //目标SDK版本
         targetSdkVersion 23
+        //版本号
         versionCode 1
+        //版本名字
         versionName "1.0"
     }
     buildTypes {
