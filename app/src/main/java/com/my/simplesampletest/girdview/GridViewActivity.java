@@ -21,6 +21,7 @@ import java.util.List;
 
 /**
  * 学习使用GirdView
+ * 这个代码暂时在小米4C上图片位置传了，但是在虚拟机上好用
  * <p/>
  * Created by YJH on 2016/7/23.
  */
