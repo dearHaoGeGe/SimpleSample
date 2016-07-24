@@ -1,5 +1,7 @@
 package com.my.simplesampletest.girdview;
 
+import android.graphics.Bitmap;
+
 /**
  * GirdView中item的实体类
  *
@@ -9,6 +11,7 @@ public class GVItemEntity {
 
     private String name;
     private String imgUrl;
+    private Bitmap localPic;
 
     public GVItemEntity(String name) {
         this.name = name;
@@ -28,5 +31,13 @@ public class GVItemEntity {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public Bitmap getLocalPic() {
+        return localPic;
+    }
+
+    public void setLocalPic(Bitmap localPic) {
+        this.localPic = localPic;
     }
 }

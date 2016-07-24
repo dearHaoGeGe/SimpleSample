@@ -65,6 +65,12 @@ public class GVBaseAdapter extends BaseAdapter {
             holder.ivDel_item_GVAct.setVisibility(View.GONE);
         }
 
+        if (data.get(position).getLocalPic()!=null){
+            holder.iv_item_GVAct.setImageBitmap(data.get(position).getLocalPic());
+        }else {
+            holder.iv_item_GVAct.setImageResource(R.mipmap.vonvon);
+        }
+
         holder.ivDel_item_GVAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,5 +99,15 @@ public class GVBaseAdapter extends BaseAdapter {
 
     public boolean isShowDelEnable() {
         return isShowDelEnable;
+    }
+
+    /**
+     * 网适配器中添加数据
+     *
+     * @param entity
+     */
+    public void addData(GVItemEntity entity){
+        this.data.add(entity);
+        notifyDataSetChanged();
     }
 }

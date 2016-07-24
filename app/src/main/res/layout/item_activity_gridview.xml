@@ -27,8 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_item_GVAct"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:text="这是一个item"
-        android:textSize="25sp" />
+        android:textSize="20sp" />
 
 </RelativeLayout>
