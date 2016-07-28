@@ -12,11 +12,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.my.simplesampletest.R;
+import com.my.simplesampletest.add_local_pic.common.LocalImageHelper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingProgressListener;
 
@@ -43,7 +45,7 @@ public class AlbumViewPager extends ViewPager implements MatrixImageView.OnMovin
     //本地图片的option
 	DisplayImageOptions localOptions;
 
-	private  class ProcressListener implements ImageLoadingProgressListener {
+	private  class ProcressListener implements ImageLoadingProgressListener{
 		private View mView = null;
 
 		public ProcressListener(View view){
@@ -59,7 +61,7 @@ public class AlbumViewPager extends ViewPager implements MatrixImageView.OnMovin
 	}
 
 
-	private ImageLoadingListener loadingListenerr = new ImageLoadingListener(){
+	private ImageLoadingListener loadingListener = new ImageLoadingListener(){
 
 		@Override
 		public void onLoadingCancelled(String arg0, View arg1) {
@@ -149,7 +151,7 @@ public class AlbumViewPager extends ViewPager implements MatrixImageView.OnMovin
 			imageView.setOnMovingListener(AlbumViewPager.this);
 			imageView.setOnSingleTapListener(onSingleTapListener);
 			String path=paths.get(position);
-			ImageLoader.getInstance().displayImage(path, imageView, localOptions, loadingListenerr, new ProcressListener(imageLayout));
+			ImageLoader.getInstance().displayImage(path, imageView, localOptions, loadingListener, new ProcressListener(imageLayout));
 			return imageLayout;
 		}
 
@@ -174,51 +176,51 @@ public class AlbumViewPager extends ViewPager implements MatrixImageView.OnMovin
 
 	}
 
-//	public class LocalViewPagerAdapter extends PagerAdapter {
-//		private List<LocalImageHelper.LocalFile> paths;//大图地址 如果为网络图片 则为大图url
-//		public LocalViewPagerAdapter(List<LocalImageHelper.LocalFile> paths){
-//			this.paths=paths;
-//		}
-//
-//		@Override
-//		public int getCount() {
-//			return paths.size();
-//		}
-//
-//		@Override
-//		public Object instantiateItem(ViewGroup viewGroup, int position) {
-//			//注意，这里不可以加inflate的时候直接添加到viewGroup下，而需要用addView重新添加
-//			//因为直接加到viewGroup下会导致返回的view为viewGroup
-//			View imageLayout = inflate(getContext(), R.layout.item_album_pager, null);
-//			viewGroup.addView(imageLayout);
-//			assert imageLayout != null;
-//			MatrixImageView imageView = (MatrixImageView) imageLayout.findViewById(R.id.image);
-//			imageView.setOnMovingListener(AlbumViewPager.this);
-//			imageView.setOnSingleTapListener(onSingleTapListener);
-//			LocalImageHelper.LocalFile path=paths.get(position);
-//				ImageLoader.getInstance().displayImage(path.getOriginalUri(), new ImageViewAware(imageView), localOptions, loadingListenerr,
-//						new ProcressListener(imageLayout),path.getOrientation());
-//
-//			return imageLayout;
-//		}
-//
-//
-//
-//		@Override
-//		public int getItemPosition(Object object) {
-//			//在notifyDataSetChanged时返回None，重新绘制
-//			return POSITION_NONE;
-//		}
-//
-//		@Override
-//		public void destroyItem(ViewGroup container, int arg1, Object object) {
-//			((ViewPager) container).removeView((View) object);
-//		}
-//
-//		@Override
-//		public boolean isViewFromObject(View arg0, Object arg1) {
-//			return arg0 == arg1;
-//		}
-//	}
+	public class LocalViewPagerAdapter extends PagerAdapter {
+		private List<LocalImageHelper.LocalFile> paths;//大图地址 如果为网络图片 则为大图url
+		public LocalViewPagerAdapter(List<LocalImageHelper.LocalFile> paths){
+			this.paths=paths;
+		}
+
+		@Override
+		public int getCount() {
+			return paths.size();
+		}
+
+		@Override
+		public Object instantiateItem(ViewGroup viewGroup, int position) {
+			//注意，这里不可以加inflate的时候直接添加到viewGroup下，而需要用addView重新添加
+			//因为直接加到viewGroup下会导致返回的view为viewGroup
+			View imageLayout = inflate(getContext(), R.layout.item_album_pager, null);
+			viewGroup.addView(imageLayout);
+			assert imageLayout != null;
+			MatrixImageView imageView = (MatrixImageView) imageLayout.findViewById(R.id.image);
+			imageView.setOnMovingListener(AlbumViewPager.this);
+			imageView.setOnSingleTapListener(onSingleTapListener);
+			LocalImageHelper.LocalFile path=paths.get(position);
+			ImageLoader.getInstance().displayImage(path.getOriginalUri(), new ImageViewAware(imageView), localOptions, loadingListener,
+					new ProcressListener(imageLayout),path.getOrientation());
+
+			return imageLayout;
+		}
+
+
+
+		@Override
+		public int getItemPosition(Object object) {
+			//在notifyDataSetChanged时返回None，重新绘制
+			return POSITION_NONE;
+		}
+
+		@Override
+		public void destroyItem(ViewGroup container, int arg1, Object object) {
+			((ViewPager) container).removeView((View) object);
+		}
+
+		@Override
+		public boolean isViewFromObject(View arg0, Object arg1) {
+			return arg0 == arg1;
+		}
+	}
 
 }

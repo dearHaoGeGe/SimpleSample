@@ -8,4 +8,9 @@
 
     <dimen name="radio_button_conner_radius">5dp</dimen>
     <dimen name="radio_button_stroke_border">1dp</dimen>
+
+    <!-- 读取本地照片发说说的Demo -->
+    <dimen name="size_100dip">100dip</dimen>
+    <dimen name="size_10dip">10.0dip</dimen>
+
 </resources>
