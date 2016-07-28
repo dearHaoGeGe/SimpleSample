@@ -11,6 +11,7 @@ import android.view.View;
 import com.my.simplesampletest.about.AboutActivity;
 import com.my.simplesampletest.act_life_cycle.LifeCycleActivity;
 import com.my.simplesampletest.activitypostobject.PostActivity;
+import com.my.simplesampletest.add_local_pic.DynamicPostAct;
 import com.my.simplesampletest.autohideime.UseEditTextAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
@@ -136,7 +137,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习ViewPager+Fragment LazyLoad");
         data.add("Android EditText 的使用及值得注意的地方");
         data.add("学习使用GridView");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("读取本地照片发说说的Demo");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -279,6 +280,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 29://学习使用GridView
                 startActivity(new Intent(this, GridViewActivity.class));
+                break;
+
+            case 30://读取本地照片发说说的Demo
+                startActivity(new Intent(this, DynamicPostAct.class));
                 break;
         }
     }

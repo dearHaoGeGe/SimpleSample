@@ -93,6 +93,8 @@
         <activity android:name=".autohideime.UseEditTextAct"/>
         <!-- 学习使用GridView -->
         <activity android:name=".girdview.GridViewActivity"/>
+        <!-- 读取本地照片发说说的Demo -->
+        <activity android:name=".add_local_pic.DynamicPostAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
