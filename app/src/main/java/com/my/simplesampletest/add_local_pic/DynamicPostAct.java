@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.text.Editable;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.my.simplesampletest.R;
+import com.my.simplesampletest.add_local_pic.common.ImageUtils;
 import com.my.simplesampletest.add_local_pic.common.LocalImageHelper;
 import com.my.simplesampletest.add_local_pic.common.StringUtils;
 import com.my.simplesampletest.add_local_pic.widget.AlbumViewPager;
@@ -35,6 +37,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import java.io.File;
@@ -302,9 +305,9 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
                 break;
 
             case R.id.post_add_pic:
-                //Intent intent = new Intent(DynamicPost.this, LocalAlbum.class);
-                //startActivityForResult(intent, ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP);
-                Toast.makeText(DynamicPostAct.this, "跳到下一个Activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LocalAlbumAct.class);
+                startActivityForResult(intent, ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP);
+                //Toast.makeText(DynamicPostAct.this, "跳到下一个Activity", Toast.LENGTH_SHORT).show();
                 break;
 
             default:
@@ -333,9 +336,53 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ImageUtils.REQUEST_CODE_GETIMAGE_BYCROP:
+                if (LocalImageHelper.getInstance().isResultOk()) {
+                    LocalImageHelper.getInstance().setResultOk(false);
+                    //获取选中的图片
+                    List<LocalImageHelper.LocalFile> files = LocalImageHelper.getInstance().getCheckedItems();
+                    for (int i = 0; i < files.size(); i++) {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
+                        params.rightMargin = padding;
+                        FilterImageView imageView = new FilterImageView(this);
+                        imageView.setLayoutParams(params);
+                        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        ImageLoader.getInstance().displayImage(files.get(i).getThumbnailUri(), new ImageViewAware(imageView), options,
+                                null, null, files.get(i).getOrientation());
+                        imageView.setOnClickListener(this);
+                        pictures.add(files.get(i));
+                        if (pictures.size() == 9) {
+                            add.setVisibility(View.GONE);
+                        } else {
+                            add.setVisibility(View.VISIBLE);
+                        }
+                        picContainer.addView(imageView, picContainer.getChildCount() - 1);
+                        picRemain.setText(pictures.size() + "/9");
+                        LocalImageHelper.getInstance().setCurrentSize(pictures.size());
+                    }
+                    //清空选中的图片
+                    files.clear();
+                    //设置当前选中的图片数量
+                    LocalImageHelper.getInstance().setCurrentSize(pictures.size());
+                    //延迟滑动至最右边
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            scrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+                        }
+                    }, 50L);
+                }
+                //清空选中的图片
+                LocalImageHelper.getInstance().getCheckedItems().clear();
+                break;
 
-
-
+            default:
+                break;
+        }
+    }
 
     /**
      * 初始化ImageLoader的，一般写在Application中，
