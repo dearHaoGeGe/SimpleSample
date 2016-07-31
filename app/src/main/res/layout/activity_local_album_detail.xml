@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/album_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45.0dip"
+        android:background="#ffffff"
+        android:gravity="top">
+
+        <com.my.simplesampletest.add_local_pic.widget.FilterImageView
+            android:id="@+id/album_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="12.0dip"
+            android:paddingRight="12.0dip"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/album_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:ellipsize="middle"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:textColor="#ff363636"
+            android:textSize="18.0dip" />
+
+        <TextView
+            android:id="@+id/album_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/album_finish"
+            android:enabled="true"
+            android:gravity="center"
+            android:minWidth="50dip"
+            android:text="完成"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:background="#ffcccccc" />
+
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:horizontalSpacing="7.5dip"
+        android:numColumns="3"
+        android:verticalSpacing="7.5dip" />
+
+    <FrameLayout
+        android:id="@+id/pagerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.my.simplesampletest.add_local_pic.widget.AlbumViewPager
+            android:id="@+id/albumviewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fffcfcfd" />
+
+        <RelativeLayout
+            android:id="@+id/album_item_header_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50.0dip"
+            android:background="#aa111213">
+
+            <ImageView
+                android:id="@+id/header_bar_photo_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="5.0dip"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/icon_back2" />
+
+            <TextView
+                android:id="@+id/header_bar_photo_count"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/header_bar_photo_back"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="10.0dip"
+                android:singleLine="true"
+                android:textColor="#ffeeeeee"
+                android:textSize="22.0sp" />
+
+            <TextView
+                android:id="@+id/header_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10.0dip"
+                android:background="@drawable/album_finish"
+                android:enabled="true"
+                android:gravity="center"
+                android:minWidth="50dip"
+                android:text="完成"
+                android:textColor="#ffffff" />
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20.0dip"
+                android:layout_toLeftOf="@id/header_finish"
+                android:background="@drawable/picture_setting_album_checkbox"
+                android:button="@null"
+                android:checked="false"
+                android:focusable="false" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

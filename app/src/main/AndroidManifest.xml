@@ -97,6 +97,8 @@
         <activity android:name=".add_local_pic.DynamicPostAct"/>
         <!-- 读取本地照片发说说的Demo  本地相册 -->
         <activity android:name=".add_local_pic.LocalAlbumAct"/>
+        <!-- 读取本地照片发说说的Demo 相册详情页 -->
+        <activity android:name=".add_local_pic.LocalAlbumDetailAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

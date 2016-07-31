@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 发表说说的demo，用到的CheckBox选中与非选中的状态 -->
+    <item android:drawable="@mipmap/albumset_preselected" android:state_checked="false" android:state_enabled="true" />
+    <item android:drawable="@mipmap/albumset_selected" android:state_checked="true" android:state_enabled="true" />
+</selector>

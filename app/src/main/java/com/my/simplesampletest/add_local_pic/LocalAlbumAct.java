@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.my.simplesampletest.R;
+import com.my.simplesampletest.add_local_pic.common.ExtraKey;
 import com.my.simplesampletest.add_local_pic.common.ImageUtils;
 import com.my.simplesampletest.add_local_pic.common.LocalImageHelper;
 import com.my.simplesampletest.add_local_pic.common.StringUtils;
@@ -90,7 +91,7 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
         progress.startAnimation(animation);
 
 
-        /**本地图片辅助类初始化,这个方法写在BaseApplication，不能写在这里*/
+        /**本地图片辅助类初始化,这个方法写在BaseApplication,不写的话没有初始化，会报空指针，不能写在这里*/
         //LocalImageHelper.init(BaseApplication.getInstance());
 
         new Thread(new Runnable() {
@@ -123,7 +124,7 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loacal_album_camera:
-                takePic();
+                takePic();  /**点击拍照*/
                 break;
 
             case R.id.album_back:
@@ -152,7 +153,7 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
                         localFile.setOrientation(getBitmapDegree(cameraPath));
                         LocalImageHelper.getInstance().getCheckedItems().add(localFile);
                         LocalImageHelper.getInstance().setResultOk(true);
-                        new  Thread(new Runnable() {
+                        new Thread(new Runnable() {
                             @Override
                             public void run() {
 
@@ -165,7 +166,7 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
                             public void run() {
                                 finish();
                             }
-                        },1000);
+                        }, 1000);
                     } else {
                         Toast.makeText(this, "图片获取失败", Toast.LENGTH_SHORT).show();
                     }
@@ -215,14 +216,18 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(LocalAlbumAct.this, "点击item~", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, LocalAlbumDetailAct.class);
+        intent.putExtra(ExtraKey.LOCAL_FOLDER_NAME, folderNames.get(position));
+        intent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+        startActivity(intent);
     }
 
     /**
      * 点击拍照按钮
      */
     private void takePic() {
-        if(LocalImageHelper.getInstance().getCurrentSize()+LocalImageHelper.getInstance().getCheckedItems().size()>=9){
-            Toast.makeText(this,"最多选择9张图片",Toast.LENGTH_SHORT).show();
+        if (LocalImageHelper.getInstance().getCurrentSize() + LocalImageHelper.getInstance().getCheckedItems().size() >= 9) {
+            Toast.makeText(this, "最多选择9张图片", Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -230,7 +235,7 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
         String cameraPath = LocalImageHelper.getInstance().setCameraImgPath();
         File file = new File(cameraPath);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-        startActivityForResult(intent,ImageUtils.REQUEST_CODE_GETIMAGE_BYCAMERA);
+        startActivityForResult(intent, ImageUtils.REQUEST_CODE_GETIMAGE_BYCAMERA);
     }
 
     /**
@@ -245,7 +250,7 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
         public FolderAdapter(Context context, Map<String, List<LocalImageHelper.LocalFile>> folders) {
             this.folders = folders;
             this.context = context;
-            folderNames=new ArrayList<>();
+            folderNames = new ArrayList<>();
 
             options = new DisplayImageOptions.Builder()
                     .cacheInMemory(true)
