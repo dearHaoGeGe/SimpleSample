@@ -276,7 +276,9 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.post_back:    //返回键
-                Snackbar.make(mBack, "退出", Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(mBack, "退出", Snackbar.LENGTH_SHORT).show();
+                LocalImageHelper.getInstance().clear();     /**清除之前选中的缓存*/
+                finish();
                 break;
 
             case R.id.header_bar_photo_back:    //进入ViewPager后的返回箭头图片
@@ -289,7 +291,11 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
 
             case R.id.header_bar_photo_delete:  //进入ViewPager后 右上角的删除图片
                 int index = viewpager.getCurrentItem();
-                Snackbar.make(mBack, "删除" + index, Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(mBack, "删除" + index, Snackbar.LENGTH_SHORT).show();
+                hideViewPager();
+                pictures.remove(index);
+                LocalImageHelper.getInstance().setCurrentSize(pictures.size());
+                picContainer.removeViewAt(index);
                 break;
 
             case R.id.post_send:
@@ -299,6 +305,7 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
                     Toast.makeText(this, "请添写动态内容或至少添加一张图片", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
+                    Toast.makeText(this, "提交成功", Toast.LENGTH_SHORT).show();
                     //设置为不可点击，防止重复提交
                     v.setEnabled(false);
                 }
@@ -383,6 +390,7 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
                 break;
         }
     }
+
 
     /**
      * 初始化ImageLoader的，一般写在Application中，

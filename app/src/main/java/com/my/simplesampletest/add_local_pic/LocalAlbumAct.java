@@ -215,7 +215,6 @@ public class LocalAlbumAct extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(LocalAlbumAct.this, "点击item~", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, LocalAlbumDetailAct.class);
         intent.putExtra(ExtraKey.LOCAL_FOLDER_NAME, folderNames.get(position));
         intent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
