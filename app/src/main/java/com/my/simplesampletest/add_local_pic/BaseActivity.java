@@ -23,6 +23,7 @@ public class BaseActivity extends AppCompatActivity {
         isDestroy = false;
         //在V7包下的AppCompatActivity设置无标题
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);    继承Activity的时候全屏
         //垂直显示
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //添加Activity到堆栈
