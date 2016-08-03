@@ -105,6 +105,8 @@
         <activity android:name=".blurred_view.BlurredViewAct"/>
         <!-- 动态控制模糊度 -->
         <activity android:name=".blurred_view.BlurredViewBasicAct"/>
+        <!-- 天气模糊背景 -->
+        <activity android:name=".blurred_view.WeatherActivity"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

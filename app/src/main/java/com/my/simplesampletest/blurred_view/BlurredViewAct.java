@@ -45,6 +45,7 @@ public class BlurredViewAct extends BaseActivity implements View.OnClickListener
                 break;
 
             case R.id.btn2_BlurredViewAct:
+                startActivity(new Intent(this,WeatherActivity.class));
                 break;
         }
     }

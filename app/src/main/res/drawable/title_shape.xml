@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 模糊背景图片的toolbar背景 -->
+
+    <gradient
+        android:angle="90"
+        android:endColor="#88000000"
+        android:startColor="#22000000" />
+</shape>

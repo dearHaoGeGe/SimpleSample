@@ -18,6 +18,7 @@ android {
         //版本名字
         versionName "1.0"
 
+        /** 这两个是背景模糊需要加的 */
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
     }
