@@ -17,6 +17,9 @@ android {
         versionCode 1
         //版本名字
         versionName "1.0"
+
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -44,4 +47,5 @@ dependencies {
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile files('libs/uil.jar')
+    compile files('libs/blurredview-0.8.1-sources.jar')
 }

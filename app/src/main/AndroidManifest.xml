@@ -101,6 +101,10 @@
         <activity android:name=".add_local_pic.LocalAlbumAct"/>
         <!-- 读取本地照片发说说的Demo 相册详情页 -->
         <activity android:name=".add_local_pic.LocalAlbumDetailAct"/>
+        <!-- 模糊图片 -->
+        <activity android:name=".blurred_view.BlurredViewAct"/>
+        <!-- 动态控制模糊度 -->
+        <activity android:name=".blurred_view.BlurredViewBasicAct"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

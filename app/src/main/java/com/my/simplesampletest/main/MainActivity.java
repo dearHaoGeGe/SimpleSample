@@ -13,6 +13,7 @@ import com.my.simplesampletest.act_life_cycle.LifeCycleActivity;
 import com.my.simplesampletest.activitypostobject.PostActivity;
 import com.my.simplesampletest.add_local_pic.DynamicPostAct;
 import com.my.simplesampletest.autohideime.UseEditTextAct;
+import com.my.simplesampletest.blurred_view.BlurredViewAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
@@ -138,7 +139,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Android EditText 的使用及值得注意的地方");
         data.add("学习使用GridView");
         data.add("读取本地照片发说说的Demo");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("模糊背景图片");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
@@ -284,6 +285,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 30://读取本地照片发说说的Demo
                 startActivity(new Intent(this, DynamicPostAct.class));
+                break;
+
+            case 31://模糊背景图片
+                startActivity(new Intent(this, BlurredViewAct.class));
                 break;
         }
     }
