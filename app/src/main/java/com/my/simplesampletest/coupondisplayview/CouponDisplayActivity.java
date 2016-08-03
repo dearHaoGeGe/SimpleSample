@@ -16,6 +16,9 @@ public class CouponDisplayActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coupon_display);
+
+        initView();
+        initData();
     }
 
     @Override
@@ -25,6 +28,6 @@ public class CouponDisplayActivity extends BaseActivity {
 
     @Override
     public void initData() {
-
+        /** Android 项目中图片压缩看我的blog就够了 图片处理 http://blog.csdn.net/chivalrousman/article/details/49743361*/
     }
 }

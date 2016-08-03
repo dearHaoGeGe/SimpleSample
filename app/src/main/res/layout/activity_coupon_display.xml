@@ -24,21 +24,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:text="美食劵"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_marginTop="8dp"
-                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
                 android:text="编号:1122364985452"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginTop="5dp"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:text="截止日期：2016-12-31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -67,21 +67,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:text="美食劵"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_marginTop="8dp"
-                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
                 android:text="编号:1122364985452"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginTop="5dp"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:text="截止日期：2016-12-31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -110,21 +110,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:text="美食劵"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_marginTop="8dp"
-                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
                 android:text="编号:1122364985452"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginTop="5dp"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:text="截止日期：2016-12-31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
