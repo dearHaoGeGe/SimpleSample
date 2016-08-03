@@ -8,9 +8,10 @@ import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
 
 /**
- * @author Qiushui
+ * 模糊Bitmap
+ *
+ * Created by YJH on 2016/8/3.
  */
-
 public class BlurBitmap {
     /**
      * 图片缩放比例

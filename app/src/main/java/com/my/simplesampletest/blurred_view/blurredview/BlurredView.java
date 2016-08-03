@@ -16,9 +16,8 @@ import android.widget.RelativeLayout;
 import com.my.simplesampletest.R;
 
 /**
- * @author Qiushui
+ * Created by YJH on 2016/8/3.
  */
-
 public class BlurredView extends RelativeLayout {
 
     /**

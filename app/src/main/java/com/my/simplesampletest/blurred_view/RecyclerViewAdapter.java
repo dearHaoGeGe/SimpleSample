@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import com.my.simplesampletest.R;
 
 /**
+ * 天气动态模糊的adapter
+ *
  * Created by YJH on 2016/8/3.
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

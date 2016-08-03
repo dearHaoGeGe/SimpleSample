@@ -11,6 +11,8 @@ import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.blurred_view.blurredview.BlurredView;
 
 /**
+ * 手动设置模糊度
+ *
  * Created by YJH on 2016/8/3.
  */
 public class BlurredViewBasicAct extends BaseActivity implements SeekBar.OnSeekBarChangeListener {

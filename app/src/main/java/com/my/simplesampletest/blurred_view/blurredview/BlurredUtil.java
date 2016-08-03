@@ -6,9 +6,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
 /**
- * @author Qiushui
+ * Created by YJH on 2016/8/3.
  */
-
 public class BlurredUtil {
 
     /**

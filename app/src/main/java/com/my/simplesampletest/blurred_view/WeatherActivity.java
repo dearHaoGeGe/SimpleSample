@@ -11,6 +11,8 @@ import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.blurred_view.blurredview.BlurredView;
 
 /**
+ * 天气动态模糊
+ *
  * Created by YJH on 2016/8/3.
  */
 public class WeatherActivity extends BaseActivity {

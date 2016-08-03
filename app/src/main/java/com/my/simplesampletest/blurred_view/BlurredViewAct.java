@@ -9,6 +9,10 @@ import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 
 /**
+ * 把图片作为背景模糊处理，动态模糊效果
+ *
+ * 参考：http://blog.csdn.net/wl9739/article/details/51955598
+ *
  * Created by YJH on 2016/8/3.
  */
 public class BlurredViewAct extends BaseActivity implements View.OnClickListener {
