@@ -111,7 +111,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("EventBus传递事件");
         data.add("测试string装换成JSONObject");
         data.add("Android快速实现点击任意位置收缩键盘");
-        data.add("android自定义控件—边缘凹凸的View");
+        data.add("android自定义控件—边缘凹凸的View、CardView的使用方法、分享弹窗ShareView");
         data.add("activity之间传递对象");
         data.add("TabLayout配合ViewPager可以滑动");
         data.add("广播BroadCast");
@@ -175,7 +175,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, AutoHideIMEActivity.class));
                 break;
 
-            case 3: //android自定义控件—边缘凹凸的View
+            case 3: //android自定义控件—边缘凹凸的View、CardView的使用方法、分享弹窗ShareView
                 startActivity(new Intent(this, CouponDisplayActivity.class));
                 break;
 

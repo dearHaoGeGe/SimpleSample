@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 微信分享点击和没点击的样式 -->
+
+    <item android:drawable="@mipmap/hj_share_wx_sel" android:state_pressed="true"></item>
+    <item android:drawable="@mipmap/hj_share_wx" android:state_pressed="false"></item>
+
+</selector>

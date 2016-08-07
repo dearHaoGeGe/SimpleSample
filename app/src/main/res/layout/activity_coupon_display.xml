@@ -155,9 +155,9 @@
             android:background="#E0EEEE"
             android:foreground="?attr/selectableItemBackground"
             android:stateListAnimator="@drawable/item_raise"
+            app:cardBackgroundColor="#D1EEEE"
             app:cardCornerRadius="6dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#D1EEEE">
+            app:cardElevation="6dp">
 
             <TextView
                 android:id="@+id/info_text"
