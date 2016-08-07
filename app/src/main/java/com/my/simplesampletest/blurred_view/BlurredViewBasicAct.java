@@ -13,6 +13,8 @@ import com.my.simplesampletest.blurred_view.blurredview.BlurredView;
 /**
  * 手动设置模糊度
  *
+ * 加载图片框架比较:http://blog.csdn.net/richiezhu/article/details/46968569
+ *
  * Created by YJH on 2016/8/3.
  */
 public class BlurredViewBasicAct extends BaseActivity implements SeekBar.OnSeekBarChangeListener {

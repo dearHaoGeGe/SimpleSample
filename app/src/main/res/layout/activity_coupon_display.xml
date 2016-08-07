@@ -1,136 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.my.simplesampletest.coupondisplayview.CouponDisplayView
-        android:padding="20dp"
-        android:orientation="horizontal"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFB5C5">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"/>
+        <com.my.simplesampletest.coupondisplayview.CouponDisplayView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFB5C5"
+            android:orientation="horizontal"
+            android:padding="20dp">
 
-        <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="美食劵"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="编号:1122364985452"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="截止日期：2016-12-31"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </com.my.simplesampletest.coupondisplayview.CouponDisplayView>
+
+        <com.my.simplesampletest.coupondisplayview.CouponDisplayView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFB5C5"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="美食劵"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="编号:1122364985452"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="截止日期：2016-12-31"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </com.my.simplesampletest.coupondisplayview.CouponDisplayView>
+
+        <com.my.simplesampletest.coupondisplayview.CouponDisplayView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFB5C5"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="美食劵"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="编号:1122364985452"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="截止日期：2016-12-31"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </com.my.simplesampletest.coupondisplayview.CouponDisplayView>
+
+
+        <!-- app:cardCornerRadius="6dp" 表示卡片的弧度 -->
+        <!-- app:cardElevation="6dp" 表示阴影的深度 -->
+        <!-- android:foreground="?attr/selectableItemBackground" 波纹型的选中效果 -->
+        <!-- android:stateListAnimator="@drawable/item_raise" 阴影加深的选中效果 -->
+        <!-- app:cardBackgroundColor="#D1EEEE" 设置CardView的背景色 -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView_Demo"
+            android:layout_width="320dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="20dp"
+            android:background="#E0EEEE"
+            android:foreground="?attr/selectableItemBackground"
+            android:stateListAnimator="@drawable/item_raise"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#D1EEEE">
 
             <TextView
-                android:textSize="20sp"
-                android:text="美食劵"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:id="@+id/info_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="这是一个CardView" />
 
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:text="编号:1122364985452"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        </android.support.v7.widget.CardView>
 
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:text="截止日期：2016-12-31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+    </LinearLayout>
 
-        </LinearLayout>
 
-    </com.my.simplesampletest.coupondisplayview.CouponDisplayView>
-
-    <com.my.simplesampletest.coupondisplayview.CouponDisplayView
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFB5C5">
-
-        <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"/>
-
-        <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:textSize="20sp"
-                android:text="美食劵"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:text="编号:1122364985452"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:text="截止日期：2016-12-31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-    </com.my.simplesampletest.coupondisplayview.CouponDisplayView>
-
-    <com.my.simplesampletest.coupondisplayview.CouponDisplayView
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFB5C5">
-
-        <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"/>
-
-        <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:textSize="20sp"
-                android:text="美食劵"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:text="编号:1122364985452"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:text="截止日期：2016-12-31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-    </com.my.simplesampletest.coupondisplayview.CouponDisplayView>
-
-</LinearLayout>
+</ScrollView>
