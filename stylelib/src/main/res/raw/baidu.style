@@ -1,0 +1,38 @@
+{
+    "style_id": 1,
+    "default_style":"true",
+    "types": [
+        {
+            "type_name": "type_base",
+            //标记为默认样式
+            "default_type":"false",
+            "attributes": [
+                {
+                    "attributeType": "font_color",
+                    "attributeValue": "#8E9EB5"
+                },
+                {
+                    "attributeType": "background_color",
+                    "attributeValue": "#252F3B"
+                },
+                {
+                    "attributeType": "diver_color",
+                    "attributeValue": "#0C1824"
+                },
+                {
+                    "attributeType": "url_color",
+                    "attributeValue": "#2C4D7D"
+                }
+            ]
+        },
+        {
+            "type_name": "type_title:type_base",
+            "attributes": [
+                {
+                    "attributeType": "font_color",
+                    "attributeValue": "#2C4D7D"
+                }
+            ]
+        }
+    ]
+}

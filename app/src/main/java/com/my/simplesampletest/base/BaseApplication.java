@@ -6,6 +6,7 @@ import android.view.Display;
 import android.view.WindowManager;
 
 import com.my.simplesampletest.add_local_pic.common.LocalImageHelper;
+import com.zgh.stylelib.style.StyleHelper;
 
 import java.io.File;
 
@@ -39,6 +40,8 @@ public class BaseApplication extends Application {
         initDisplay();
         /** 本地图片辅助类初始化  (发说说读取照片时候添加的) */
         LocalImageHelper.init(this);
+
+        StyleHelper.init(this,"wangyi","baidu", "day");
     }
 
     public String getCachePath() {
