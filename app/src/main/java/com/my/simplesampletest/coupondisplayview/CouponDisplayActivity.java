@@ -48,7 +48,7 @@ public class CouponDisplayActivity extends BaseActivity {
 
 
                 if (a == 0) {
-                    StyleHelper.changeStyle(0, 1);
+                    StyleHelper.changeStyle(0, 2);
                     a++;
                 } else {
                     StyleHelper.changeStyle(0,0);
