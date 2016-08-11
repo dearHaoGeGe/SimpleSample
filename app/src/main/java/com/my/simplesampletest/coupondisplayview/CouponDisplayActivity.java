@@ -24,7 +24,6 @@ public class CouponDisplayActivity extends BaseActivity {
 
     private CardView cardView_Demo;
     private ShareView mShareView; //分享视图
-    int a = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +42,8 @@ public class CouponDisplayActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //ToastUtil.showToast(CouponDisplayActivity.this,"This is a CardView ···");
-//                mShareView = new ShareView(CouponDisplayActivity.this);
-//                mShareView.show();
-
-
-                if (a == 0) {
-                    StyleHelper.changeStyle(0, 2);
-                    a++;
-                } else {
-                    StyleHelper.changeStyle(0,0);
-                }
-
-
+                mShareView = new ShareView(CouponDisplayActivity.this);
+                mShareView.show();
             }
         });
     }

@@ -17,15 +17,24 @@ import com.google.zxing.common.StringUtils;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 import com.orhanobut.logger.Logger;
+import com.zgh.stylelib.style.StyleHelper;
 
 /**
- * 读取assets文件夹下的config.properties文件
- * <p/>
+ * 读取assets文件夹下的config.properties文件、夜间模式
+ * <p>
+ * 夜间模式参考：http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650820786&idx=1&sn=692caf3110d2793a1c725706d8141edf&scene=0#wechat_redirect
+ * 夜间模式参考github：https://github.com/zhuguohui/StyleDemo
+ * <p>
+ * 夜间模式使用方法：
+ * ①在BaseApplication中初始化：StyleHelper.init(this,"wangyi","baidu", "day");
+ * ②在BaseActivity中初始化Activity和销毁Activity
+ * ③设置夜间模式StyleHelper.changeStyle(0,1);  暂时只有百度贴吧、网易新闻夜间模式和白天模式
+ * <p>
  * Created by YJH on 2016/6/29.
  */
 public class ConfigPropertiesAct extends BaseActivity implements View.OnClickListener {
 
-    private Button btn_ConfigPropertiesAct;
+    private Button btn_ConfigPropertiesAct, btn_BaiduNight, btn_WangYiNight;
     private static Properties properties;
     public static final String TAG = "ConfigPropertiesAct";
 
@@ -42,7 +51,12 @@ public class ConfigPropertiesAct extends BaseActivity implements View.OnClickLis
     @Override
     public void initView() {
         btn_ConfigPropertiesAct = (Button) findViewById(R.id.btn_ConfigPropertiesAct);
+        btn_BaiduNight = (Button) findViewById(R.id.btn_BaiduNight);
+        btn_WangYiNight = (Button) findViewById(R.id.btn_WangYiNight);
+
         btn_ConfigPropertiesAct.setOnClickListener(this);
+        btn_BaiduNight.setOnClickListener(this);
+        btn_WangYiNight.setOnClickListener(this);
     }
 
     /**
@@ -77,6 +91,14 @@ public class ConfigPropertiesAct extends BaseActivity implements View.OnClickLis
             case R.id.btn_ConfigPropertiesAct:
                 properties = getProperties(this, "config.properties");
                 Toast.makeText(ConfigPropertiesAct.this, "" + getProperty("app.cc"), Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.btn_BaiduNight:
+                StyleHelper.changeStyle(0, 1);
+                break;
+
+            case R.id.btn_WangYiNight:
+                StyleHelper.changeStyle(0, 2);
                 break;
         }
     }

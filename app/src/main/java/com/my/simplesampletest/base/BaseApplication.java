@@ -41,6 +41,7 @@ public class BaseApplication extends Application {
         /** 本地图片辅助类初始化  (发说说读取照片时候添加的) */
         LocalImageHelper.init(this);
 
+        /** 夜间模式在BaseApplication中初始化，默认的有网易、百度、白天的模式 */
         StyleHelper.init(this,"wangyi","baidu", "day");
     }
 

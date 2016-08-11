@@ -126,7 +126,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("用zxing做的生成二维码，并且扫码");
         data.add("自定义跑马灯效果(广告)");
         data.add("学习使用universal-image-loader-1.9.5");
-        data.add("读取assets文件夹下的config.properties文件");
+        data.add("读取assets文件夹下的config.properties文件、夜间模式");
         data.add("学习使用OKHttp");
         data.add("Android 快速实现文件下载（只有4行代码）");
         data.add("登录动画效果");
@@ -235,7 +235,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, ImageLoaderActivity.class));
                 break;
 
-            case 18://读取assets文件夹下的config.properties文件
+            case 18://读取assets文件夹下的config.properties文件、夜间模式
                 startActivity(new Intent(this, ConfigPropertiesAct.class));
                 break;
 

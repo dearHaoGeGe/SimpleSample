@@ -71,7 +71,7 @@
         <activity android:name=".imageloader.ImageLoaderActivity"/>
         <!--关于的activity-->
         <activity android:name=".about.AboutActivity"/>
-        <!--读取assets文件夹下的config.properties文件-->
+        <!--读取assets文件夹下的config.properties文件、夜间模式-->
         <activity android:name=".read_config_properties.ConfigPropertiesAct"/>
         <!--学习使用OKHttp-->
         <activity android:name=".okhttp.OKHttpActivity"/>
