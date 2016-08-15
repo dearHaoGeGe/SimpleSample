@@ -2,7 +2,6 @@ package com.my.simplesampletest.viewpager_fragment_lazyload;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +36,7 @@ public abstract class BasePageFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         isViewInitiated = true;
         prepareFetchData();
@@ -83,4 +82,6 @@ public abstract class BasePageFragment extends Fragment {
         }
         return false;
     }
+
+    //public int getCurrentItem
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.my.simplesampletest.R;
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * Created by YJH on 2016/7/14.
  */
-public class PagerFragmentLazyLoadAct extends BaseActivity {
+public class PagerFragmentLazyLoadAct extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     private PagerSlidingTabStrip pagerSlidingTabStrip_VPFLLAct;
     private ViewPager viewPager_VPFLLAct;
@@ -23,6 +24,7 @@ public class PagerFragmentLazyLoadAct extends BaseActivity {
     private List<String> titles;
     private VPFLLPagerAdapter adapter;
     private TextView tv_VPFLLAct;
+    private OnCurrentItem onCurrentItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,5 +65,27 @@ public class PagerFragmentLazyLoadAct extends BaseActivity {
         viewPager_VPFLLAct.setAdapter(adapter);
 
         pagerSlidingTabStrip_VPFLLAct.setViewPager(viewPager_VPFLLAct);
+
+        viewPager_VPFLLAct.addOnPageChangeListener(this);
     }
+
+    //******************************** addOnPageChangeListener 开始 **********************************//
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        //Toast.makeText(PagerFragmentLazyLoadAct.this, ""+position, Toast.LENGTH_SHORT).show();
+        if (onCurrentItem!=null){
+            onCurrentItem.getCurrentItem(position);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+    //******************************** addOnPageChangeListener 结束 **********************************//
 }
