@@ -27,8 +27,6 @@ public class VPFLLOneFragment extends BasePageFragment {
     private TextView tv_VPFLLAct, tv_VPFLLOneFragment;
     private ViewPager viewPager_VPFLLAct;
 
-    private OnCurrentItem onCurrentItem;
-
     public static VPFLLOneFragment newInstance() {
         VPFLLOneFragment fragment = new VPFLLOneFragment();
         //Bundle args = new Bundle();
@@ -41,7 +39,6 @@ public class VPFLLOneFragment extends BasePageFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         Log.e(TAG, "onAttach");
-        onCurrentItem= (OnCurrentItem) context;
     }
 
     @Override
@@ -55,9 +52,6 @@ public class VPFLLOneFragment extends BasePageFragment {
         Log.e(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_vpfll_one, container, false);
         tv_VPFLLOneFragment = (TextView) view.findViewById(R.id.tv_VPFLLOneFragment);
-
-//        onCurrentItem.
-
         return view;
     }
 
@@ -68,10 +62,7 @@ public class VPFLLOneFragment extends BasePageFragment {
         Log.e(TAG, "onActivityCreated");
 
         tv_VPFLLAct = (TextView) getActivity().findViewById(R.id.tv_VPFLLAct);   //获取activity中的组件,可以交互
-        viewPager_VPFLLAct= (ViewPager) getActivity().findViewById(R.id.viewPager_VPFLLAct);
 
-        int vp=viewPager_VPFLLAct.getCurrentItem();
-        Log.e(TAG+"VP",vp+"");
 
         tv_VPFLLOneFragment.setOnClickListener(new View.OnClickListener() {
             @Override

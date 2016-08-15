@@ -82,6 +82,4 @@ public abstract class BasePageFragment extends Fragment {
         }
         return false;
     }
-
-    //public int getCurrentItem
 }

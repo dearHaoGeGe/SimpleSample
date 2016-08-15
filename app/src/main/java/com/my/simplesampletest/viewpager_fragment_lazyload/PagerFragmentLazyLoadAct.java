@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.my.simplesampletest.R;
@@ -18,13 +17,13 @@ import java.util.List;
  */
 public class PagerFragmentLazyLoadAct extends BaseActivity implements ViewPager.OnPageChangeListener {
 
+    private static final String TAG = "VPFLL___Act";
     private PagerSlidingTabStrip pagerSlidingTabStrip_VPFLLAct;
     private ViewPager viewPager_VPFLLAct;
-    private List<Fragment> fragmentList;
+    private List<BasePageFragment> fragmentList;
     private List<String> titles;
     private VPFLLPagerAdapter adapter;
     private TextView tv_VPFLLAct;
-    private OnCurrentItem onCurrentItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +76,11 @@ public class PagerFragmentLazyLoadAct extends BaseActivity implements ViewPager.
 
     @Override
     public void onPageSelected(int position) {
-        //Toast.makeText(PagerFragmentLazyLoadAct.this, ""+position, Toast.LENGTH_SHORT).show();
-        if (onCurrentItem!=null){
-            onCurrentItem.getCurrentItem(position);
-        }
+        /**
+         * 每次滑动ViewPager的时候，把当前的Fragment设置为加载网络,
+         * 就实现了点击哪个item哪个item就加载网络,ViewPager的预加载只是加载布局，不加载网络
+         */
+        fragmentList.get(position).prepareFetchData(true);
     }
 
     @Override

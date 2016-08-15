@@ -11,10 +11,10 @@ import java.util.List;
  */
 public class VPFLLPagerAdapter extends FragmentPagerAdapter {
 
-    private List<Fragment> fragmentList;
+    private List<BasePageFragment> fragmentList;
     private List<String> titles;
 
-    public VPFLLPagerAdapter(FragmentManager fm, List<Fragment> fragmentList, List<String> titles) {
+    public VPFLLPagerAdapter(FragmentManager fm, List<BasePageFragment> fragmentList, List<String> titles) {
         super(fm);
         this.fragmentList = fragmentList;
         this.titles = titles;
