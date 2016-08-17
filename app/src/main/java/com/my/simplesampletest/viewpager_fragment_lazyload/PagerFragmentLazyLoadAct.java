@@ -4,13 +4,22 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Stack;
+import java.util.Vector;
+import java.util.WeakHashMap;
 
 /**
  * Created by YJH on 2016/7/14.
@@ -81,6 +90,17 @@ public class PagerFragmentLazyLoadAct extends BaseActivity implements ViewPager.
          * 就实现了点击哪个item哪个item就加载网络,ViewPager的预加载只是加载布局，不加载网络
          */
         fragmentList.get(position).prepareFetchData(true);
+        //Toast.makeText(PagerFragmentLazyLoadAct.this, ""+position, Toast.LENGTH_SHORT).show();
+        //Collection
+        //List
+        //LinkedList
+        //ArrayList
+        //Vector
+        //Stack
+        //Map
+        //HashMap
+        //Hashtable
+        //WeakHashMap
     }
 
     @Override
