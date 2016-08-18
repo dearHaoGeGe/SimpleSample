@@ -107,6 +107,12 @@
         <activity android:name=".blurred_view.BlurredViewBasicAct"/>
         <!-- 天气模糊背景 -->
         <activity android:name=".blurred_view.WeatherActivity"/>
+        <!-- Service的生命周期 -->
+        <activity android:name=".servicelife.ServiceActivity"/>
+
+
+        <!-- Service的生命周期 -->
+        <service android:name=".servicelife.TestService"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

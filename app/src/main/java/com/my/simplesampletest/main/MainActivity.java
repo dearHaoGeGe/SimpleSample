@@ -8,17 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.my.simplesampletest.R;
 import com.my.simplesampletest.about.AboutActivity;
 import com.my.simplesampletest.act_life_cycle.LifeCycleActivity;
 import com.my.simplesampletest.activitypostobject.PostActivity;
 import com.my.simplesampletest.add_local_pic.DynamicPostAct;
+import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.autohideime.UseEditTextAct;
+import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.blurred_view.BlurredViewAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
-import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
-import com.my.simplesampletest.R;
-import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
 import com.my.simplesampletest.download_apk.DownloadAPKAct;
 import com.my.simplesampletest.eventbus.EventBusActivity;
@@ -30,7 +30,6 @@ import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
-import com.my.simplesampletest.marqueeview.MarqueeView;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
@@ -39,6 +38,7 @@ import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.read_config_properties.ConfigPropertiesAct;
 import com.my.simplesampletest.segment_view.SegmentViewActivity;
+import com.my.simplesampletest.servicelife.ServiceActivity;
 import com.my.simplesampletest.snackbar.SnackbarActivity;
 import com.my.simplesampletest.swipe_refresh_layout.SwipeRefreshLayoutAct;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
@@ -140,7 +140,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习使用GridView");
         data.add("读取本地照片发说说的Demo");
         data.add("模糊背景图片");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("Service的生命周期");
         data.add("5s1d6a165a1ds515c15d1c5d");
         data.add("5s1d6a165a1ds515c15d1c5d");
     }
@@ -289,6 +289,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 31://模糊背景图片
                 startActivity(new Intent(this, BlurredViewAct.class));
+                break;
+
+            case 32://Service的生命周期
+                startActivity(new Intent(this, ServiceActivity.class));
                 break;
         }
     }
