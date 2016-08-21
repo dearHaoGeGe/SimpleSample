@@ -28,6 +28,7 @@ import com.my.simplesampletest.imagecache.DiskLruCacheAct;
 import com.my.simplesampletest.imageloader.ImageLoaderActivity;
 import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
+import com.my.simplesampletest.loading.LoadActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
@@ -141,8 +142,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("读取本地照片发说说的Demo");
         data.add("模糊背景图片");
         data.add("Service的生命周期");
-        data.add("5s1d6a165a1ds515c15d1c5d");
-        data.add("5s1d6a165a1ds515c15d1c5d");
+        data.add("一些加载动画");
     }
 
     @Override
@@ -293,6 +293,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 32://Service的生命周期
                 startActivity(new Intent(this, ServiceActivity.class));
+                break;
+
+            case 33://一些加载动画
+                startActivity(new Intent(this, LoadActivity.class));
                 break;
         }
     }

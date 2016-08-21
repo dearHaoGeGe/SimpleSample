@@ -109,6 +109,8 @@
         <activity android:name=".blurred_view.WeatherActivity"/>
         <!-- Service的生命周期 -->
         <activity android:name=".servicelife.ServiceActivity"/>
+        <!-- 一些加载动画 -->
+        <activity android:name=".loading.LoadActivity"/>
 
 
         <!-- Service的生命周期 -->
