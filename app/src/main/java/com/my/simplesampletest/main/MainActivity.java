@@ -43,6 +43,7 @@ import com.my.simplesampletest.servicelife.ServiceActivity;
 import com.my.simplesampletest.snackbar.SnackbarActivity;
 import com.my.simplesampletest.swipe_refresh_layout.SwipeRefreshLayoutAct;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
+import com.my.simplesampletest.utils.ToastUtil;
 import com.my.simplesampletest.viewpager_fragment_lazyload.PagerFragmentLazyLoadAct;
 import com.my.simplesampletest.zxing.QRCodeActivity;
 
@@ -57,6 +58,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     private RecyclerView rcView_main;
     private List<String> data;
     private MainActAdapter adapter;
+    private long fitstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,13 +90,13 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.item_menu_app:
                 startActivity(new Intent(this, AboutActivity.class));
                 return true;
@@ -102,6 +104,17 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (fitstTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            System.exit(0);
+        } else {
+            ToastUtil.showToast(this, "再按一次退出程序~");
+        }
+        fitstTime = System.currentTimeMillis();
     }
 
     /**
@@ -204,7 +217,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 break;
 
             case 10://ListView更新单条数据，刷新
-                startActivity(new Intent(this,LVUpdateSingleAct.class));
+                startActivity(new Intent(this, LVUpdateSingleAct.class));
                 break;
 
             case 11://Android DiskLruCache完全解析，硬盘缓存的最佳方案

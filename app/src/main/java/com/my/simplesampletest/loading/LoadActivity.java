@@ -1,8 +1,11 @@
 package com.my.simplesampletest.loading;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.loading.loadingdrawable.CollisionLoadingRenderer;
@@ -14,6 +17,8 @@ import com.my.simplesampletest.loading.loadingdrawable.SwapLoadingRenderer;
 import com.my.simplesampletest.loading.loadingdrawable.WhorlLoadingRenderer;
 
 /**
+ * 一些加载动画
+ * <p/>
  * Created by YJH on 2016/4/20.
  */
 public class LoadActivity extends AppCompatActivity {
@@ -57,6 +62,9 @@ public class LoadActivity extends AppCompatActivity {
         mIvLevel.setImageDrawable(mLevelDrawable);
         mIvMaterial.setImageDrawable(mMaterialDrawable);
         mIvCollision.setImageDrawable(mCollisionDrawable);
+
+
+        Toast.makeText(LoadActivity.this, "当前版本:" + getVersionName(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -79,5 +87,25 @@ public class LoadActivity extends AppCompatActivity {
         mMaterialDrawable.stop();
         mCollisionDrawable.stop();
         super.onStop();
+    }
+
+    /**
+     * 获取版本名称，从build文件获取
+     */
+    private String getVersionName() {
+        //1.包管理者对象
+        PackageManager packageManager = getPackageManager();
+        try {
+            //2.从包的管理者对象中，获取指定包名的基本信息（版本名称，版本号）传0代表获取基本信息
+            PackageInfo info = packageManager.getPackageInfo(getPackageName(), 0);
+            String versionName = info.versionName;
+
+            return versionName;
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
