@@ -111,6 +111,8 @@
         <activity android:name=".servicelife.ServiceActivity"/>
         <!-- 一些加载动画 -->
         <activity android:name=".loading.LoadActivity"/>
+        <!-- MVP写的一个登录的Demo -->
+        <activity android:name=".mvp.view.LoginMVPActivity"/>
 
 
         <!-- Service的生命周期 -->

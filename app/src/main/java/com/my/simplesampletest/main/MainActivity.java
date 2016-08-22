@@ -33,6 +33,7 @@ import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
+import com.my.simplesampletest.mvp.view.LoginMVPActivity;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
@@ -156,6 +157,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("模糊背景图片");
         data.add("Service的生命周期");
         data.add("一些加载动画");
+        data.add("MVP写的一个登录的Demo");
     }
 
     @Override
@@ -310,6 +312,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 33://一些加载动画
                 startActivity(new Intent(this, LoadActivity.class));
+                break;
+
+            case 34://MVP写的一个登录的Demo
+                startActivity(new Intent(this,LoginMVPActivity.class));
                 break;
         }
     }
