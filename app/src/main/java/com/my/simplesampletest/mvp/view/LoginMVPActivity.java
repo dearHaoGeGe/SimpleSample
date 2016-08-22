@@ -13,6 +13,10 @@ import com.my.simplesampletest.mvp.presenter.ILoginPresenter;
 import com.my.simplesampletest.mvp.presenter.LoginPresenterCompl;
 
 /**
+ * 用MVP写了一个登录
+ * 参考：https://segmentfault.com/a/1190000003927200
+ * github参考：https://github.com/kaedea/android-mvp-pattern
+ *
  * Created by YJH on 2016/8/22.
  */
 public class LoginMVPActivity extends BaseActivity implements View.OnClickListener, ILoginView {
