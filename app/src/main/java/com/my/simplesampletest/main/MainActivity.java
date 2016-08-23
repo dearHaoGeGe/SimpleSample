@@ -27,6 +27,7 @@ import com.my.simplesampletest.guide_pager.GuidePagerActivity;
 import com.my.simplesampletest.imagecache.DiskLruCacheAct;
 import com.my.simplesampletest.imageloader.ImageLoaderActivity;
 import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
+import com.my.simplesampletest.immersive_status_bar.ImmersiveStatusBarAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.loading.LoadActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
@@ -158,6 +159,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Service的生命周期");
         data.add("一些加载动画");
         data.add("MVP写的一个登录的Demo");
+        data.add("学习沉浸式状态栏");
     }
 
     @Override
@@ -316,6 +318,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 34://MVP写的一个登录的Demo
                 startActivity(new Intent(this,LoginMVPActivity.class));
+                break;
+
+            case 35://学习沉浸式状态栏
+                startActivity(new Intent(this, ImmersiveStatusBarAct.class));
                 break;
         }
     }

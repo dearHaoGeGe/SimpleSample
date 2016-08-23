@@ -113,6 +113,8 @@
         <activity android:name=".loading.LoadActivity"/>
         <!-- MVP写的一个登录的Demo -->
         <activity android:name=".mvp.view.LoginMVPActivity"/>
+        <!-- 学习沉浸式状态栏 -->
+        <activity android:name=".immersive_status_bar.ImmersiveStatusBarAct"/>
 
 
         <!-- Service的生命周期 -->
