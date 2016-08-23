@@ -42,7 +42,7 @@ public class ImmersiveStatusBarAct extends BaseActivity {
     }
 
     /**
-     * 真正的沉浸式状态栏
+     * 真正的沉浸式状态栏    (如果用其他的模式把这个方法给注掉)
      */
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

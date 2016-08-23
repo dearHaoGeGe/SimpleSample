@@ -133,14 +133,16 @@ public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPage
         //循环新建底部圆点imageview，将生成的imageview保存到数组中
         for (int i = 0; i < mViewList.size(); i++) {
             mImageView = new ImageView(this);
-            mImageView.setLayoutParams(new ViewGroup.LayoutParams(20, 20));
-            mImageView.setPadding(30, 0, 30, 0);
+            LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(40, 40);   //小圆点的大小
+            layout.setMargins(8,100,8,0);   //小圆点的左右间距和离按钮的高度
+            mImageView.setLayoutParams(layout);
+            mImageView.setPadding(10, 0, 10, 0);
             mImageViewArray[i] = mImageView;
             //第一个页面需要设为选中状态，这里要使用两张不同的图片（选中与未选中）
             if (i == 0) {
-                mImageView.setBackgroundResource(R.mipmap.ic_red_loudspeaker);
+                mImageView.setBackgroundResource(R.mipmap.hj_share_wx);
             } else {
-                mImageView.setBackgroundResource(R.mipmap.ic_loudspeaker);
+                mImageView.setBackgroundResource(R.mipmap.hj_share_qq);
             }
             //将数组中的imageview加入到viewgroup
             mViewGroup.addView(mImageViewArray[i]);
@@ -158,9 +160,9 @@ public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPage
     public void onPageSelected(int position) {
         //循环设置当前页的标记图
         for (int i = 0; i < mImageViewArray.length; i++) {
-            mImageViewArray[position].setBackgroundResource(R.mipmap.ic_loudspeaker);
+            mImageViewArray[position].setBackgroundResource(R.mipmap.hj_share_wx);
             if (position != i) {
-                mImageViewArray[i].setBackgroundResource(R.mipmap.ic_red_loudspeaker);
+                mImageViewArray[i].setBackgroundResource(R.mipmap.hj_share_qq);
             }
         }
         //判断是否最后一页，是则显示button
