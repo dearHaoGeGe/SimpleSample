@@ -21,9 +21,9 @@ import java.util.List;
 
 /**
  * app带圆点指示的引导页
- *
+ * <p/>
  * http://mp.weixin.qq.com/s?__biz=MzAwOTUyNzI3Ng==&mid=2652071384&idx=1&sn=eb604a3df9dd894a2cfda0317ac26e47&scene=0&ptlang=2052&ADUIN=1607609655&ADSESSION=1468157568&ADTAG=CLIENT.QQ.5473_.0&ADPUBNO=26569#wechat_redirect
- *
+ * <p/>
  * Created by YJH on 2016/7/10.
  */
 public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
@@ -74,12 +74,12 @@ public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPage
 
     @Override
     public void initView() {
-        btn_GuidePagerAct= (Button) findViewById(R.id.btn_GuidePagerAct);
+        btn_GuidePagerAct = (Button) findViewById(R.id.btn_GuidePagerAct);
 
         btn_GuidePagerAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GuidePagerActivity.this,MaterialTextFieldAct.class));
+                startActivity(new Intent(GuidePagerActivity.this, MaterialTextFieldAct.class));
                 finish();
             }
         });
@@ -97,6 +97,10 @@ public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPage
      */
     private void initViewpager() {
         viewPager_GuidePagerAct = (ViewPager) findViewById(R.id.viewPager_GuidePagerAct);
+
+        /** 这是设置翻转动画的 */
+        viewPager_GuidePagerAct.setPageTransformer(true, new ZoomOutPageTransformer());
+
         //实例化图片资源
         mImageIdArray = new int[]{R.mipmap.happiness, R.mipmap.happy, R.mipmap.health, R.mipmap.success, R.mipmap.marilyn_monroe};
 
@@ -133,8 +137,9 @@ public class GuidePagerActivity extends BaseActivity implements ViewPager.OnPage
         //循环新建底部圆点imageview，将生成的imageview保存到数组中
         for (int i = 0; i < mViewList.size(); i++) {
             mImageView = new ImageView(this);
+            /** ImageView设置左右间距 参考：http://blog.csdn.net/gxtdjh/article/details/8532980 */
             LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(40, 40);   //小圆点的大小
-            layout.setMargins(8,100,8,0);   //小圆点的左右间距和离按钮的高度
+            layout.setMargins(8, 100, 8, 0);   //小圆点的左右间距和离按钮的高度
             mImageView.setLayoutParams(layout);
             mImageView.setPadding(10, 0, 10, 0);
             mImageViewArray[i] = mImageView;
