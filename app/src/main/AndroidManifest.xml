@@ -3,7 +3,7 @@
     package="com.my.simplesampletest">
 
     <!--网络-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--写入SD卡-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--读取SD卡-->
@@ -11,7 +11,7 @@
     <!--相机的权限(扫描二维码用到)-->
     <uses-permission android:name="android.permission.CAMERA" />
     <!--允许程序禁用键盘锁-->
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
 
     <application
@@ -30,102 +30,104 @@
         </activity>
 
         <!--EventBus-->
-        <activity android:name=".eventbus.EventBusActivity"/>
-        <activity android:name=".eventbus.EventBus2Activity"/>
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".eventbus.EventBus2Activity" />
         <!--测试string装换成JSONObject-->
-        <activity android:name=".jsonobjecttostring.JSONObjectActivity"/>
-        <!--自动隐藏键盘Demo-->
-        <activity android:name=".autohideime.AutoHideIMEActivity"/>
+        <activity android:name=".jsonobjecttostring.JSONObjectActivity" />
+        <!--自动隐藏键盘Demo、和侧滑菜单-->
+        <activity android:name=".autohideime.AutoHideIMEActivity" />
         <!--android自定义控件—边缘凹凸的View、CardView的使用方法、分享弹窗ShareView-->
-        <activity android:name=".coupondisplayview.CouponDisplayActivity"/>
+        <activity android:name=".coupondisplayview.CouponDisplayActivity" />
         <!--activity之间传递对象-->
-        <activity android:name=".activitypostobject.PostActivity"/>
-        <activity android:name=".activitypostobject.ReceiveActivity"/>
+        <activity android:name=".activitypostobject.PostActivity" />
+        <activity android:name=".activitypostobject.ReceiveActivity" />
         <!--TabLayout配合ViewPager可以滑动-->
-        <activity android:name=".tablayout.TLTrunkActivity"/>
+        <activity android:name=".tablayout.TLTrunkActivity" />
         <!--广播activity-->
-        <activity android:name=".broadcast.BroadCastActivity"/>
+        <activity android:name=".broadcast.BroadCastActivity" />
         <!--PicassoDemo-->
-        <activity android:name=".picasso.PicassoDemoActivity"/>
+        <activity android:name=".picasso.PicassoDemoActivity" />
         <!--Picasso的简单使用-->
-        <activity android:name=".picasso.PicassoActivity"/>
+        <activity android:name=".picasso.PicassoActivity" />
         <!--Logger工具-->
-        <activity android:name=".logger.LoggerActivity"/>
+        <activity android:name=".logger.LoggerActivity" />
         <!--ListView更新单条数据，刷新-->
-        <activity android:name=".lvupdatesingledata.LVUpdateSingleAct"/>
+        <activity android:name=".lvupdatesingledata.LVUpdateSingleAct" />
         <!--Android DiskLruCache完全解析，硬盘缓存的最佳方案-->
-        <activity android:name=".imagecache.DiskLruCacheAct"/>
+        <activity android:name=".imagecache.DiskLruCacheAct" />
         <!--3D图片滚动-->
-        <activity android:name=".imageswitchview.Image3DSwitchViewAct"/>
+        <activity android:name=".imageswitchview.Image3DSwitchViewAct" />
         <!--学习ORMLite数据库-->
-        <activity android:name=".ormlitedemo.ORMLiteActivity"/>
+        <activity android:name=".ormlitedemo.ORMLiteActivity" />
         <!--Activity的生命周期-->
-        <activity android:name=".act_life_cycle.LifeCycleActivity"/>
-        <activity android:name=".act_life_cycle.LifeCycle2Activity"/>
+        <activity android:name=".act_life_cycle.LifeCycleActivity" />
+        <activity android:name=".act_life_cycle.LifeCycle2Activity" />
         <!--用zxing做的生成二维码，并且扫码-->
-        <activity android:name=".zxing.QRCodeActivity"/>
-        <activity android:name=".zxing.ScanActivity"/>
+        <activity android:name=".zxing.QRCodeActivity" />
+        <activity android:name=".zxing.ScanActivity" />
         <!--自定义跑马灯效果(广告)-->
-        <activity android:name=".marqueeview.MarqueeViewActivity"/>
+        <activity android:name=".marqueeview.MarqueeViewActivity" />
         <!--学习使用universal-image-loader-1.9.5-->
-        <activity android:name=".imageloader.ImageLoaderActivity"/>
+        <activity android:name=".imageloader.ImageLoaderActivity" />
         <!--关于的activity-->
-        <activity android:name=".about.AboutActivity"/>
+        <activity android:name=".about.AboutActivity" />
         <!--读取assets文件夹下的config.properties文件、夜间模式-->
-        <activity android:name=".read_config_properties.ConfigPropertiesAct"/>
+        <activity android:name=".read_config_properties.ConfigPropertiesAct" />
         <!--学习使用OKHttp-->
-        <activity android:name=".okhttp.OKHttpActivity"/>
+        <activity android:name=".okhttp.OKHttpActivity" />
         <!--Android 快速实现文件下载（只有4行代码）-->
-        <activity android:name=".download_apk.DownloadAPKAct"/>
+        <activity android:name=".download_apk.DownloadAPKAct" />
         <!--登录动画效果-->
-        <activity android:name=".material_text_field.MaterialTextFieldAct"/>
+        <activity android:name=".material_text_field.MaterialTextFieldAct" />
         <!--RadioGroup实现类似ios的分段选择(UISegmentedControl)控件-->
-        <activity android:name=".segment_view.SegmentViewActivity"/>
+        <activity android:name=".segment_view.SegmentViewActivity" />
         <!--app带圆点指示的引导页-->
-        <activity android:name=".guide_pager.GuidePagerActivity"/>
+        <activity android:name=".guide_pager.GuidePagerActivity" />
         <!--SwipeRefreshLayout Google官方下拉刷新组件-->
-        <activity android:name=".swipe_refresh_layout.SwipeRefreshLayoutAct"/>
+        <activity android:name=".swipe_refresh_layout.SwipeRefreshLayoutAct" />
         <!--学习使用Snackbar-->
-        <activity android:name=".snackbar.SnackbarActivity"/>
+        <activity android:name=".snackbar.SnackbarActivity" />
         <!--循环显示超长图片-->
-        <activity android:name=".cylinderImage_view.CylinderImageViewAct"/>
+        <activity android:name=".cylinderImage_view.CylinderImageViewAct" />
         <!--学习ViewPager+Fragment LazyLoad-->
-        <activity android:name=".viewpager_fragment_lazyload.PagerFragmentLazyLoadAct"/>
+        <activity android:name=".viewpager_fragment_lazyload.PagerFragmentLazyLoadAct" />
         <!--Android EditText 的使用及值得注意的地方-->
-        <activity android:name=".autohideime.UseEditTextAct"/>
+        <activity android:name=".autohideime.UseEditTextAct" />
         <!-- 学习使用GridView -->
-        <activity android:name=".girdview.GridViewActivity"/>
+        <activity android:name=".girdview.GridViewActivity" />
         <!-- 读取本地照片发说说的Demo -->
-        <activity android:name=".add_local_pic.DynamicPostAct"/>
+        <activity android:name=".add_local_pic.DynamicPostAct" />
         <!-- 读取本地照片发说说的Demo  本地相册 -->
-        <activity android:name=".add_local_pic.LocalAlbumAct"/>
+        <activity android:name=".add_local_pic.LocalAlbumAct" />
         <!-- 读取本地照片发说说的Demo 相册详情页 -->
-        <activity android:name=".add_local_pic.LocalAlbumDetailAct"/>
+        <activity android:name=".add_local_pic.LocalAlbumDetailAct" />
         <!-- 模糊图片 -->
-        <activity android:name=".blurred_view.BlurredViewAct"/>
+        <activity android:name=".blurred_view.BlurredViewAct" />
         <!-- 动态控制模糊度 -->
-        <activity android:name=".blurred_view.BlurredViewBasicAct"/>
+        <activity android:name=".blurred_view.BlurredViewBasicAct" />
         <!-- 天气模糊背景 -->
-        <activity android:name=".blurred_view.WeatherActivity"/>
+        <activity android:name=".blurred_view.WeatherActivity" />
         <!-- Service的生命周期 -->
-        <activity android:name=".servicelife.ServiceActivity"/>
+        <activity android:name=".servicelife.ServiceActivity" />
         <!-- 一些加载动画 -->
-        <activity android:name=".loading.LoadActivity"/>
+        <activity android:name=".loading.LoadActivity" />
         <!-- MVP写的一个登录的Demo -->
-        <activity android:name=".mvp.view.LoginMVPActivity"/>
+        <activity android:name=".mvp.view.LoginMVPActivity" />
         <!-- 学习沉浸式状态栏 -->
-        <activity android:name=".immersive_status_bar.ImmersiveStatusBarAct"/>
+        <activity android:name=".immersive_status_bar.ImmersiveStatusBarAct" />
+        <!-- 侧滑菜单 SlidingPaneLayout Sample -->
+        <activity android:name=".autohideime.SlidingPaneLayoutActivity" />
 
 
         <!-- Service的生命周期 -->
-        <service android:name=".servicelife.TestService"/>
+        <service android:name=".servicelife.TestService" />
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">
             <intent-filter>
                 <!-- 我们要监听的广播名字 -->
                 <!-- 注意action里的内容不要写错 包括大小写 -->
-                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
             </intent-filter>
         </receiver>
 

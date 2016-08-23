@@ -126,7 +126,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data = new ArrayList<>();
         data.add("EventBus传递事件");
         data.add("测试string装换成JSONObject");
-        data.add("Android快速实现点击任意位置收缩键盘");
+        data.add("Android快速实现点击任意位置收缩键盘、和侧滑菜单");
         data.add("android自定义控件—边缘凹凸的View、CardView的使用方法、分享弹窗ShareView");
         data.add("activity之间传递对象");
         data.add("TabLayout配合ViewPager可以滑动");
@@ -188,7 +188,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, JSONObjectActivity.class));
                 break;
 
-            case 2: //Android快速实现点击任意位置收缩键盘
+            case 2: //Android快速实现点击任意位置收缩键盘、和侧滑菜单
                 startActivity(new Intent(this, AutoHideIMEActivity.class));
                 break;
 
