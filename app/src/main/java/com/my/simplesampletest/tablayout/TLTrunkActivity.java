@@ -27,6 +27,8 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
     private ViewPager viewPager_TLTrunkAct;
     private MyTBLFragmentPagerAdapter adapter;
     private TabLayout.Tab one, two, three, four;
+    private String testValue = "接口传值";
+    private IValues iValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,8 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
 
         tabLayout_TLTrunkAct.setOnTabSelectedListener(this);
 
+
+
     }
 
     @Override
@@ -90,6 +94,10 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
             three.setIcon(R.mipmap.ic_launcher);
         } else if (tab == tabLayout_TLTrunkAct.getTabAt(3)) {
             four.setIcon(R.mipmap.ic_launcher);
+        }
+
+        if (iValues!=null){
+            iValues.getValue(testValue);
         }
     }
 
@@ -153,4 +161,7 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
     }
 
 
+    public void setiValues(IValues iValues) {
+        this.iValues = iValues;
+    }
 }
