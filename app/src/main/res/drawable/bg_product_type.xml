@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 本品 -->
+    <item android:state_enabled="true">
+        <shape>
+            <stroke android:width="1dp" android:color="#cccccc"/>
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+    <!-- 单品-->
+    <item android:state_selected="true" android:state_enabled="false">
+        <shape>
+            <solid android:color="#cccccc"/>
+        </shape>
+    </item>
+    <!-- 赠品 -->
+    <item android:state_selected="false" android:state_enabled="false">
+        <shape>
+            <solid android:color="#ff6600"/>
+        </shape>
+    </item>
+</selector>

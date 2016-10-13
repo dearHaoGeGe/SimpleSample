@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <ImageView
+        android:scaleType="centerCrop"
         android:id="@+id/iv_item_GVAct"
         android:layout_width="150dp"
         android:layout_height="150dp"

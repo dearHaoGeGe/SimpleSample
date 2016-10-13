@@ -31,6 +31,8 @@ import com.my.simplesampletest.immersive_status_bar.ImmersiveStatusBarAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
 import com.my.simplesampletest.loading.LoadActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
+import com.my.simplesampletest.lv_diff_type.LvDifferentTypeAct;
+import com.my.simplesampletest.lv_nesting_lv.NestOneActivity;
 import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
@@ -160,6 +162,8 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("一些加载动画");
         data.add("MVP写的一个登录的Demo");
         data.add("学习沉浸式状态栏");
+        data.add("分Type的ListView");
+        data.add("ListView嵌套ListView");
     }
 
     @Override
@@ -322,6 +326,14 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 35://学习沉浸式状态栏
                 startActivity(new Intent(this, ImmersiveStatusBarAct.class));
+                break;
+
+            case 36://分Type的ListView
+                startActivity(new Intent(this, LvDifferentTypeAct.class));
+                break;
+
+            case 37://ListView嵌套ListView
+                startActivity(new Intent(this, NestOneActivity.class));
                 break;
         }
     }

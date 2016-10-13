@@ -117,6 +117,10 @@
         <activity android:name=".immersive_status_bar.ImmersiveStatusBarAct" />
         <!-- 侧滑菜单 SlidingPaneLayout Sample -->
         <activity android:name=".autohideime.SlidingPaneLayoutActivity" />
+        <!-- 分Type的ListView -->
+        <activity android:name=".lv_diff_type.LvDifferentTypeAct"/>
+        <!-- ListView嵌套ListView -->
+        <activity android:name=".lv_nesting_lv.NestOneActivity"/>
 
 
         <!-- Service的生命周期 -->
