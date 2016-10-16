@@ -39,6 +39,7 @@ import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.mvp.view.LoginMVPActivity;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
+import com.my.simplesampletest.pic_save_sd.PicSaveSDActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
 import com.my.simplesampletest.read_config_properties.ConfigPropertiesAct;
@@ -164,6 +165,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习沉浸式状态栏");
         data.add("分Type的ListView");
         data.add("ListView嵌套ListView");
+        data.add("调取相机拍照保存在本地，并且显示出来");
     }
 
     @Override
@@ -321,7 +323,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 break;
 
             case 34://MVP写的一个登录的Demo
-                startActivity(new Intent(this,LoginMVPActivity.class));
+                startActivity(new Intent(this, LoginMVPActivity.class));
                 break;
 
             case 35://学习沉浸式状态栏
@@ -334,6 +336,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 37://ListView嵌套ListView
                 startActivity(new Intent(this, NestOneActivity.class));
+                break;
+
+            case 38://调取相机拍照保存在本地，并且显示出来
+                startActivity(new Intent(this, PicSaveSDActivity.class));
                 break;
         }
     }

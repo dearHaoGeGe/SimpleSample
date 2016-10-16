@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_TakePic_PicSaveSDAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照" />
+
+    <Button
+        android:id="@+id/btn_savePic_PicSaveSDAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存到SD卡图片" />
+
+    <Button
+        android:id="@+id/btn_setPic_PicSaveSDAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从SD卡获取指定图片" />
+
+    <Button
+        android:id="@+id/btn_delPic_PicSaveSDAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从SD卡删除指定图片" />
+
+    <Button
+        android:id="@+id/btn_delDir_PicSaveSDAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从SD卡删除文件夹及内容" />
+
+    <ImageView
+        android:id="@+id/iv_pic_PicSaveSDAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@null" />
+
+</LinearLayout>
