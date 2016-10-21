@@ -38,6 +38,7 @@ import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.mvp.view.LoginMVPActivity;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
+import com.my.simplesampletest.orientation_rc_view.OrientationRCViewAct;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.pic_save_sd.PicSaveSDActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
@@ -166,6 +167,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("分Type的ListView");
         data.add("ListView嵌套ListView");
         data.add("调取相机拍照保存在本地，并且显示出来");
+        data.add("横向的RecyclerView，动态加载设置组件的宽高");
     }
 
     @Override
@@ -340,6 +342,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 38://调取相机拍照保存在本地，并且显示出来
                 startActivity(new Intent(this, PicSaveSDActivity.class));
+                break;
+
+            case 39://横向的RecyclerView，动态加载设置组件的宽高
+                startActivity(new Intent(this, OrientationRCViewAct.class));
                 break;
         }
     }

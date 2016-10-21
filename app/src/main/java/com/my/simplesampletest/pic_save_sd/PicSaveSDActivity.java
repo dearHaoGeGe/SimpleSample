@@ -112,7 +112,7 @@ public class PicSaveSDActivity extends BaseActivity implements View.OnClickListe
                 } else {
                     Toast.makeText(this, "删除文件夹失败~", Toast.LENGTH_SHORT).show();
                 }
-                SaveAndReadPic.RecursionDeleteFile(new File(SaveAndReadPic.outPath));
+                //SaveAndReadPic.RecursionDeleteFile(new File(SaveAndReadPic.outPath));
                 break;
         }
     }
