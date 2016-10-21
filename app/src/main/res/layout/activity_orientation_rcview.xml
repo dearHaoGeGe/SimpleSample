@@ -10,16 +10,59 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C67171">
+        android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/lv"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_LoadGet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="get请求"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_LoadPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="post请求"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_LoadBitmap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="加载图片"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tv_Result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_LoadGet"
+                android:text="请求结果" />
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_Result"
+                android:src="@mipmap/ic_launcher" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>
