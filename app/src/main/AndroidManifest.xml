@@ -125,7 +125,7 @@
         <activity android:name=".lv_nesting_lv.NestOneActivity"/>
         <!-- 调取相机拍照保存在本地，并且显示出来 -->
         <activity android:name=".pic_save_sd.PicSaveSDActivity"/>
-        <!-- 横向的RecyclerView，动态加载设置组件的宽高,自己封装的网络请求 -->
+        <!-- 横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求 -->
         <activity android:name=".orientation_rc_view.OrientationRCViewAct"/>
 
 

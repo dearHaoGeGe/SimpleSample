@@ -23,9 +23,9 @@ public class LvDifferentTypeAdapter extends BaseAdapter {
     private Context context;
     private List<DiffTypeBean> data;
     private final int VIEW_TYPE = 3;
-    private final int TYPE_1 = 0;
-    private final int TYPE_2 = 1;
-    private final int TYPE_3 = 2;
+    private final int TYPE_1 = 1;
+    private final int TYPE_2 = 2;
+    private final int TYPE_3 = 3;
 
     public LvDifferentTypeAdapter(Context context, List<DiffTypeBean> data) {
         this.context = context;
@@ -39,7 +39,7 @@ public class LvDifferentTypeAdapter extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        return VIEW_TYPE;
+        return VIEW_TYPE+1; //这里原来写3报错(不是自己程序的错)，改成大于type数量就没问题了
     }
 
     @Override
@@ -62,12 +62,12 @@ public class LvDifferentTypeAdapter extends BaseAdapter {
         ViewHolder1 holder1 = null;
         ViewHolder2 holder2 = null;
         ViewHolder3 holder3 = null;
-        int type = getItemViewType(position);
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.default_layout_find_listview, parent, false);
+        //如果convertView没有默认布局会没有提示的报错，加上这句话就好了
+        //convertView = LayoutInflater.from(context).inflate(R.layout.default_layout_find_listview, parent, false);
 
         if (null == convertView) {
-            switch (type) {
+            switch (getItemViewType(position)) {
                 case TYPE_1:
                     convertView = LayoutInflater.from(context).inflate(R.layout.item_lv_diff_type_one, parent, false);
                     holder1 = new ViewHolder1();
@@ -99,7 +99,7 @@ public class LvDifferentTypeAdapter extends BaseAdapter {
                     break;
             }
         } else {
-            switch (type) {
+            switch (getItemViewType(position)) {
                 case TYPE_1:
                     holder1 = (ViewHolder1) convertView.getTag();
                     break;
@@ -115,7 +115,7 @@ public class LvDifferentTypeAdapter extends BaseAdapter {
         }
 
         if (null != data) {
-            switch (type) {
+            switch (getItemViewType(position)) {
                 case TYPE_1:
                     holder1.iv_item_lv_diff_type_one.setImageBitmap(data.get(position).getType_1().getPic());
                     holder1.tv_name_item_lv_diff_type_one.setText(data.get(position).getType_1().getName());

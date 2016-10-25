@@ -167,7 +167,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("分Type的ListView");
         data.add("ListView嵌套ListView");
         data.add("调取相机拍照保存在本地，并且显示出来");
-        data.add("横向的RecyclerView，动态加载设置组件的宽高,自己封装的网络请求");
+        data.add("横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求");
     }
 
     @Override
@@ -344,7 +344,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, PicSaveSDActivity.class));
                 break;
 
-            case 39://横向的RecyclerView，动态加载设置组件的宽高,自己封装的网络请求
+            case 39://横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求
                 startActivity(new Intent(this, OrientationRCViewAct.class));
                 break;
         }
