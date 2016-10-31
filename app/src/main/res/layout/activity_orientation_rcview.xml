@@ -10,6 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <com.my.simplesampletest.orientation_rc_view.HorizontalListView
+        android:id="@+id/lv_HorizontalRC"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

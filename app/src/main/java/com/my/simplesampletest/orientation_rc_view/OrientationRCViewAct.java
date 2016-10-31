@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,8 +18,8 @@ import android.widget.Toast;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
-import com.my.simplesampletest.orientation_rc_view.self_net.YJHHttpRequest;
 import com.my.simplesampletest.orientation_rc_view.self_net.OnYJHCallBack;
+import com.my.simplesampletest.orientation_rc_view.self_net.YJHHttpRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,10 +30,10 @@ import java.util.Map;
  * 横向的RecyclerView
  * 动态改变组件的宽高（根据手机屏幕的宽高）
  * 下面的布局是自己封装的网络请求
- * <p>
+ * <p/>
  * Created by YJH on 2016/10/17.
  */
-public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAdapter.RcItemOnClickListener, View.OnClickListener {
+public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAdapter.RcItemOnClickListener, View.OnClickListener, AdapterView.OnItemClickListener {
 
     /**
      * 下面组件是横向滑动的RecyclerView用到的
@@ -42,6 +43,14 @@ public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAd
     private RecyclerViewAdapter adapter;
     private List<String> data;
     private LinearLayoutManager manager;
+    private int screenWidth;
+    private int screenHeight;
+
+    /**
+     * 下面组件是横行ListView用到的的
+     */
+    private ListAdapter adapterLV;
+    private HorizontalListView lv_HorizontalRC;
 
     /**
      * 下面的组件是自己写的网络请求用到的
@@ -69,8 +78,6 @@ public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAd
 
     @Override
     public void initView() {
-        rcView = (RecyclerView) findViewById(R.id.rcView);
-
         tv_Result = (TextView) findViewById(R.id.tv_Result);
         btn_LoadGet = (Button) findViewById(R.id.btn_LoadGet);
         btn_LoadPost = (Button) findViewById(R.id.btn_LoadPost);
@@ -84,37 +91,8 @@ public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAd
 
     @Override
     public void initData() {
-        data = new ArrayList<>();
-        data.add("冰品");
-        data.add("常温");
-        data.add("液态");
-        data.add("加温");
-        data.add("酸奶");
-        data.add("低温");
-        data.add("纯牛奶");
-        data.add("高温");
-        data.add("固态");
-
-        manager = new LinearLayoutManager(this);
-        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        rcView.setLayoutManager(manager);
-
-        int screenWidth = getWindowManager().getDefaultDisplay().getWidth();
-        int screenHeight = getWindowManager().getDefaultDisplay().getHeight();
-        Log.d(TAG_SRCEEN, "宽度=" + screenWidth + ",高度=" + screenHeight);
-        //动态设置组件的宽高
-        LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, (int) (0.08 * screenHeight));
-        rcView.setLayoutParams(param);
-
-        adapter = new RecyclerViewAdapter(this, data, screenWidth, screenHeight);
-        rcView.setAdapter(adapter);
-
-        adapter.setRcItemOnClickListener(this);
-
-        onItemClick(rcView, 0);
-        adapter.setStatus(0);
-
+        falseData();
+        getScreenInfo();
         mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
@@ -126,13 +104,32 @@ public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAd
                 return false;
             }
         });
+        initRecyclerView();
+        initListView(screenWidth, screenHeight);
     }
 
     @Override
-    public void onItemClick(View view, int position) {
+    public void onItemClick(View view, final int position) {
         Toast.makeText(OrientationRCViewAct.this, "" + data.get(position), Toast.LENGTH_SHORT).show();
         //跳转到指定的position，第二个参数偏移量，屏幕1/3做偏移量
-        manager.scrollToPositionWithOffset(position, (int) (0.333333 * getWindowManager().getDefaultDisplay().getWidth()));
+        manager.postOnAnimation(new Runnable() {
+            @Override
+            public void run() {
+                manager.scrollToPositionWithOffset(position, (int) (0.333333 * getWindowManager().getDefaultDisplay().getWidth()));
+            }
+        });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+        Toast.makeText(this, "" + data.get(position), Toast.LENGTH_SHORT).show();
+        setStatus(position);
+        lv_HorizontalRC.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                lv_HorizontalRC.scrollTo((position * (screenWidth / 3)) - (screenWidth / 3));
+            }
+        }, 300);
     }
 
     @Override
@@ -193,14 +190,15 @@ public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAd
     /**
      * 加载图片
      */
-    private void loadImage(){
+    private void loadImage() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                YJHHttpRequest.getNetImage(URL_IMAGE,new getResultCallBack());
+                YJHHttpRequest.getNetImage(URL_IMAGE, new getResultCallBack());
             }
         }).start();
     }
+
 
     /**
      * 请求结果回调
@@ -247,4 +245,88 @@ public class OrientationRCViewAct extends BaseActivity implements RecyclerViewAd
         }
     }
 
+    /**
+     * 对RecyclerView初始化以及操作
+     */
+    private void initRecyclerView() {
+        rcView = (RecyclerView) findViewById(R.id.rcView);
+        manager = new LinearLayoutManager(this);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rcView.setLayoutManager(manager);
+
+        adapter = new RecyclerViewAdapter(this, data, screenWidth, screenHeight);
+        rcView.setAdapter(adapter);
+        adapter.setRcItemOnClickListener(this);
+
+        //动态设置组件的宽高
+        LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, (int) (0.08 * screenHeight));
+        rcView.setLayoutParams(param);
+        onItemClick(rcView, 0);
+        adapter.setStatus(0);
+    }
+
+    /**
+     * 对ListView初始化以及操作
+     *
+     * @param screenWidth  屏幕宽度
+     * @param screenHeight 屏幕高度
+     */
+    private void initListView(int screenWidth, int screenHeight) {
+        lv_HorizontalRC = (HorizontalListView) findViewById(R.id.lv_HorizontalRC);
+        lv_HorizontalRC.setOnItemClickListener(this);
+
+        adapterLV = new ListAdapter(this, data, screenWidth, screenHeight);
+        lv_HorizontalRC.setAdapter(adapterLV);
+
+        //动态设置组件的宽高
+        LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, (int) (0.08 * screenHeight));
+        lv_HorizontalRC.setLayoutParams(param);
+
+        onItemClick(null, null, 0, 0);
+        setStatus(0);
+    }
+
+    /**
+     * 设置选中的状态
+     *
+     * @param position 选中的位置
+     */
+    public void setStatus(int position) {
+        Map<Integer, Boolean> map = new HashMap<>();
+        for (int i = 0; i < data.size(); i++) {
+            if (i == position) {
+                map.put(i, true);
+            } else {
+                map.put(i, false);
+            }
+        }
+        adapterLV.setMap(map);
+    }
+
+    /**
+     * 获取屏幕的宽高
+     */
+    private void getScreenInfo() {
+        screenWidth = getWindowManager().getDefaultDisplay().getWidth();
+        screenHeight = getWindowManager().getDefaultDisplay().getHeight();
+        Log.d(TAG_SRCEEN, "宽度=" + screenWidth + ",高度=" + screenHeight);
+    }
+
+    /**
+     * 假数据
+     */
+    private void falseData() {
+        data = new ArrayList<>();
+        data.add("冰品");
+        data.add("常温");
+        data.add("液态");
+        data.add("加温");
+        data.add("酸奶");
+        data.add("低温");
+        data.add("纯牛奶");
+        data.add("高温");
+        data.add("固态");
+    }
 }

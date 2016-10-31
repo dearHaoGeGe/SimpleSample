@@ -23,7 +23,7 @@ public class ImmersiveStatusBarAct extends BaseActivity {
         setContentView(R.layout.activity_immersive_status_bar);
 
         //FULLSCREEN();     //全屏
-        //transParentStatusBar();   //透明状态栏效果
+        transParentStatusBar();   //透明状态栏效果
         //hideBottomNavigationBar();//隐藏底部导航栏(在这种模式下，触摸屏幕的任意位置都会退出全屏)
         //transParentStatusBarAndBottomNavigationBar(); //透明状态栏和底部导航栏
 
@@ -44,20 +44,20 @@ public class ImmersiveStatusBarAct extends BaseActivity {
     /**
      * 真正的沉浸式状态栏    (如果用其他的模式把这个方法给注掉)
      */
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        }
-    }
+//    @Override
+//    public void onWindowFocusChanged(boolean hasFocus) {
+//        super.onWindowFocusChanged(hasFocus);
+//        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
+//            View decorView = getWindow().getDecorView();
+//            decorView.setSystemUiVisibility(
+//                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+//        }
+//    }
 
     /**
      * 全屏
