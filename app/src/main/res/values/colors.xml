@@ -4,12 +4,8 @@
     <color name="colorPrimary">#00BCD4</color>
     <color name="colorPrimaryDark">#0097A7</color>
     <color name="colorAccent">#009688</color>
-    <!--<color name="colorPrimary">#3F51B5</color>-->
-    <!--<color name="colorPrimaryDark">#303F9F</color>-->
-    <!--<color name="colorAccent">#FF4081</color>-->
 
-
-    <!-- 仿IOS分段式按钮 -->
+   <!-- 仿IOS分段式按钮 -->
     <color name="radio_button_selected_color">#ff33b5e5</color>
     <!--<color name="radio_button_unselected_color">#FFFFFF</color>-->
     <color name="radio_button_unselected_color">#e0e0e0</color>
@@ -17,5 +13,8 @@
     <!-- 点击item有变化 -->
     <color name="mine_bg_selected">#d9d9d9</color>
     <color name="mine_bg">#ffffff</color>
+
+    <!-- CoordinatorLayout布局的使用方式 -->
+    <color name="pink">#FF1493</color>>
 
 </resources>

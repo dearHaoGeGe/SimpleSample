@@ -2,6 +2,7 @@ package com.my.simplesampletest.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import com.my.simplesampletest.autohideime.UseEditTextAct;
 import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.blurred_view.BlurredViewAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
+import com.my.simplesampletest.coordinator_layout.CoordinatorLayoutAct;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
 import com.my.simplesampletest.download_apk.DownloadAPKAct;
@@ -168,6 +170,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("ListView嵌套ListView");
         data.add("调取相机拍照保存在本地，并且显示出来");
         data.add("横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求");
+        data.add("CoordinatorLayout布局的使用方式");
     }
 
     @Override
@@ -346,6 +349,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 39://横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求
                 startActivity(new Intent(this, OrientationRCViewAct.class));
+                break;
+
+            case 40://CoordinatorLayout布局的使用方式
+                startActivity(new Intent(this, CoordinatorLayoutAct.class));
                 break;
         }
     }

@@ -52,4 +52,5 @@ dependencies {
     //cardview
     compile 'com.android.support:cardview-v7:23.1.1'
     compile project(':stylelib')
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

@@ -127,6 +127,9 @@
         <activity android:name=".pic_save_sd.PicSaveSDActivity"/>
         <!-- 横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求 -->
         <activity android:name=".orientation_rc_view.OrientationRCViewAct"/>
+        <!-- CoordinatorLayout布局的使用方式 -->
+        <activity android:name=".coordinator_layout.CoordinatorLayoutAct"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
 
         <!-- Service的生命周期 -->
