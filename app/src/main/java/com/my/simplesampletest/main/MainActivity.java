@@ -2,7 +2,6 @@ package com.my.simplesampletest.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -142,7 +141,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Logger工具");
         data.add("ListView更新单条数据，刷新");
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
-        data.add("3D图片滚动");
+        data.add("3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能");
         data.add("学习ORMLite数据库");
         data.add("Activity的生命周期");
         data.add("用zxing做的生成二维码，并且扫码");
@@ -239,7 +238,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, DiskLruCacheAct.class));
                 break;
 
-            case 12://3D图片滚动
+            case 12://3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能
                 startActivity(new Intent(this, Image3DSwitchViewAct.class));
                 break;
 
