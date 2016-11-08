@@ -2,6 +2,8 @@ package com.my.simplesampletest.lvupdatesingledata;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ListView更新单条数据，刷新
+ * ListView更新单条数据，刷新，禁止截屏
  * <p/>
  * Created by YJH on 2016/6/15.
  */
@@ -27,6 +29,9 @@ public class LVUpdateSingleAct extends BaseActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lv_update_single);
+
+        //此方法是禁止截屏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
 
         initView();
         initData();

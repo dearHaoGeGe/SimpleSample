@@ -71,6 +71,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();
         initData();
     }
@@ -139,7 +140,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("PicassoDemo");
         data.add("Picasso的简单使用");
         data.add("Logger工具");
-        data.add("ListView更新单条数据，刷新");
+        data.add("ListView更新单条数据，刷新，禁止截屏");
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
         data.add("3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能");
         data.add("学习ORMLite数据库");
@@ -230,7 +231,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, LoggerActivity.class));
                 break;
 
-            case 10://ListView更新单条数据，刷新
+            case 10://ListView更新单条数据，刷新，禁止截屏
                 startActivity(new Intent(this, LVUpdateSingleAct.class));
                 break;
 
