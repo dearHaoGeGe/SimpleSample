@@ -6,6 +6,7 @@ import android.view.Display;
 import android.view.WindowManager;
 
 import com.my.simplesampletest.add_local_pic.common.LocalImageHelper;
+import com.my.simplesampletest.commonutils.CrashHandler;
 import com.zgh.stylelib.style.StyleHelper;
 
 import java.io.File;
@@ -42,7 +43,11 @@ public class BaseApplication extends Application {
         LocalImageHelper.init(this);
 
         /** 夜间模式在BaseApplication中初始化，默认的有网易、百度、白天的模式 */
-        StyleHelper.init(this,"wangyi","baidu", "day");
+        StyleHelper.init(this, "wangyi", "baidu", "day");
+
+        /** 初始化捕获程序异常 */
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(this);
     }
 
     public String getCachePath() {
