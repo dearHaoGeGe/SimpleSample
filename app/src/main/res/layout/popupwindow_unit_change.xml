@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:background="#FFEFDB"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_ProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="蒙牛纯牛奶利乐包1000ml*6盒"
+            android:textColor="#6699ff" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/ll_name"
+        android:background="#999999" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_divider"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:paddingTop="30dp">
+
+        <EditText
+            android:id="@+id/et_Piece_PieceToPkg"
+            style="@style/AppTheme.EditText"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="件  转   "
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_Pkg_PieceToPkg"
+            style="@style/AppTheme.EditText"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="包 "
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll1"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:paddingTop="30dp">
+
+        <EditText
+            android:id="@+id/et_Pkg_PkgToPiece"
+            style="@style/AppTheme.EditText"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="包  转   "
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_Piece_PkgToPiece"
+            style="@style/AppTheme.EditText"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="件 "
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll2"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:text="确定"
+        android:textAllCaps="false" />
+
+</RelativeLayout>
