@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.utils.To;
 import com.orhanobut.logger.Logger;
 
 import java.io.File;
@@ -95,7 +98,7 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_DownloadAPKAct:
-                Toast.makeText(DownloadAPKAct.this, "正在下载...", Toast.LENGTH_SHORT).show();
+                To.showCompletedCustomToastWithResId(this, R.layout.toast, "正在下载...", R.mipmap.ic_category_1);
                 downloadAPK(downloadUrl, fileName);
                 break;
         }
@@ -160,6 +163,7 @@ public class DownloadAPKAct extends BaseActivity implements View.OnClickListener
                     break;
                 case DownloadManager.STATUS_SUCCESSFUL:
                     Logger.i(">>>下载完成");
+                    To.showCustomToastWithImage(this, "下载完成", R.mipmap.ic_category_28);
                     //下载完成安装APK
                     //downloadPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath() + File.separator + versionName;
                     installAPK(Environment.getExternalStoragePublicDirectory(DOWNLOAD_PATH + fileName));
