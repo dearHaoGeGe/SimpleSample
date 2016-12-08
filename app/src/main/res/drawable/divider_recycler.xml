@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+        了解Logger、RecyclerView侧滑菜单，长按拖拽，滑动删除，
+        自动加载更多，和ViewPager结合使用，和任何下拉刷新框架结合使用。
+    -->
+
+    <!-- RecycleView的分割线 -->
+
+    <solid android:color="@android:color/darker_gray" />
+
+    <size android:height="1px" />
+
+</shape>

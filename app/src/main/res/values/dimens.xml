@@ -19,4 +19,7 @@
     <dimen name="image_width">120dp</dimen>
     <dimen name="title_margin">20dp</dimen>
 
+    <!-- 公用的 -->
+    <dimen name="dp_60">60dp</dimen>
+
 </resources>

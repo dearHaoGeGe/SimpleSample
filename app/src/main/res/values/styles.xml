@@ -39,4 +39,12 @@
         <item name="android:paddingRight">5dp</item>
     </style>
 
+    <!-- LoggerActivity中设置menu中英文的默认大写，把大写设置为默认，没有ActionBar -->
+    <style name="MenuTextAllCaps" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textAllCaps">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    
 </resources>

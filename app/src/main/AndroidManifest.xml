@@ -51,8 +51,49 @@
         <activity android:name=".picasso.PicassoDemoActivity" />
         <!--Picasso的简单使用-->
         <activity android:name=".picasso.PicassoActivity" />
-        <!--Logger工具-->
+        <!--了解Logger、RecyclerView侧滑菜单，长按拖拽，滑动删除，自动加载更多，和ViewPager结合使用，和任何下拉刷新框架结合使用。-->
         <activity android:name=".logger.LoggerActivity" />
+        <activity
+            android:name=".logger.AllMenuActivity"
+            android:label="两侧菜单"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.ViewTypeMenuActivity"
+            android:label="ViewType菜单"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.ViewPagerMenuActivity"
+            android:label="和ViewPager嵌套"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.RefreshLoadMoreActivity"
+            android:label="下拉刷新，加载更多"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.ListDragMenuActivity"
+            android:label="拖拽Item条目+菜单(List)"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.GridDragMenuActivity"
+            android:label="拖拽Item条目+菜单(Grid)"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.ListDragSwipeActivity"
+            android:label="滑动直接删除+拖拽Item条目"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.DragSwipeFlagsActivity"
+            android:label="指定Item不能拖拽/滑动删除"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.VerticalMenuActivity"
+            android:label="竖型菜单"
+            android:theme="@style/MenuTextAllCaps" />
+        <activity
+            android:name=".logger.DefineActivity"
+            android:label="用SwipeMenuLayout实现你自己的侧滑"
+            android:theme="@style/MenuTextAllCaps" />
+
         <!--ListView更新单条数据，刷新，禁止截屏-->
         <activity android:name=".lvupdatesingledata.LVUpdateSingleAct" />
         <!--Android DiskLruCache完全解析，硬盘缓存的最佳方案-->
@@ -120,16 +161,17 @@
         <!-- 侧滑菜单 SlidingPaneLayout Sample -->
         <activity android:name=".autohideime.SlidingPaneLayoutActivity" />
         <!-- 分Type的ListView -->
-        <activity android:name=".lv_diff_type.LvDifferentTypeAct"/>
+        <activity android:name=".lv_diff_type.LvDifferentTypeAct" />
         <!-- ListView嵌套ListView -->
-        <activity android:name=".lv_nesting_lv.NestOneActivity"/>
+        <activity android:name=".lv_nesting_lv.NestOneActivity" />
         <!-- 调取相机拍照保存在本地，并且显示出来 -->
-        <activity android:name=".pic_save_sd.PicSaveSDActivity"/>
+        <activity android:name=".pic_save_sd.PicSaveSDActivity" />
         <!-- 横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求 -->
-        <activity android:name=".orientation_rc_view.OrientationRCViewAct"/>
+        <activity android:name=".orientation_rc_view.OrientationRCViewAct" />
         <!-- CoordinatorLayout布局的使用方式 -->
-        <activity android:name=".coordinator_layout.CoordinatorLayoutAct"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".coordinator_layout.CoordinatorLayoutAct"
+            android:theme="@style/AppTheme.NoActionBar" />
 
 
         <!-- Service的生命周期 -->

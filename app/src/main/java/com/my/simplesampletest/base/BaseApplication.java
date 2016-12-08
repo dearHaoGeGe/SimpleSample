@@ -46,8 +46,8 @@ public class BaseApplication extends Application {
         StyleHelper.init(this, "wangyi", "baidu", "day");
 
         /** 初始化捕获程序异常 */
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(this);
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(this);
     }
 
     public String getCachePath() {

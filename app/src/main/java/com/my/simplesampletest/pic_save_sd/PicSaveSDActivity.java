@@ -22,7 +22,7 @@ import java.util.Date;
 
 /**
  * 调取相机拍照保存在本地，并且显示出来
- * 从SD卡中 读取Bitmap、保存Bitmap、删除Bitmap、删除文件夹
+ * 从SD卡中 读取Bitmap、保存Bitmap、删除Bitmap、删除文件夹、设置图片水印、设置黑白图片
  * <p/>
  * Created by YJH on 2016/10/16.
  */

@@ -139,7 +139,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("广播BroadCast");
         data.add("PicassoDemo");
         data.add("Picasso的简单使用");
-        data.add("Logger工具");
+        data.add("了解Logger、RecyclerView侧滑菜单，长按拖拽，滑动删除，自动加载更多，和ViewPager结合使用，和任何下拉刷新框架结合使用。");
         data.add("ListView更新单条数据，刷新，禁止截屏");
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
         data.add("3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能");
