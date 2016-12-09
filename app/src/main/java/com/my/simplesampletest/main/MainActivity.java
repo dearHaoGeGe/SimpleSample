@@ -171,6 +171,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("调取相机拍照保存在本地，并且显示出来");
         data.add("横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求");
         data.add("CoordinatorLayout布局的使用方式");
+        data.add("Fragment跳转传值、Fragment覆盖Fragment");
     }
 
     @Override
