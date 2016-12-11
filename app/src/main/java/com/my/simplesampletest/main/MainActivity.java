@@ -49,6 +49,7 @@ import com.my.simplesampletest.segment_view.SegmentViewActivity;
 import com.my.simplesampletest.servicelife.ServiceActivity;
 import com.my.simplesampletest.snackbar.SnackbarActivity;
 import com.my.simplesampletest.swipe_refresh_layout.SwipeRefreshLayoutAct;
+import com.my.simplesampletest.tablayout.FragmentToFragmentAct;
 import com.my.simplesampletest.tablayout.TLTrunkActivity;
 import com.my.simplesampletest.utils.ToastUtil;
 import com.my.simplesampletest.viewpager_fragment_lazyload.PagerFragmentLazyLoadAct;
@@ -354,6 +355,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 40://CoordinatorLayout布局的使用方式
                 startActivity(new Intent(this, CoordinatorLayoutAct.class));
+                break;
+
+            case 41://Fragment跳转传值、Fragment覆盖Fragment
+                startActivity(new Intent(this,FragmentToFragmentAct.class));
                 break;
         }
     }

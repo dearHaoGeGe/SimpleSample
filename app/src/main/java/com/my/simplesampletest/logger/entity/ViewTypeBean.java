@@ -1,11 +1,13 @@
 package com.my.simplesampletest.logger.entity;
 
+import java.io.Serializable;
+
 /**
  * 实体类
  *
  * Created by YJH on 2016/11/30 16:50.
  */
-public class ViewTypeBean {
+public class ViewTypeBean implements Serializable{
 
     private String content;
 

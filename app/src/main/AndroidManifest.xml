@@ -172,6 +172,8 @@
         <activity
             android:name=".coordinator_layout.CoordinatorLayoutAct"
             android:theme="@style/AppTheme.NoActionBar" />
+        <!-- Fragment跳转传值、Fragment覆盖Fragment -->
+        <activity android:name=".tablayout.FragmentToFragmentAct"/>
 
 
         <!-- Service的生命周期 -->
