@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,13 @@ public class OneTabLFragment extends Fragment implements IValues {
 
         //activity.setiValues(this);
 
-        ViewTypeBean data = (ViewTypeBean) getArguments().getSerializable("data0");
+        ViewTypeBean data = null;
+        try {
+            data = (ViewTypeBean) getArguments().getSerializable("data0");
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            Log.e(TAG, "data0没有获取到");
+        }
         if (null != data) {
             tv_fragment_one_tabl = (TextView) view.findViewById(R.id.tv_fragment_one_tabl);
             tv_fragment_one_tabl.setText("content = " + data.getContent() + ",viewType = " + data.getViewType());
