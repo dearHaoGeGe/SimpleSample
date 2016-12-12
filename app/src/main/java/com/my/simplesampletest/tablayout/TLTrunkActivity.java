@@ -70,16 +70,16 @@ public class TLTrunkActivity extends BaseActivity implements TabLayout.OnTabSele
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
         if (tab == tabLayout_TLTrunkAct.getTabAt(0)) {
-            one.setIcon(R.mipmap.app_icon);
+            one.setIcon(R.mipmap.github);
             viewPager_TLTrunkAct.setCurrentItem(0);
         } else if (tab == tabLayout_TLTrunkAct.getTabAt(1)) {
-            two.setIcon(R.mipmap.app_icon);
+            two.setIcon(R.mipmap.github);
             viewPager_TLTrunkAct.setCurrentItem(1);
         } else if (tab == tabLayout_TLTrunkAct.getTabAt(2)) {
-            three.setIcon(R.mipmap.app_icon);
+            three.setIcon(R.mipmap.github);
             viewPager_TLTrunkAct.setCurrentItem(2);
         } else if (tab == tabLayout_TLTrunkAct.getTabAt(3)) {
-            four.setIcon(R.mipmap.app_icon);
+            four.setIcon(R.mipmap.github);
             viewPager_TLTrunkAct.setCurrentItem(3);
         }
     }
