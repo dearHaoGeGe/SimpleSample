@@ -111,16 +111,6 @@ public class PhoneStateUtils {
 		}
 	}
 
-	/**
-	 * 获取当前的手机号
-	 *
-	 * @return 手机号
-	 */
-	public static String getLocalNumber(Context context) {
-		TelephonyManager tManager = (TelephonyManager) context.getSystemService(context.TELEPHONY_SERVICE);
-		String number = tManager.getLine1Number();
-		return number;
-	}
 
 	/**
 	 * 判断是否为2或者3G

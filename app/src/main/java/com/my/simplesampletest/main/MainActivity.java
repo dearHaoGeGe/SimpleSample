@@ -63,6 +63,7 @@ import java.util.List;
  */
 public class MainActivity extends BaseActivity implements MainActAdapter.MyItemOnClickListener, MainActAdapter.MyItemOnLongClickListener {
 
+    private final String TAG = getClass().getSimpleName() + "--->";
     private RecyclerView rcView_main;
     private List<String> data;
     private MainActAdapter adapter;
@@ -358,7 +359,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 break;
 
             case 41://Fragment跳转传值、Fragment覆盖Fragment
-                startActivity(new Intent(this,FragmentToFragmentAct.class));
+                startActivity(new Intent(this, FragmentToFragmentAct.class));
                 break;
         }
     }
