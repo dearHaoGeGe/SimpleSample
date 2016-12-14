@@ -4,29 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="16dp"
     tools:context=".tablayout.ThreeTabLFragment">
 
-    <SeekBar
-        android:id="@+id/sb_fragment_three_tabl"
+    <!--滑动验证条-->
+    <RelativeLayout
+        android:id="@+id/rl1_fragment_three_tabl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:max="100"
-        android:progress="0"
-        android:progressDrawable="@drawable/seekbar_bg"
-        android:thumb="@mipmap/thumb"
-        android:thumbOffset="0dp" />
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tv_fragment_three_tabl"
-        android:layout_width="wrap_content"
+        <SeekBar
+            android:id="@+id/sb_fragment_three_tabl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/seekbar_bg"
+            android:thumb="@mipmap/thumb"
+            android:thumbOffset="0dp" />
+
+        <TextView
+            android:id="@+id/tv_fragment_three_tabl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="请按住滑块，拖动到最右边"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl2_fragment_three_tabl"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="请按住滑块，拖动到最右边"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp" />
+        android:layout_below="@+id/rl1_fragment_three_tabl"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_copy_fragment_three_tabl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="10dp"
+            android:text="复制下面内容"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_copy_fragment_three_tabl"
+            style="@style/AppTheme.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_copy_fragment_three_tabl"
+            android:layout_centerHorizontal="true"
+            android:text="测试复制内容文本" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -18,6 +18,8 @@ import com.my.simplesampletest.utils.L;
 import com.my.simplesampletest.utils.To;
 
 /**
+ * Fragment跳转传值
+ *
  * Created by YJH on 2016/6/7.
  */
 public class OneTabLFragment extends Fragment implements IValues {

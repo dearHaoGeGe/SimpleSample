@@ -8,23 +8,28 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.utils.L;
+import com.my.simplesampletest.utils.StringUtil;
+import com.my.simplesampletest.utils.ToastUtil;
 
 /**
- * Android基础控件——SeekBar的使用、仿淘宝滑动验证
+ * Android基础控件——SeekBar的使用，仿淘宝滑动验证、复制文本
  * 参考：http://blog.csdn.net/qq_30379689/article/details/53284378
  * <p>
  * Created by YJH on 2016/6/7.
  */
-public class ThreeTabLFragment extends Fragment implements SeekBar.OnSeekBarChangeListener {
+public class ThreeTabLFragment extends Fragment implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
     private static final String TAG = "Fragment>3<--->";
     private SeekBar sb_fragment_three_tabl;
-    private TextView tv_fragment_three_tabl;
+    private TextView tv_fragment_three_tabl;        //请按住滑块，拖动到最右边
+    private TextView tv_copy_fragment_three_tabl;   //复制
+    private EditText et_copy_fragment_three_tabl;
 
     @Override
     public void onAttach(Context context) {
@@ -39,7 +44,10 @@ public class ThreeTabLFragment extends Fragment implements SeekBar.OnSeekBarChan
 
         sb_fragment_three_tabl = (SeekBar) view.findViewById(R.id.sb_fragment_three_tabl);
         tv_fragment_three_tabl = (TextView) view.findViewById(R.id.tv_fragment_three_tabl);
+        tv_copy_fragment_three_tabl = (TextView) view.findViewById(R.id.tv_copy_fragment_three_tabl);
+        et_copy_fragment_three_tabl = (EditText) view.findViewById(R.id.et_copy_fragment_three_tabl);
         sb_fragment_three_tabl.setOnSeekBarChangeListener(this);
+        tv_copy_fragment_three_tabl.setOnClickListener(this);
         return view;
     }
 
@@ -95,6 +103,23 @@ public class ThreeTabLFragment extends Fragment implements SeekBar.OnSeekBarChan
             tv_fragment_three_tabl.setVisibility(View.VISIBLE);
             tv_fragment_three_tabl.setTextColor(Color.GRAY);
             tv_fragment_three_tabl.setText("请按住滑块，拖动到最右边");
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_copy_fragment_three_tabl:
+                String text = et_copy_fragment_three_tabl.getText().toString();
+                if (!StringUtil.isEmpty(text)) {
+                    //复制文本
+                    android.text.ClipboardManager clipboardManager = (android.text.ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                    clipboardManager.setText(text);
+                    ToastUtil.showToast(getActivity(), "复制成功");
+                } else {
+                    ToastUtil.showToast(getActivity(), "EditText中不能为空");
+                }
+                break;
         }
     }
     //----------------------------------- setOnSeekBarChangeListener结束 ------------------------------------------

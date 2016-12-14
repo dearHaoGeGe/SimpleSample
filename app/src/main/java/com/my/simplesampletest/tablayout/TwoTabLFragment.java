@@ -14,6 +14,8 @@ import com.my.simplesampletest.logger.entity.ViewTypeBean;
 import com.my.simplesampletest.utils.L;
 
 /**
+ * Fragment跳转传值
+ *
  * Created by YJH on 2016/6/7.
  */
 public class TwoTabLFragment extends Fragment {

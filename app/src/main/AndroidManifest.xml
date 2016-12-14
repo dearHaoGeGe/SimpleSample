@@ -43,7 +43,7 @@
         <!--activity之间传递对象-->
         <activity android:name=".activitypostobject.PostActivity" />
         <activity android:name=".activitypostobject.ReceiveActivity" />
-        <!--TabLayout配合ViewPager可以滑动-->
+        <!--TabLayout配合ViewPager可以滑动、SeekBar的使用，仿淘宝滑动验证、复制文本-->
         <activity android:name=".tablayout.TLTrunkActivity" />
         <!--广播activity-->
         <activity android:name=".broadcast.BroadCastActivity" />

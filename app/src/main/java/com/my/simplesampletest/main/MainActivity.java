@@ -137,7 +137,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Android快速实现点击任意位置收缩键盘、和侧滑菜单");
         data.add("android自定义控件—边缘凹凸的View、CardView的使用方法、分享弹窗ShareView");
         data.add("activity之间传递对象");
-        data.add("TabLayout配合ViewPager可以滑动");
+        data.add("TabLayout配合ViewPager可以滑动、SeekBar的使用，仿淘宝滑动验证、复制文本");
         data.add("广播BroadCast");
         data.add("PicassoDemo");
         data.add("Picasso的简单使用");
@@ -214,7 +214,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, PostActivity.class));
                 break;
 
-            case 5: //TabLayout配合ViewPager可以滑动
+            case 5: //TabLayout配合ViewPager可以滑动、SeekBar的使用，仿淘宝滑动验证、复制文本
                 startActivity(new Intent(this, TLTrunkActivity.class));
                 break;
 
