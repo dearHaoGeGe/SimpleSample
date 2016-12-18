@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.view.View;
 
 import com.my.simplesampletest.R;
@@ -123,6 +124,10 @@ public class ImmersiveStatusBarAct extends BaseActivity {
      */
     private void hideActionBar() {
         ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        if (actionBar != null) {
+            actionBar.hide();
+        } else {
+            Log.e("hideActionBar", "ActionBar为空");
+        }
     }
 }
