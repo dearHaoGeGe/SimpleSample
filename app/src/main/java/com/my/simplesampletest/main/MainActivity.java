@@ -144,7 +144,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("了解Logger、RecyclerView侧滑菜单，长按拖拽，滑动删除，自动加载更多，和ViewPager结合使用，和任何下拉刷新框架结合使用。");
         data.add("ListView更新单条数据，刷新，禁止截屏");
         data.add("Android DiskLruCache完全解析，硬盘缓存的最佳方案");
-        data.add("3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能");
+        data.add("3D图片滚动、仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能");
         data.add("学习ORMLite数据库");
         data.add("Activity的生命周期");
         data.add("用zxing做的生成二维码，并且扫码");
@@ -242,7 +242,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, DiskLruCacheAct.class));
                 break;
 
-            case 12://3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能
+            case 12://3D图片滚动、仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能
                 startActivity(new Intent(this, Image3DSwitchViewAct.class));
                 break;
 

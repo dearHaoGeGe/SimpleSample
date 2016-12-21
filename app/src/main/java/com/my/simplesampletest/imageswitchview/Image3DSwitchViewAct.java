@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 3D图片滚动，仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能
+ * 3D图片滚动、仿美团网，使用ViewPager+GridView实现左右滑动查看更多分类的功能
  * <p/>
  * 美团：http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650821215&idx=1&sn=fc4acc7167e2ce3935a7cfb04272650e&chksm=80b786c1b7c00fd75b03d050a73b617716782c1ff96b448ecc85595959aabf01d6d77321e858&scene=0#wechat_redirect
  * <p/>
