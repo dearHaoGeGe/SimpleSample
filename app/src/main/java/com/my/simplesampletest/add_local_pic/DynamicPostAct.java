@@ -401,14 +401,16 @@ public class DynamicPostAct extends BaseActivity implements MatrixImageView.OnSi
     private void initImageLoader(Context context) {
         //缓存文件的目录
         File cacheDir = StorageUtils.getOwnCacheDirectory(context, "学习ImageLoader/cache");
+        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+        int cacheSize = maxMemory / 4;
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .memoryCacheExtraOptions(480, 800)   // max width, max height，即保存的每个缓存文件的最大长宽
                 .threadPoolSize(3)  //线程池内加载的数量
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator()) //将保存的时候的URI名称用MD5 加密
-                .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))  //你可以通过自己的内存缓存实现
-                .memoryCacheSize(2 * 1024 * 1024)   // 内存缓存的最大值
+                .memoryCache(new UsingFreqLimitedMemoryCache(cacheSize))  //你可以通过自己的内存缓存实现
+                .memoryCacheSize(cacheSize)   // 内存缓存的最大值
                 .diskCacheSize(10 * 1024 * 1024)    // 10 Mb sd卡(本地)缓存的最大值
                 .tasksProcessingOrder(QueueProcessingType.FIFO)
                 .diskCache(new UnlimitedDiskCache(cacheDir))    //自定义缓存路径

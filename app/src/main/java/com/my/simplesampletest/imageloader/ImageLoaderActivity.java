@@ -29,13 +29,13 @@ import java.io.File;
 /**
  * 学习使用ImageLoader，ImageLoader在2015年9月份已经停止更新
  * 以后的项目中不建议使用
- *
+ * <p>
  * http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661949&idx=1&sn=09aececd879bd8b4635e6a63a8249808&scene=0#wechat_redirect
  * http://blog.csdn.net/xiaanming/article/details/26810303
- *
+ * <p>
  * Created by YJH on 2016/6/27.
  */
-public class ImageLoaderActivity extends BaseActivity{
+public class ImageLoaderActivity extends BaseActivity {
 
     private ListView lv_ImageLoaderAct;
     private ImageLoaderAdapter adapter;
@@ -58,21 +58,21 @@ public class ImageLoaderActivity extends BaseActivity{
      *
      * @param context
      */
-    private void initImageLoader(Context context){
+    private void initImageLoader(Context context) {
         //缓存文件的目录
-        File cacheDir= StorageUtils.getOwnCacheDirectory(context,"学习ImageLoader/cache");
-        ImageLoaderConfiguration config=new ImageLoaderConfiguration.Builder(context)
-                .memoryCacheExtraOptions(480,800)   // max width, max height，即保存的每个缓存文件的最大长宽
+        File cacheDir = StorageUtils.getOwnCacheDirectory(context, "学习ImageLoader/cache");
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
+                .memoryCacheExtraOptions(480, 800)   // max width, max height，即保存的每个缓存文件的最大长宽
                 .threadPoolSize(3)  //线程池内加载的数量
-                .threadPriority(Thread.NORM_PRIORITY-2)
+                .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator()) //将保存的时候的URI名称用MD5 加密
-                .memoryCache(new UsingFreqLimitedMemoryCache(2*1024*1024))  //你可以通过自己的内存缓存实现
-                .memoryCacheSize(2*1024*1024)   // 内存缓存的最大值
-                .diskCacheSize(10*1024*1024)    // 10 Mb sd卡(本地)缓存的最大值
+                .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))  //你可以通过自己的内存缓存实现
+                .memoryCacheSize(2 * 1024 * 1024)   // 内存缓存的最大值
+                .diskCacheSize(10 * 1024 * 1024)    // 10 Mb sd卡(本地)缓存的最大值
                 .tasksProcessingOrder(QueueProcessingType.FIFO)
                 .diskCache(new UnlimitedDiskCache(cacheDir))    //自定义缓存路径
-                .imageDownloader(new BaseImageDownloader(context,5*1000,30*1000))   // connectTimeout (5 s), readTimeout (30 s)超时时间
+                .imageDownloader(new BaseImageDownloader(context, 5 * 1000, 30 * 1000))   // connectTimeout (5 s), readTimeout (30 s)超时时间
                 .writeDebugLogs()   // Remove for release app
                 .build();
         //全局初始化此配置
@@ -81,12 +81,12 @@ public class ImageLoaderActivity extends BaseActivity{
 
     @Override
     public void initView() {
-        lv_ImageLoaderAct= (ListView) findViewById(R.id.lv_ImageLoaderAct);
+        lv_ImageLoaderAct = (ListView) findViewById(R.id.lv_ImageLoaderAct);
     }
 
     @Override
     public void initData() {
-        options=new DisplayImageOptions.Builder()
+        options = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.mipmap.ic_stub)   // 设置图片下载期间显示的图片
                 .showImageForEmptyUri(R.mipmap.ic_empty)// 设置图片Uri为空或是错误的时候显示的图片
                 .showImageOnFail(R.mipmap.ic_error)     // 设置图片加载或解码过程中发生错误显示的图片
@@ -95,7 +95,7 @@ public class ImageLoaderActivity extends BaseActivity{
                 .displayer(new RoundedBitmapDisplayer(20))// 设置成圆角图片
                 .build();   // 构建完成
 
-        imageLoader=ImageLoader.getInstance();
+        imageLoader = ImageLoader.getInstance();
 
         /**
          * 快速滑动GridView，ListView，我们希望能停止图片的加载，
@@ -107,9 +107,9 @@ public class ImageLoaderActivity extends BaseActivity{
          * 第二个是控制是否在滑动过程中暂停加载图片，如果需要暂停传true就行了，
          * 第三个参数控制猛的滑动界面的时候图片是否加载
          */
-        lv_ImageLoaderAct.setOnScrollListener(new PauseOnScrollListener(imageLoader,true,true));
+        lv_ImageLoaderAct.setOnScrollListener(new PauseOnScrollListener(imageLoader, true, true));
 
-        adapter=new ImageLoaderAdapter(images,this,imageLoader,options);
+        adapter = new ImageLoaderAdapter(images, this, imageLoader, options);
         lv_ImageLoaderAct.setAdapter(adapter);
     }
 
@@ -117,7 +117,7 @@ public class ImageLoaderActivity extends BaseActivity{
     /**
      * 适配器
      */
-    private class ImageLoaderAdapter extends BaseAdapter{
+    private class ImageLoaderAdapter extends BaseAdapter {
 
         private String[] img;
         private Context context;
@@ -148,37 +148,36 @@ public class ImageLoaderActivity extends BaseActivity{
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder=null;
-            if (convertView==null){
-                convertView= LayoutInflater.from(context).inflate(R.layout.item_image_loader_activity,parent,false);
-                holder=new ViewHolder();
-                holder.iv_item_ImageLoaderAct= (ImageView) convertView.findViewById(R.id.iv_item_ImageLoaderAct);
-                holder.tv_item_ImageLoaderAct= (TextView) convertView.findViewById(R.id.tv_item_ImageLoaderAct);
+            ViewHolder holder = null;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(context).inflate(R.layout.item_image_loader_activity, parent, false);
+                holder = new ViewHolder();
+                holder.iv_item_ImageLoaderAct = (ImageView) convertView.findViewById(R.id.iv_item_ImageLoaderAct);
+                holder.tv_item_ImageLoaderAct = (TextView) convertView.findViewById(R.id.tv_item_ImageLoaderAct);
 
                 convertView.setTag(holder);
-            }else {
-                holder= (ViewHolder) convertView.getTag();
+            } else {
+                holder = (ViewHolder) convertView.getTag();
             }
 
             /**
              * imageUrl 图片的Url地址 imageView 承载图片的ImageView控件 options
              * DisplayImageOptions配置文件
              */
-            imageLoader.displayImage(img[position],holder.iv_item_ImageLoaderAct,options);
-            holder.tv_item_ImageLoaderAct.setText("Item"+(position+1));
+            imageLoader.displayImage(img[position], holder.iv_item_ImageLoaderAct, options);
+            holder.tv_item_ImageLoaderAct.setText("Item" + (position + 1));
 
             return convertView;
         }
 
-        class ViewHolder{
+        class ViewHolder {
             private ImageView iv_item_ImageLoaderAct;
             private TextView tv_item_ImageLoaderAct;
         }
     }
 
 
-
-    public static final String[] images = new String[] {
+    public static final String[] images = new String[]{
             "http://cdn.duitang.com/uploads/blog/201308/18/20130818150526_Ru2Bk.thumb.600_0.png",
             "http://www.bkill.com/u/info_img/2012-09/02/2012083116140522302.jpg",
             "http://www.it165.net/uploadfile/2011/1218/20111218070928328.jpg",

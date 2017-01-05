@@ -1,12 +1,15 @@
 package com.my.simplesampletest.main;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.about.AboutActivity;
@@ -16,6 +19,7 @@ import com.my.simplesampletest.add_local_pic.DynamicPostAct;
 import com.my.simplesampletest.autohideime.AutoHideIMEActivity;
 import com.my.simplesampletest.autohideime.UseEditTextAct;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.base.MPermissionListener;
 import com.my.simplesampletest.blurred_view.BlurredViewAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.coordinator_layout.CoordinatorLayoutAct;
@@ -76,6 +80,39 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
         initView();
         initData();
+
+        requestPermission();
+    }
+
+    private void requestPermission() {
+        requestRuntimePermission(new MPermissionListener() {
+                                     @Override
+                                     public void onGranted() {
+                                         Toast.makeText(MainActivity.this, "所有权限都已经授权", Toast.LENGTH_SHORT).show();
+                                     }
+
+                                     @Override
+                                     public void onDenied(List<String> deniedPermission) {
+                                         for (String permissions : deniedPermission) {
+                                             Log.e(TAG, "被拒绝的权限：" + permissions);
+                                         }
+                                         ToastUtil.showToast(MainActivity.this, "有" + deniedPermission.size() + "权限没有被允许，3S后自动退出程序");
+                                        new Thread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    Thread.sleep(3000);
+                                                    killSelf();
+                                                } catch (InterruptedException e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }).start();
+                                     }
+                                 },
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA);
     }
 
     @Override
@@ -125,6 +162,13 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
             ToastUtil.showToast(this, "再按一次退出程序~");
         }
         fitstTime = System.currentTimeMillis();
+    }
+
+    /**
+     * 杀死自己
+     */
+    private void killSelf(){
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     /**

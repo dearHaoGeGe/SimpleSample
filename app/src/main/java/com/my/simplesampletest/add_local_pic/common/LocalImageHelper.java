@@ -2,6 +2,7 @@ package com.my.simplesampletest.add_local_pic.common;
 
 import android.database.Cursor;
 import android.provider.MediaStore;
+
 import com.my.simplesampletest.base.BaseApplication;
 
 import java.io.File;
@@ -30,12 +31,13 @@ public class LocalImageHelper {
 
     //当前选中得图片个数
     private int currentSize;
+
     public String getCameraImgPath() {
         return CameraImgPath;
     }
 
     public String setCameraImgPath() {
-        String foloder= BaseApplication.getInstance().getCachePath()
+        String foloder = BaseApplication.getInstance().getExternalCacheDir()
                 + "/PostPicture/";
         File savedir = new File(foloder);
         if (!savedir.exists()) {
@@ -44,10 +46,10 @@ public class LocalImageHelper {
         String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss")
                 .format(new Date());
         // 照片命名
-        String picName =  timeStamp + ".jpg";
+        String picName = timeStamp + ".jpg";
         //  裁剪头像的绝对路径
         CameraImgPath = foloder + picName;
-        return  CameraImgPath;
+        return CameraImgPath;
     }
 
     //拍照时指定保存图片的路径
@@ -82,12 +84,13 @@ public class LocalImageHelper {
 
     public static void init(BaseApplication context) {
         instance = new LocalImageHelper(context);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                instance.initImage();
-            }
-        }).start();
+        /**这个注掉是因为6.0运行时权限不能在Application中获取权限*/
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                instance.initImage();
+//            }
+//        }).start();
     }
 
     public boolean isInited() {
@@ -113,7 +116,7 @@ public class LocalImageHelper {
     public synchronized void initImage() {
         if (isRunning)
             return;
-        isRunning=true;
+        isRunning = true;
         if (isInited())
             return;
         //获取大图的游标
@@ -136,7 +139,7 @@ public class LocalImageHelper {
                 //获取大图URI
                 String uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI.buildUpon().
                         appendPath(Integer.toString(id)).build().toString();
-                if(StringUtils.isEmpty(uri))
+                if (StringUtils.isEmpty(uri))
                     continue;
                 if (StringUtils.isEmpty(thumbUri))
                     thumbUri = uri;
@@ -150,7 +153,7 @@ public class LocalImageHelper {
                 if (degree != 0) {
                     degree = degree + 180;
                 }
-                localFile.setOrientation(360-degree);
+                localFile.setOrientation(360 - degree);
 
                 paths.add(localFile);
                 //判断文件夹是否已经存在
@@ -165,7 +168,7 @@ public class LocalImageHelper {
         }
         folders.put("所有图片", paths);
         cursor.close();
-        isRunning=false;
+        isRunning = false;
     }
 
     private String getThumbnail(int id, String path) {
@@ -191,16 +194,17 @@ public class LocalImageHelper {
         return folders.get(folder);
     }
 
-    public void clear(){
+    public void clear() {
         checkedItems.clear();
-        currentSize=(0);
-        String foloder= BaseApplication.getInstance().getCachePath()
+        currentSize = (0);
+        String foloder = BaseApplication.getInstance().getExternalCacheDir()
                 + "/PostPicture/";
         File savedir = new File(foloder);
         if (savedir.exists()) {
             deleteFile(savedir);
         }
     }
+
     public void deleteFile(File file) {
 
         if (file.exists()) {
@@ -215,6 +219,7 @@ public class LocalImageHelper {
         } else {
         }
     }
+
     public static class LocalFile {
         private String originalUri;//原图URI
         private String thumbnailUri;//缩略图URI
@@ -242,7 +247,7 @@ public class LocalImageHelper {
         }
 
         public void setOrientation(int exifOrientation) {
-            orientation =  exifOrientation;
+            orientation = exifOrientation;
         }
 
     }
