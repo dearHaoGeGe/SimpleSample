@@ -42,6 +42,7 @@ import com.my.simplesampletest.lvupdatesingledata.LVUpdateSingleAct;
 import com.my.simplesampletest.marqueeview.MarqueeViewActivity;
 import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.mvp.view.LoginMVPActivity;
+import com.my.simplesampletest.observer_mode.ObserverActivity;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
 import com.my.simplesampletest.orientation_rc_view.OrientationRCViewAct;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
@@ -218,6 +219,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("横向的RecyclerView，动态加载设置组件的宽高，自己封装的网络请求");
         data.add("CoordinatorLayout布局的使用方式");
         data.add("Fragment跳转传值、Fragment覆盖Fragment");
+        data.add("观察者模式");
     }
 
     @Override
@@ -404,6 +406,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 41://Fragment跳转传值、Fragment覆盖Fragment
                 startActivity(new Intent(this, FragmentToFragmentAct.class));
+                break;
+
+            case 42://观察者模式
+                startActivity(new Intent(this, ObserverActivity.class));
                 break;
         }
     }
