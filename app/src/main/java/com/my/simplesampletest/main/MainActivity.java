@@ -2,6 +2,7 @@ package com.my.simplesampletest.main;
 
 import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -86,6 +87,11 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     }
 
     private void requestPermission() {
+        Log.e(TAG, "版本号：" + android.os.Build.VERSION.RELEASE + "\nSDK号：" + Build.VERSION.SDK_INT + "\n手机型号：" + android.os.Build.MODEL);
+        //如果当前的系统小于6.0的不进行权限判断
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return;
+        }
         requestRuntimePermission(new MPermissionListener() {
                                      @Override
                                      public void onGranted() {
@@ -98,17 +104,17 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                                              Log.e(TAG, "被拒绝的权限：" + permissions);
                                          }
                                          ToastUtil.showToast(MainActivity.this, "有" + deniedPermission.size() + "权限没有被允许，3S后自动退出程序");
-                                        new Thread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                try {
-                                                    Thread.sleep(3000);
-                                                    killSelf();
-                                                } catch (InterruptedException e) {
-                                                    e.printStackTrace();
-                                                }
-                                            }
-                                        }).start();
+                                         new Thread(new Runnable() {
+                                             @Override
+                                             public void run() {
+                                                 try {
+                                                     Thread.sleep(3000);
+                                                     killSelf();
+                                                 } catch (InterruptedException e) {
+                                                     e.printStackTrace();
+                                                 }
+                                             }
+                                         }).start();
                                      }
                                  },
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -168,7 +174,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     /**
      * 杀死自己
      */
-    private void killSelf(){
+    private void killSelf() {
         android.os.Process.killProcess(android.os.Process.myPid());
     }
 

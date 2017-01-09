@@ -3,13 +3,14 @@ package com.my.simplesampletest.observer_mode;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.observer_mode.sample.Weather;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -26,6 +27,7 @@ import java.util.Observer;
 
 public class ObserverActivity extends BaseActivity implements View.OnClickListener, Observer {
 
+    private final String TAG = getClass().getSimpleName() + "--->";
     private Button btn_observer;
     private ImageView iv_observer;
     private MyObserverable observablerable;
@@ -39,6 +41,7 @@ public class ObserverActivity extends BaseActivity implements View.OnClickListen
 
         initView();
         initData();
+        observerDemo();
     }
 
     @Override
@@ -57,6 +60,28 @@ public class ObserverActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_observer:
+                asyncLoadPic();
+                break;
+        }
+    }
+
+
+    @Override
+    public void update(Observable observable, Object data) {
+        iv_observer.post(new Runnable() {
+            @Override
+            public void run() {
+                iv_observer.setImageBitmap(bitmap);
+            }
+        });
+    }
+
+    /**
+     * 异步加载图片
+     */
+    private void asyncLoadPic() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -77,13 +102,47 @@ public class ObserverActivity extends BaseActivity implements View.OnClickListen
         }).start();
     }
 
+    /**
+     * 观察者模式
+     */
+    private void observerDemo() {
+        com.my.simplesampletest.observer_mode.sample.Observable<Weather> observable = new com.my.simplesampletest.observer_mode.sample.Observable();
+        com.my.simplesampletest.observer_mode.sample.Observer<Weather> observer1 = new Observer1();
+        com.my.simplesampletest.observer_mode.sample.Observer<Weather> observer2 = new Observer2();
+
+        observable.register(observer1);
+        observable.register(observer2);
+
+        observable.notifyObservers(new Weather("晴转多云"));
+
+        observable.notifyObservers(new Weather("多云转阴"));
+
+        observable.unregister(observer1);
+        observable.unregister(observer2);
+
+        observable.notifyObservers(new Weather("台风"));
+    }
+
     @Override
-    public void update(Observable observable, Object data) {
-        iv_observer.post(new Runnable() {
-            @Override
-            public void run() {
-                iv_observer.setImageBitmap(bitmap);
-            }
-        });
+    protected void onDestroy() {
+        super.onDestroy();
+
+        //用完了要移除
+        observablerable.deleteObserver(this);
+    }
+
+    private class Observer1 implements com.my.simplesampletest.observer_mode.sample.Observer<Weather> {
+
+        @Override
+        public void onUpdate(com.my.simplesampletest.observer_mode.sample.Observable<Weather> observable, Weather data) {
+            Log.e(TAG, "观察者1：" + data.toString());
+        }
+    }
+
+    private class Observer2 implements com.my.simplesampletest.observer_mode.sample.Observer<Weather> {
+        @Override
+        public void onUpdate(com.my.simplesampletest.observer_mode.sample.Observable<Weather> observable, Weather data) {
+            Log.e(TAG, "观察者2：" + data.toString());
+        }
     }
 }

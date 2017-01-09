@@ -1,7 +1,6 @@
 package com.my.simplesampletest.observer_mode;
 
 import android.util.Log;
-import android.widget.TextView;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -32,5 +31,11 @@ public class MyObserverable extends Observable {
     public void addObserver(Observer observer) {
         super.addObserver(observer);
         Log.e(TAG, "新增加了一个观察者");
+    }
+
+    @Override
+    public synchronized void deleteObserver(Observer observer) {
+        super.deleteObserver(observer);
+        Log.e(TAG,"移除一个观察者");
     }
 }
