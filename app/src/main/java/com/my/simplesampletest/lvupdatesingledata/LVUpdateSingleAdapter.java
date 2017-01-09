@@ -15,14 +15,14 @@ import java.util.List;
 
 /**
  * LVUpdateSingleAct中的适配器
- *
+ * <p>
  * Created by YJH on 2016/6/15.
  */
-public class LVUpdateSingleAdapter extends BaseAdapter{
+public class LVUpdateSingleAdapter extends BaseAdapter {
 
     private Context context;
     private List<String> datas;
-    private static final String CHANGE_DATA="数据改变了";
+    private static final String CHANGE_DATA = "数据改变了";
 
     public LVUpdateSingleAdapter(Context context, List<String> datas) {
         this.context = context;
@@ -50,23 +50,23 @@ public class LVUpdateSingleAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder=null;
-        if (convertView==null){
-            convertView= LayoutInflater.from(context).inflate(R.layout.item_activity_lv_update_single,parent,false);
-            holder=new ViewHolder();
-            holder.iv_item_LVUpdateSingleAct= (ImageView) convertView.findViewById(R.id.iv_item_LVUpdateSingleAct);
-            holder.tv_item_LVUpdateSingleAct= (TextView) convertView.findViewById(R.id.tv_item_LVUpdateSingleAct);
+        ViewHolder holder = null;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_lv_update_single, parent, false);
+            holder = new ViewHolder();
+            holder.iv_item_LVUpdateSingleAct = (ImageView) convertView.findViewById(R.id.iv_item_LVUpdateSingleAct);
+            holder.tv_item_LVUpdateSingleAct = (TextView) convertView.findViewById(R.id.tv_item_LVUpdateSingleAct);
 
             convertView.setTag(holder);
-        }else {
-            holder= (ViewHolder) convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        if (datas!=null){
+        if (datas != null) {
             holder.tv_item_LVUpdateSingleAct.setText(datas.get(position));
-            if (datas.get(position).equals(CHANGE_DATA)){
+            if (datas.get(position).equals(CHANGE_DATA)) {
                 holder.iv_item_LVUpdateSingleAct.setImageResource(R.mipmap.a);
-            }else {
+            } else {
                 holder.iv_item_LVUpdateSingleAct.setImageResource(R.mipmap.aa);
             }
         }
@@ -74,7 +74,7 @@ public class LVUpdateSingleAdapter extends BaseAdapter{
         return convertView;
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         private ImageView iv_item_LVUpdateSingleAct;
         private TextView tv_item_LVUpdateSingleAct;
     }

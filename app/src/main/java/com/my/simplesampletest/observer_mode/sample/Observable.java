@@ -35,13 +35,16 @@ public class Observable<T> {
      * @param observer 观察者
      */
     public synchronized void unregister(Observer<T> observer) {
+        if (null == observer) {
+            throw new NullPointerException("observer不能为空");
+        }
         mObservers.remove(observer);
     }
 
     /**
      * 移除所有的观察者
      */
-    public synchronized void removeObservers() {
+    public synchronized void unregisterAll() {
         mObservers.clear();
     }
 
