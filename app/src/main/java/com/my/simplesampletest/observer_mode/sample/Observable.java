@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 观察者模式（被观察的对象）
+ * http://www.w2bc.com/Article/76136
  * <p>
  * Created by YJH on 2017/1/9 13:27.
  */
