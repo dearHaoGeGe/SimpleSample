@@ -55,4 +55,5 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     //RecyclerView侧滑菜单，RecyclerView滑动删除，RecyclerView长按拖拽
     compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
+    compile 'com.google.code.gson:gson:2.8.0'
 }
