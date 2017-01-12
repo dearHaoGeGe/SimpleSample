@@ -7,8 +7,12 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.utils.ToastUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,11 +39,13 @@ public class JSONObjectActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(FLAG_HOMEKEY_DISPATCHED,FLAG_HOMEKEY_DISPATCHED);  //关键代码
+        getWindow().setFlags(FLAG_HOMEKEY_DISPATCHED, FLAG_HOMEKEY_DISPATCHED);  //关键代码
         setContentView(R.layout.activity_jsonobject);
 
         initView();
         initData();
+
+        useGsonConvert();
     }
 
     @Override
@@ -65,15 +71,10 @@ public class JSONObjectActivity extends BaseActivity {
                 cb.setCaseNo(j.getString("caseNo"));
                 cb.setGewRead(Integer.parseInt(j.getString("gewRead")));
                 cb.setGewResult(Integer.parseInt(j.getString("gewResult")));
-                cb.setID(j.getString("id"));
-                cb.setPoliceRead(j.getString("policeRead")); // 公安为String类型
-                cb.setPoliceResult(j.getString("policeResult"));
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                try {
-                    cb.setRegisterDate(formatter.parse(j.getString("registerDate")));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                cb.setCaseId(j.getString("id"));
+                cb.setPoliceRead(Integer.parseInt(j.getString("policeRead"))); // 公安为String类型
+                cb.setPoliceResult(Integer.parseInt(j.getString("policeResult")));
+                cb.setRegisterDate(j.getString("registerDate"));
 
                 cbList.add(cb);
             }
@@ -100,11 +101,56 @@ public class JSONObjectActivity extends BaseActivity {
         return json;
     }
 
+    /**
+     * 使用Gson解析
+     */
+    private void useGsonConvert() {
+        JSONObject json = changeType();
+        List<CasesBean> cbList = new ArrayList<>();
+        JSONObject jSOB = null;
+        JSONArray jsonArray = null;
+        try {
+            jSOB = json.getJSONObject("data");
+            jsonArray = jSOB.getJSONArray("cases");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        Gson gson = new Gson();
+        //这个方式是用来解析JSONArray
+        cbList = gson.fromJson(String.valueOf(jsonArray), new TypeToken<List<CasesBean>>() {
+        }.getType());
+        ToastUtil.showToast(this, cbList.get(3).getCaseId());
+        gson = setGsonBuilder().create();
+
+        gson.toJson(cbList.get(0));
+        Log.e(TAG,gson.toJson(cbList.get(0)));
+    }
+
+    private GsonBuilder setGsonBuilder(){
+        GsonBuilder gb = new GsonBuilder();
+        // 不导出实体中没有用@Expose注解的属性
+        gb.excludeFieldsWithoutExposeAnnotation();
+        // 支持Map的key为复杂对象的形式
+        gb.enableComplexMapKeySerialization();
+        // 时间转化为特定格式
+        gb.setDateFormat("yyyy-MM-dd HH:mm:ss");
+        // 序列化null字段
+        gb.serializeNulls();
+        // 会把字段首字母大写
+        // gb.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE);
+        // 对json结果格式化.
+        // gb.setPrettyPrinting();
+        // 版本号来选择是否要序列化.
+        gb.setVersion(1.0);
+        return gb;
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //Toast.makeText(JSONObjectActivity.this, "555~", Toast.LENGTH_SHORT).show();
-        if (keyCode==event.KEYCODE_HOME){
-            Snackbar.make(tv_JSONObjectAct,"点击Home键~",Snackbar.LENGTH_SHORT).show();
+        if (keyCode == event.KEYCODE_HOME) {
+            Snackbar.make(tv_JSONObjectAct, "点击Home键~", Snackbar.LENGTH_SHORT).show();
             return false;
         }
         return super.onKeyDown(keyCode, event);
