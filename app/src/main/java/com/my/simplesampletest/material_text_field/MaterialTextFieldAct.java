@@ -1,6 +1,7 @@
 package com.my.simplesampletest.material_text_field;
 
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -90,7 +91,9 @@ public class MaterialTextFieldAct extends BaseActivity implements View.OnClickLi
         mPopWindow.setBackgroundDrawable(new BitmapDrawable());
         mPopWindow.setOutsideTouchable(true);
         mPopWindow.setContentView(view);
-        View rootView = LayoutInflater.from(this).inflate(R.layout.activity_material_text_field, null);
-        mPopWindow.showAtLocation(rootView, Gravity.CENTER, 0, 0);
+//        View rootView = LayoutInflater.from(this).inflate(R.layout.activity_material_text_field, null);
+//        mPopWindow.showAtLocation(rootView, Gravity.CENTER, 0, 0);
+
+        mPopWindow.showAtLocation(getWindow().getDecorView(), Gravity.CENTER, 0, 0);
     }
 }

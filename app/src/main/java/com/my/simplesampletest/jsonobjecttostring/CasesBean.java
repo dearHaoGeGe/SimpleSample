@@ -9,26 +9,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class CasesBean {
 
-
-    /**
-     * bankRead : 1
-     * bankResult : 2
-     * caseName : 测试案件01
-     * caseNo : （2016）湘执测试01号
-     * gewRead : 0
-     * gewResult : 0
-     * id : 201606060001
-     * policeRead : 1
-     * policeResult : 2
-     * registerDate : 2016-06-06 13:59:06
-     */
-
     /**
      * @SerializedName 作用：用于和json数据统一
      * @Expose 作用：实体类转换成json数据时，只转换有@Expose注解的，没有注解的不转换（必须用GsonBuilder这个类转换）
      * <p>
      * http://www.cnblogs.com/newcaoguo/p/6104884.html
      * http://www.cnblogs.com/tittles0k/p/5621362.html
+     * http://www.chengxuyuans.com/Android/91328.html
      */
     @SerializedName("id")
     @Expose
