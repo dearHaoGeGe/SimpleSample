@@ -35,7 +35,7 @@ import com.my.simplesampletest.imageloader.ImageLoaderActivity;
 import com.my.simplesampletest.imageswitchview.Image3DSwitchViewAct;
 import com.my.simplesampletest.immersive_status_bar.ImmersiveStatusBarAct;
 import com.my.simplesampletest.jsonobjecttostring.JSONObjectActivity;
-import com.my.simplesampletest.loading.LoadActivity;
+import com.my.simplesampletest.loading_and_annotation.LoadActivity;
 import com.my.simplesampletest.logger.LoggerActivity;
 import com.my.simplesampletest.lv_diff_type.LvDifferentTypeAct;
 import com.my.simplesampletest.lv_nesting_lv.NestOneActivity;
@@ -45,6 +45,7 @@ import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.mvp.view.LoginMVPActivity;
 import com.my.simplesampletest.observer_mode.ObserverActivity;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
+import com.my.simplesampletest.org_tree_view.OrgTreeActivity;
 import com.my.simplesampletest.orientation_rc_view.OrientationRCViewAct;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.pic_save_sd.PicSaveSDActivity;
@@ -216,7 +217,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("读取本地照片发说说的Demo");
         data.add("模糊背景图片");
         data.add("Service的生命周期");
-        data.add("一些加载动画");
+        data.add("一些加载动画、获取APP当前的版本、自定义Annotation");
         data.add("MVP写的一个登录的Demo");
         data.add("学习沉浸式状态栏");
         data.add("分Type的ListView");
@@ -226,6 +227,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("CoordinatorLayout布局的使用方式");
         data.add("Fragment跳转传值、Fragment覆盖Fragment");
         data.add("观察者模式");
+        data.add("树形结构关系View（类似于多层ExpandableListView效果）");
     }
 
     @Override
@@ -378,7 +380,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, ServiceActivity.class));
                 break;
 
-            case 33://一些加载动画
+            case 33://一些加载动画、获取APP当前的版本、自定义Annotation
                 startActivity(new Intent(this, LoadActivity.class));
                 break;
 
@@ -416,6 +418,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 42://观察者模式
                 startActivity(new Intent(this, ObserverActivity.class));
+                break;
+
+            case 43://树形结构关系View（类似于多层ExpandableListView效果）
+                startActivity(new Intent(this, OrgTreeActivity.class));
                 break;
         }
     }

@@ -1,5 +1,6 @@
 package com.my.simplesampletest.pic_save_sd;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -7,10 +8,13 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.ThumbnailUtils;
 import android.os.Environment;
 import android.text.TextPaint;
 import android.util.Log;
+
+import com.my.simplesampletest.R;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -308,6 +312,38 @@ public class SaveAndReadPic {
 
         Bitmap resizeBmp = ThumbnailUtils.extractThumbnail(newBmp, 380, 460);
         return resizeBmp;
+    }
+
+    /**
+     * 设置图片旋转
+     *
+     * @param mContext   Context
+     * @param resourceId 资源id
+     * @param degrees    旋转角度
+     * @return Bitmap
+     */
+    public static Bitmap rotatePic(Context mContext, int resourceId, float degrees) {
+        Matrix matrix = new Matrix();
+        Bitmap bitmap = ((BitmapDrawable) mContext.getResources().getDrawable(resourceId)).getBitmap();
+        // 设置旋转角度
+        matrix.setRotate(degrees);
+        // 重新绘制Bitmap
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+    }
+
+    /**
+     * 设置图片旋转
+     *
+     * @param bitmap  Bitmap
+     * @param degrees 旋转角度
+     * @return Bitmap
+     */
+    public static Bitmap rotatePic(Bitmap bitmap, float degrees) {
+        Matrix matrix = new Matrix();
+        // 设置旋转角度
+        matrix.setRotate(degrees);
+        // 重新绘制Bitmap
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
 
 }

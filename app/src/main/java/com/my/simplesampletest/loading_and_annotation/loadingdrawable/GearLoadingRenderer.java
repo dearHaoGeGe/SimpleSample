@@ -1,4 +1,4 @@
-package com.my.simplesampletest.loading.loadingdrawable;
+package com.my.simplesampletest.loading_and_annotation.loadingdrawable;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

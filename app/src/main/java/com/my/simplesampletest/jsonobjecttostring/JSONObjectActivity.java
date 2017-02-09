@@ -56,7 +56,7 @@ public class JSONObjectActivity extends BaseActivity {
         JSONObject json = changeType();
 //        tv_JSONObjectAct.setText(json.toString());
         List<CasesBean> cbList = new ArrayList<>();
-        JSONObject jSOB = null;
+        JSONObject jSOB;
         try {
             jSOB = json.getJSONObject("data");
             JSONArray jsonArray = jSOB.getJSONArray("cases");
@@ -86,7 +86,7 @@ public class JSONObjectActivity extends BaseActivity {
     /**
      * 装换类型
      *
-     * @return
+     * @return  JSONObject
      */
     private JSONObject changeType() {
         JSONObject json = null;
@@ -104,8 +104,8 @@ public class JSONObjectActivity extends BaseActivity {
      */
     private void useGsonConvert() {
         JSONObject json = changeType();
-        List<CasesBean> cbList = new ArrayList<>();
-        JSONObject jSOB = null;
+        List<CasesBean> cbList;
+        JSONObject jSOB;
         JSONArray jsonArray = null;
         try {
             jSOB = json.getJSONObject("data");
@@ -147,7 +147,7 @@ public class JSONObjectActivity extends BaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //Toast.makeText(JSONObjectActivity.this, "555~", Toast.LENGTH_SHORT).show();
-        if (keyCode == event.KEYCODE_HOME) {
+        if (keyCode == KeyEvent.KEYCODE_HOME) {
             Snackbar.make(tv_JSONObjectAct, "点击Home键~", Snackbar.LENGTH_SHORT).show();
             return false;
         }

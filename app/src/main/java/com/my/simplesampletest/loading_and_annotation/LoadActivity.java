@@ -1,4 +1,4 @@
-package com.my.simplesampletest.loading;
+package com.my.simplesampletest.loading_and_annotation;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -8,16 +8,18 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.my.simplesampletest.R;
-import com.my.simplesampletest.loading.loadingdrawable.CollisionLoadingRenderer;
-import com.my.simplesampletest.loading.loadingdrawable.GearLoadingRenderer;
-import com.my.simplesampletest.loading.loadingdrawable.LevelLoadingRenderer;
-import com.my.simplesampletest.loading.loadingdrawable.LoadingDrawable;
-import com.my.simplesampletest.loading.loadingdrawable.MaterialLoadingRenderer;
-import com.my.simplesampletest.loading.loadingdrawable.SwapLoadingRenderer;
-import com.my.simplesampletest.loading.loadingdrawable.WhorlLoadingRenderer;
+import com.my.simplesampletest.loading_and_annotation.annotation.CustomUtils;
+import com.my.simplesampletest.loading_and_annotation.annotation.Person;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.CollisionLoadingRenderer;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.GearLoadingRenderer;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.LevelLoadingRenderer;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.LoadingDrawable;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.MaterialLoadingRenderer;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.SwapLoadingRenderer;
+import com.my.simplesampletest.loading_and_annotation.loadingdrawable.WhorlLoadingRenderer;
 
 /**
- * 一些加载动画
+ * 一些加载动画、获取APP当前的版本、自定义Annotation
  * <p/>
  * Created by YJH on 2016/4/20.
  */
@@ -65,6 +67,8 @@ public class LoadActivity extends AppCompatActivity {
 
 
         Toast.makeText(LoadActivity.this, "当前版本:" + getVersionName(), Toast.LENGTH_SHORT).show();
+
+        CustomUtils.getInfo(Person.class);
     }
 
     @Override

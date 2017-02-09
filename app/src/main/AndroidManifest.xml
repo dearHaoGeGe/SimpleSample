@@ -152,8 +152,8 @@
         <activity android:name=".blurred_view.WeatherActivity" />
         <!-- Service的生命周期 -->
         <activity android:name=".servicelife.ServiceActivity" />
-        <!-- 一些加载动画 -->
-        <activity android:name=".loading.LoadActivity" />
+        <!-- 一些加载动画、获取APP当前的版本、自定义Annotation -->
+        <activity android:name=".loading_and_annotation.LoadActivity" />
         <!-- MVP写的一个登录的Demo -->
         <activity android:name=".mvp.view.LoginMVPActivity" />
         <!-- 学习沉浸式状态栏 -->
@@ -176,6 +176,8 @@
         <activity android:name=".tablayout.FragmentToFragmentAct"/>
         <!-- 观察者模式 -->
         <activity android:name=".observer_mode.ObserverActivity"/>
+        <!-- 树形结构关系View（类似于多层ExpandableListView效果） -->
+        <activity android:name=".org_tree_view.OrgTreeActivity"/>
 
 
         <!-- Service的生命周期 -->
