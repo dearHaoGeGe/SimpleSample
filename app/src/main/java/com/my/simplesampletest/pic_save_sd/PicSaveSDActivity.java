@@ -80,7 +80,7 @@ public class PicSaveSDActivity extends BaseActivity implements View.OnClickListe
 
             case R.id.btn_TakePic_PicSaveSDAct:
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                File outDir = new File(SaveAndReadPic.outPath);
+                File outDir = new File(SaveAndReadPic.assignSDPath(SaveAndReadPic.APP_FOLDER_NAME));
                 if (!outDir.exists()) {
                     outDir.mkdirs();
                 }
@@ -107,7 +107,7 @@ public class PicSaveSDActivity extends BaseActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_delDir_PicSaveSDAct:
-                if (SaveAndReadPic.delDir(SaveAndReadPic.outPath)) {
+                if (SaveAndReadPic.delDir(SaveAndReadPic.assignSDPath(SaveAndReadPic.APP_FOLDER_NAME))) {
                     Toast.makeText(this, "删除文件夹成功~", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "删除文件夹失败~", Toast.LENGTH_SHORT).show();

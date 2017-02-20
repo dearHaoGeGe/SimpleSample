@@ -23,6 +23,7 @@ import com.my.simplesampletest.base.BaseActivity;
 import com.my.simplesampletest.base.MPermissionListener;
 import com.my.simplesampletest.blurred_view.BlurredViewAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
+import com.my.simplesampletest.camera.CameraActivity;
 import com.my.simplesampletest.coordinator_layout.CoordinatorLayoutAct;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
@@ -228,6 +229,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Fragment跳转传值、Fragment覆盖Fragment");
         data.add("观察者模式");
         data.add("树形结构关系View（类似于多层ExpandableListView效果）");
+        data.add("自定义相机");
     }
 
     @Override
@@ -422,6 +424,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 43://树形结构关系View（类似于多层ExpandableListView效果）
                 startActivity(new Intent(this, OrgTreeActivity.class));
+                break;
+
+            case 44://自定义相机
+                startActivity(new Intent(this, CameraActivity.class));
                 break;
         }
     }

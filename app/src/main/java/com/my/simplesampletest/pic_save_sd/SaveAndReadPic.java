@@ -14,13 +14,14 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.util.Log;
 
-import com.my.simplesampletest.R;
+import com.my.simplesampletest.utils.StringUtil;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * 保存和读取图片的工具类
@@ -34,20 +35,28 @@ public class SaveAndReadPic {
     /**
      * 文件夹的名称
      */
-    private static String APP_FOLDER_NAME = "TakePicDir";
-    /**
-     * 输出路径(储存图片的文件夹路径)
-     */
-    public static String outPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + APP_FOLDER_NAME + "/";
+    public static String APP_FOLDER_NAME = "SimpleSample";
 
     /**
-     * 保存Bitmap图片在SD卡中
+     * 保存Bitmap图片在SD卡中的 APP_FOLDER_NAME 文件夹内
      *
      * @param bitmap   Bitmap
      * @param fileName 想要保存图片的名字
      * @return 是否成功
      */
     public static boolean savePic(Bitmap bitmap, String fileName) {
+        return savePic(bitmap, APP_FOLDER_NAME, fileName);
+    }
+
+    /**
+     * 保存Bitmap图片在SD卡中的 dirName 文件夹内
+     *
+     * @param bitmap   Bitmap
+     * @param dirName  指定文件目录
+     * @param fileName Bitmap图片的名称
+     * @return 是否成功
+     */
+    public static boolean savePic(Bitmap bitmap, String dirName, String fileName) {
         boolean isSuccess = true;
 
         //判断手机是否有SD卡
@@ -57,7 +66,9 @@ public class SaveAndReadPic {
         }
         //Log.d(TAG, "手机安装SD卡");
 
+        String outPath = assignSDPath(dirName);
         File outDir = new File(outPath);
+
         //判断这个文件夹是否存在
         if (!outDir.exists()) {
             outDir.mkdir(); //如果不存在创建一个
@@ -65,13 +76,40 @@ public class SaveAndReadPic {
 
         FileOutputStream fops = null;
         try {
-            fops = new FileOutputStream(mergePicName(fileName));    //outPath + "/" + fileName + ".jpg"
+            fops = new FileOutputStream(mergePicName(dirName, fileName));    //outPath + "/" + fileName + ".jpg"
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fops);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             isSuccess = false;
+        } finally {
+            if (null != bitmap) {
+                bitmap.recycle();
+            }
+            try {
+                if (null != fops) {
+                    fops.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         return isSuccess;
+    }
+
+    /**
+     * 在手机的SD卡中指定路径
+     * 路径：/storage/emulated/0 + "/" + dirName + "/"
+     *
+     * @param dirName 你想要创建文件的(如果是多层级必须用/隔开)
+     *                eg.   demo/file/cache/pic/    (多层级必须这样写)
+     * @return SD卡路径+文件
+     */
+    public static String assignSDPath(String dirName) {
+        if (StringUtil.isEmpty(dirName)) {
+            throw new NullPointerException("dirName路径不能为空！");
+        }
+        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + dirName + "/";
     }
 
     /**
@@ -118,7 +156,7 @@ public class SaveAndReadPic {
      */
     @Deprecated
     public static boolean delDir(String dirName) {
-        File dirFile = new File(outPath);
+        File dirFile = new File(assignSDPath(APP_FOLDER_NAME));
         if (!dirFile.exists()) {
             Log.d(TAG, "删除文件夹，没有" + dirName + "这个文件夹");
             return false;
@@ -202,13 +240,24 @@ public class SaveAndReadPic {
     }
 
     /**
-     * 合并图片的路径，相当于   outPath + "/" + fileName + ".jpg"
+     * 合并图片的路径，相当于  /storage/emulated/0 + APP_FOLDER_NAME + "/" + fileName + ".jpg"
      *
      * @param fileName 图片的名字
      * @return 整个的路径名字
      */
     private static String mergePicName(String fileName) {
-        return outPath + "/" + fileName + ".jpg";
+        return mergePicName(APP_FOLDER_NAME, fileName);
+    }
+
+    /**
+     * 合并图片的路径，相当于  /storage/emulated/0 + dirName + "/" + fileName + ".jpg"
+     *
+     * @param dirName  指定文件夹的目录
+     * @param fileName 图片的名字
+     * @return 整个的路径名字
+     */
+    private static String mergePicName(String dirName, String fileName) {
+        return assignSDPath(dirName) + "/" + fileName + ".jpg";
     }
 
 

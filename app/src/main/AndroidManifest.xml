@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <!--允许程序禁用键盘锁-->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 自定义相机，自动对焦 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
 
     <application
@@ -178,6 +180,8 @@
         <activity android:name=".observer_mode.ObserverActivity"/>
         <!-- 树形结构关系View（类似于多层ExpandableListView效果） -->
         <activity android:name=".org_tree_view.OrgTreeActivity"/>
+        <!-- 自定义相机 -->
+        <activity android:name=".camera.CameraActivity"/>
 
 
         <!-- Service的生命周期 -->
