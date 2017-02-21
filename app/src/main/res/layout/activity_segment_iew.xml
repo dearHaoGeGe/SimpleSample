@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <com.my.simplesampletest.segment_view.SegmentedGroup
@@ -15,39 +15,39 @@
 
         <RadioButton
             android:id="@+id/radioBtn1_SegmentedGroupAct"
+            style="@style/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/RadioButton"
-            android:text="One"/>
+            android:text="One" />
 
         <RadioButton
             android:id="@+id/radioBtn2_SegmentedGroupAct"
+            style="@style/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/RadioButton"
-            android:text="Two"/>
+            android:text="Two" />
 
         <RadioButton
             android:id="@+id/radioBtn3_SegmentedGroupAct"
+            style="@style/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/RadioButton"
-            android:text="Three"/>
+            android:text="Three" />
 
     </com.my.simplesampletest.segment_view.SegmentedGroup>
 
 
+    <!-- 华宇仿IOS分段式按钮——开始 -->
     <LinearLayout
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:id="@+id/approveResultLL"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:orientation="horizontal" >
-
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/approveAgreeTV"
@@ -85,7 +85,31 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+    <!-- 华宇仿IOS分段式按钮——结束 -->
 
 
+
+    <!-- 自动轮播图——开始 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_banner"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_point_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+    <!-- 自动轮播图——结束 -->
 
 </LinearLayout>
