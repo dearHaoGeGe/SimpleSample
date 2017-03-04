@@ -1,5 +1,7 @@
 package com.my.simplesampletest.jsonobjecttostring;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -12,19 +14,23 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.my.simplesampletest.R;
 import com.my.simplesampletest.base.BaseActivity;
+import com.my.simplesampletest.utils.FileUtils;
 import com.my.simplesampletest.utils.ToastUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
- * 测试String转换成JSONObject,
- * 解析JSONObject
+ * 测试String转换成JSONObject,Gson解析、通过Gson装换成把实体类转换成json，
+ * 把String类型存到SD卡中，从assets文件夹中读取json文件并且解析
  * <p>
  * Created by YJH on 2016/6/5.
  */
@@ -43,7 +49,10 @@ public class JSONObjectActivity extends BaseActivity {
         initView();
         initData();
 
-        useGsonConvert();
+        useGsonParse();
+
+        //把String类型已txt的形式保存在SD卡中
+        FileUtils.saveStringFile(getString(R.string.json_data));
     }
 
     @Override
@@ -54,7 +63,6 @@ public class JSONObjectActivity extends BaseActivity {
     @Override
     public void initData() {
         JSONObject json = changeType();
-//        tv_JSONObjectAct.setText(json.toString());
         List<CasesBean> cbList = new ArrayList<>();
         JSONObject jSOB;
         try {
@@ -86,12 +94,14 @@ public class JSONObjectActivity extends BaseActivity {
     /**
      * 装换类型
      *
-     * @return  JSONObject
+     * @return JSONObject
      */
     private JSONObject changeType() {
         JSONObject json = null;
         try {
-            json = new JSONObject(getString(R.string.json_data));
+//            json = new JSONObject(getString(R.string.json_data));
+            //从assets文件夹内获取json数据
+            json = new JSONObject(getJsonFromAssets(this, "case_data.json"));
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, "string转换失败!");
@@ -102,7 +112,7 @@ public class JSONObjectActivity extends BaseActivity {
     /**
      * 使用Gson解析
      */
-    private void useGsonConvert() {
+    private void useGsonParse() {
         JSONObject json = changeType();
         List<CasesBean> cbList;
         JSONObject jSOB;
@@ -122,10 +132,10 @@ public class JSONObjectActivity extends BaseActivity {
         gson = setGsonBuilder().create();
 
         gson.toJson(cbList.get(0));
-        Log.e(TAG,gson.toJson(cbList.get(0)));
+        Log.e(TAG, gson.toJson(cbList.get(0)));
     }
 
-    private GsonBuilder setGsonBuilder(){
+    private GsonBuilder setGsonBuilder() {
         GsonBuilder gb = new GsonBuilder();
         // 不导出实体中没有用@Expose注解的属性
         gb.excludeFieldsWithoutExposeAnnotation();
@@ -142,6 +152,29 @@ public class JSONObjectActivity extends BaseActivity {
         // 版本号来选择是否要序列化.
         gb.setVersion(1.0);
         return gb;
+    }
+
+    /**
+     * 从assets文件夹中读取json文件
+     *
+     * @param mContext Context
+     * @param fileName 文件名
+     * @return String
+     */
+    public String getJsonFromAssets(Context mContext, String fileName) {
+        StringBuilder sb = new StringBuilder();
+        AssetManager am = mContext.getAssets();
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(am.open(fileName)));
+            String next = "";
+            while (null != (next = br.readLine())) {
+                sb.append(next);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            sb.delete(0, sb.length());
+        }
+        return sb.toString().trim();
     }
 
     @Override

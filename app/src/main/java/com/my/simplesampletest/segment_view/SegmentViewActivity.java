@@ -28,6 +28,9 @@ import java.util.List;
  * Android开发的精华包括工具、中文API
  * http://www.androiddevtools.cn/
  * <p>
+ * 自动轮播ViewPager
+ * https://github.com/PingerOne/ViewPagerDemo
+ * <p>
  * Created by YJH on 2016/7/9.
  */
 public class SegmentViewActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener, OnItemPagerClickListener {
@@ -136,7 +139,7 @@ public class SegmentViewActivity extends BaseActivity implements View.OnClickLis
 
             if (i > 0) {
                 params.leftMargin = getResources().getDimensionPixelSize(R.dimen.dp_6);
-                params.bottomMargin=getResources().getDimensionPixelSize(R.dimen.dp_6);
+                params.bottomMargin = getResources().getDimensionPixelSize(R.dimen.dp_6);
                 pointImage.setSelected(false);
             } else {
                 pointImage.setSelected(true);
@@ -166,7 +169,7 @@ public class SegmentViewActivity extends BaseActivity implements View.OnClickLis
                 }
 
                 //一直给自己发消息
-                mHandler.postDelayed(this,3000);
+                mHandler.postDelayed(this, 3000);
             }
         }, 3000);
     }

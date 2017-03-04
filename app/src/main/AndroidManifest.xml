@@ -36,7 +36,7 @@
         <!--EventBus-->
         <activity android:name=".eventbus.EventBusActivity" />
         <activity android:name=".eventbus.EventBus2Activity" />
-        <!--测试string装换成JSONObject-->
+        <!-- 测试String转换成JSONObject,Gson解析、通过Gson装换成把实体类转换成json,把String类型存到SD卡中，从assets文件夹中读取json文件并且解析 -->
         <activity android:name=".jsonobjecttostring.JSONObjectActivity" />
         <!--自动隐藏键盘Demo、和侧滑菜单-->
         <activity android:name=".autohideime.AutoHideIMEActivity" />
@@ -124,7 +124,7 @@
         <activity android:name=".download_apk.DownloadAPKAct" />
         <!--登录动画效果-->
         <activity android:name=".material_text_field.MaterialTextFieldAct" />
-        <!--RadioGroup实现类似ios的分段选择(UISegmentedControl)控件-->
+        <!--RadioGroup实现类似ios的分段选择(UISegmentedControl)控件、自动轮播ViewPager-->
         <activity android:name=".segment_view.SegmentViewActivity" />
         <!--app带圆点指示的引导页-->
         <activity android:name=".guide_pager.GuidePagerActivity" />

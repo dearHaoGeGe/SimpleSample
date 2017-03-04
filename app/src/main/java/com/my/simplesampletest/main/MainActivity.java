@@ -186,7 +186,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     private void addDataToList() {
         data = new ArrayList<>();
         data.add("EventBus传递事件");
-        data.add("测试string装换成JSONObject");
+        data.add("测试String转换成JSONObject,Gson解析、通过Gson装换成把实体类转换成json,把String类型存到SD卡中，从assets文件夹中读取json文件并且解析");
         data.add("Android快速实现点击任意位置收缩键盘、和侧滑菜单");
         data.add("android自定义控件—边缘凹凸的View、CardView的使用方法、分享弹窗ShareView");
         data.add("activity之间传递对象");
@@ -207,7 +207,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("学习使用OKHttp");
         data.add("Android 快速实现文件下载（只有4行代码）");
         data.add("登录动画效果");
-        data.add("RadioGroup实现类似ios的分段选择(UISegmentedControl)控件");
+        data.add("RadioGroup实现类似ios的分段选择(UISegmentedControl)控件、自动轮播ViewPager");
         data.add("app带圆点指示的引导页");
         data.add("SwipeRefreshLayout Google官方下拉刷新组件");
         data.add("学习使用Snackbar");
@@ -254,7 +254,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, EventBusActivity.class));
                 break;
 
-            case 1: //测试string装换成JSONObject
+            case 1: //测试String转换成JSONObject,Gson解析、通过Gson装换成把实体类转换成json,把String类型存到SD卡中，从assets文件夹中读取json文件并且解析
                 startActivity(new Intent(this, JSONObjectActivity.class));
                 break;
 
@@ -338,7 +338,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, MaterialTextFieldAct.class));
                 break;
 
-            case 22://RadioGroup实现类似ios的分段选择(UISegmentedControl)控件
+            case 22://RadioGroup实现类似ios的分段选择(UISegmentedControl)控件、自动轮播ViewPager
                 startActivity(new Intent(this, SegmentViewActivity.class));
                 break;
 
