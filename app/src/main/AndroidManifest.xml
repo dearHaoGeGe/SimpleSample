@@ -182,6 +182,8 @@
         <activity android:name=".org_tree_view.OrgTreeActivity"/>
         <!-- 自定义相机 -->
         <activity android:name=".camera.CameraActivity"/>
+        <!-- Android 仿QQ联系人，分组悬浮，展开停至特定项 -->
+        <activity android:name=".pinned_header.PinnedHeaderActivity"/>
 
 
         <!-- Service的生命周期 -->

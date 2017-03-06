@@ -52,6 +52,7 @@ import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
 import com.my.simplesampletest.pic_save_sd.PicSaveSDActivity;
 import com.my.simplesampletest.picasso.PicassoActivity;
 import com.my.simplesampletest.picasso.PicassoDemoActivity;
+import com.my.simplesampletest.pinned_header.PinnedHeaderActivity;
 import com.my.simplesampletest.read_config_properties.ConfigPropertiesAct;
 import com.my.simplesampletest.segment_view.SegmentViewActivity;
 import com.my.simplesampletest.servicelife.ServiceActivity;
@@ -230,6 +231,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("观察者模式");
         data.add("树形结构关系View（类似于多层ExpandableListView效果）");
         data.add("自定义相机");
+        data.add("Android 仿QQ联系人，分组悬浮，展开停至特定项");
     }
 
     @Override
@@ -428,6 +430,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 44://自定义相机
                 startActivity(new Intent(this, CameraActivity.class));
+                break;
+
+            case 45://Android 仿QQ联系人，分组悬浮，展开停至特定项
+                startActivity(new Intent(this, PinnedHeaderActivity.class));
                 break;
         }
     }
