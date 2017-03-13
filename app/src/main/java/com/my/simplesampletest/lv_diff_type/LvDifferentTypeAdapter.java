@@ -39,7 +39,7 @@ public class LvDifferentTypeAdapter extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        return VIEW_TYPE+1; //这里原来写3报错(不是自己程序的错)，改成大于type数量就没问题了
+        return VIEW_TYPE + 1; //这里原来写3报错(不是自己程序的错)，改成大于type数量就没问题了
     }
 
     @Override

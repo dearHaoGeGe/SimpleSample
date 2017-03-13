@@ -7,13 +7,19 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.my.simplesampletest.R;
+import com.my.simplesampletest.lv_nesting_lv.linearlistview.LinearListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LinearListView嵌套LinearListView，ListView嵌套滑动太卡
+ * 参考：
+ * <a href="https://github.com/frankiesardo/LinearListView.git"/>
+ */
 public class NestOneActivity extends AppCompatActivity {
 
-    private ListView lv1;
+    private LinearListView linearListView;
     private NestOneAdapter adapter;
     private List<List<OrderEntity>> list;
     private List<OrderEntity> l1, l2, l3;
@@ -23,7 +29,7 @@ public class NestOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nest_one);
 
-        lv1 = (ListView) findViewById(R.id.lv1);
+        linearListView = (LinearListView) findViewById(R.id.linearListView);
         l1 = new ArrayList<>();
         l2 = new ArrayList<>();
         l3 = new ArrayList<>();
@@ -32,12 +38,9 @@ public class NestOneActivity extends AppCompatActivity {
         list.add(l1);
         list.add(l2);
         list.add(l3);
+
         adapter = new NestOneAdapter(this, list);
-        lv1.setAdapter(adapter);
-
-        View v = LayoutInflater.from(this).inflate(R.layout.head_order_detail, null);
-        lv1.addHeaderView(v);
-
+        linearListView.setAdapter(adapter);
     }
 
     /**

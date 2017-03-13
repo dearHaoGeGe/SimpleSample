@@ -18,15 +18,17 @@ public class NestTwoAdapter extends BaseAdapter {
 
     private Context context;
     private List<OrderEntity> datas;
+    private LayoutInflater inflater;
 
-    public NestTwoAdapter(Context context, List<OrderEntity> datas) {
+    public NestTwoAdapter(Context context) {
         this.context = context;
-        this.datas = datas;
+        inflater = LayoutInflater.from(this.context);
     }
+
 
     @Override
     public int getCount() {
-        return datas.size();
+        return datas == null ? 0 : datas.size();
     }
 
     @Override
@@ -41,36 +43,22 @@ public class NestTwoAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_order_product, parent, false);
-            holder = new ViewHolder();
-            holder.tv_category = (TextView) convertView.findViewById(R.id.tv_category);
-            holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
-            holder.tv_price = (TextView) convertView.findViewById(R.id.tv_price);
-            holder.tv_TJBM = (TextView) convertView.findViewById(R.id.tv_TJBM);
-            holder.tv_reducePrice = (TextView) convertView.findViewById(R.id.tv_reducePrice);
-            holder.tv_num = (TextView) convertView.findViewById(R.id.tv_num);
-            holder.tv_AllMoney = (TextView) convertView.findViewById(R.id.tv_AllMoney);
-
+            convertView = inflater.inflate(R.layout.item_order_product, parent, false);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         holder.tv_category.setText(datas.get(position).getCategory());
-        if (datas.get(position).getCategory().equals("单品")){
-//            holder.tv_category.setBackgroundColor(Color.parseColor("#D7D7D7"));
-//            holder.tv_category.setTextColor(Color.parseColor("#FF0000"));
+        if (datas.get(position).getCategory().equals("单品")) {
             holder.tv_category.setSelected(true);
             holder.tv_category.setEnabled(false);
-        }else if (datas.get(position).getCategory().equals("本品")){
-//            holder.tv_category.setBackgroundColor(Color.parseColor("#FFFFFF"));
-//            holder.tv_category.setTextColor(Color.parseColor("#FF0000"));
+        } else if (datas.get(position).getCategory().equals("本品")) {
             holder.tv_category.setEnabled(true);
-        }else {
-//            holder.tv_category.setBackgroundColor(Color.parseColor("#FF6600"));
-//            holder.tv_category.setTextColor(Color.parseColor("#FFFFFF"));
+        } else {
             holder.tv_category.setSelected(false);
             holder.tv_category.setEnabled(false);
         }
@@ -79,13 +67,18 @@ public class NestTwoAdapter extends BaseAdapter {
         holder.tv_price.setText(datas.get(position).getPrice() + "");
         holder.tv_TJBM.setText(datas.get(position).getTCBM());
         holder.tv_reducePrice.setText(datas.get(position).getReducePrice() + "");
-        holder.tv_num.setText(datas.get(position).getNum()+"");
+        holder.tv_num.setText(datas.get(position).getNum() + "");
         holder.tv_AllMoney.setText(datas.get(position).getTotal() + "");
 
         return convertView;
     }
 
-    private static class ViewHolder {
+    public void setItems(List<OrderEntity> data) {
+        this.datas = data;
+        notifyDataSetChanged();
+    }
+
+    private class ViewHolder {
         private TextView tv_category;   //单品、本品、赠品
         private TextView tv_name;       //产品名称
         private TextView tv_price;      //产品单价
@@ -93,5 +86,15 @@ public class NestTwoAdapter extends BaseAdapter {
         private TextView tv_reducePrice;//折后价格
         private TextView tv_num;        //购买的数量
         private TextView tv_AllMoney;   //合计
+
+        public ViewHolder(View convertView) {
+            tv_category = (TextView) convertView.findViewById(R.id.tv_category);
+            tv_name = (TextView) convertView.findViewById(R.id.tv_name);
+            tv_price = (TextView) convertView.findViewById(R.id.tv_price);
+            tv_TJBM = (TextView) convertView.findViewById(R.id.tv_TJBM);
+            tv_reducePrice = (TextView) convertView.findViewById(R.id.tv_reducePrice);
+            tv_num = (TextView) convertView.findViewById(R.id.tv_num);
+            tv_AllMoney = (TextView) convertView.findViewById(R.id.tv_AllMoney);
+        }
     }
 }

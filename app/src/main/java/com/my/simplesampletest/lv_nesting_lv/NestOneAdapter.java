@@ -5,24 +5,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.my.simplesampletest.R;
+import com.my.simplesampletest.lv_nesting_lv.linearlistview.LinearListView;
 
 import java.util.List;
 
 /**
+ * parentAdapter
+ * <p>
  * Created by YJH on 2016/9/28.
  */
 public class NestOneAdapter extends BaseAdapter {
 
     private Context context;
     private List<List<OrderEntity>> datas;
-    private NestTwoAdapter adapter;
-    private int headCount = 0;
+    private LayoutInflater inflater;
 
     public NestOneAdapter(Context context, List<List<OrderEntity>> datas) {
         this.context = context;
         this.datas = datas;
+        inflater = LayoutInflater.from(this.context);
     }
 
     @Override
@@ -42,30 +46,29 @@ public class NestOneAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_order_submit_nesting, parent, false);
-            holder = new ViewHolder();
-            holder.myLv = (NestingListView) convertView.findViewById(R.id.myLv);
-
+            convertView = inflater.inflate(R.layout.item_order_submit_nesting, parent, false);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
-        adapter = new NestTwoAdapter(context, datas.get(position));
-        holder.myLv.setAdapter(adapter);
-        //添加头布局
-        if (headCount < datas.size()) {    //这个判断是为了解决listview复用导致的位置错乱
-            View v = LayoutInflater.from(context).inflate(R.layout.item_order_product_head, null);
-            holder.myLv.addHeaderView(v);
-            headCount++;
-        }
-
+        holder.adapter.setItems(datas.get(position));
         return convertView;
     }
 
-    private static class ViewHolder {
-        private NestingListView myLv;
+    private class ViewHolder {
+
+        private LinearListView linearListView;
+        private TextView tv_combo_number;
+        private NestTwoAdapter adapter;
+
+        public ViewHolder(View convertView) {
+            linearListView = (LinearListView) convertView.findViewById(R.id.linearListView);
+            tv_combo_number = (TextView) convertView.findViewById(R.id.tv_combo_number);
+            adapter = new NestTwoAdapter(context);
+            linearListView.setAdapter(adapter);
+        }
     }
 }

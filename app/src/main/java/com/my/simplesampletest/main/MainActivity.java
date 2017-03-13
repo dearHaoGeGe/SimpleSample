@@ -76,12 +76,14 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
     private RecyclerView rcView_main;
     private List<String> data;
     private MainActAdapter adapter;
-    private long fitstTime;
+    private long firstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.MenuTextAllCaps);
         setContentView(R.layout.activity_main);
+        setToolbar("SimpleSample", true, 0);
 
         initView();
         initData();
@@ -158,6 +160,11 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, AboutActivity.class));
                 return true;
 
+            case android.R.id.home:
+                super.onBackPressed();
+                System.exit(0);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -165,13 +172,13 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
     @Override
     public void onBackPressed() {
-        if (fitstTime + 2000 > System.currentTimeMillis()) {
+        if (firstTime + 2000 > System.currentTimeMillis()) {
             super.onBackPressed();
             System.exit(0);
         } else {
             ToastUtil.showToast(this, "再按一次退出程序~");
         }
-        fitstTime = System.currentTimeMillis();
+        firstTime = System.currentTimeMillis();
     }
 
     /**

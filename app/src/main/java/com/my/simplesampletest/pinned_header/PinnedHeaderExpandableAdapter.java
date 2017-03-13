@@ -12,6 +12,10 @@ import android.widget.TextView;
 import com.my.simplesampletest.R;
 
 /**
+ * Android 仿QQ联系人，分组悬浮，展开停至特定项
+ * <p>
+ * 参考：http://blog.csdn.net/xuxinyihappy/article/details/50517417
+ * <p>
  * Created by YJH on 2017/3/4 16:19.
  */
 

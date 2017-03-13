@@ -12,6 +12,7 @@ import com.my.simplesampletest.base.BaseActivity;
 
 /**
  * 这个activity是往下一个activity发送object的
+ * 参考：http://www.cnblogs.com/xiaoluo501395377/p/3417048.html
  * <p/>
  * Created by YJH on 2016/6/7.
  */
@@ -20,7 +21,7 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
     private Button btn_sendObject_PostAct, btn_returnValues_PostAct;
     private TextView tv_PostAct, tv2_PostAct;
     private Person p;
-    private static final String TAG="PostActivity--->";
+    private static final String TAG = "PostActivity--->";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +105,7 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1000 && resultCode == 1001) {
             String result = data.getStringExtra("result");
-            Log.d(TAG,result);
+            Log.d(TAG, result);
             tv2_PostAct.setText(result);
         }
     }

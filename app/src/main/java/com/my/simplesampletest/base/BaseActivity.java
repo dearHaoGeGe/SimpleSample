@@ -5,8 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Window;
+import android.view.WindowManager;
 
+import com.my.simplesampletest.R;
 import com.zgh.stylelib.style.StyleHelper;
 
 import java.util.ArrayList;
@@ -87,5 +92,37 @@ public abstract class BaseActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    /**
+     * 设置全屏
+     * 要在setContentView()之前调用
+     */
+    protected void setFullScreen() {
+        //继承AppCompatActivity(V7包下的Activity)之后要用这个方法去掉title
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        //设置全屏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+
+    /**
+     * 设置Activity的Toolbar的标题、是否显示返回按钮
+     * (此方法必须在setTheme()和setContentView()之后调用)
+     *
+     * @param title                标题
+     * @param isShowNavigationIcon 是否显示返回按钮
+     * @param resId                设置Toolbar左边的图标（0的话默认为返回箭头图标）
+     */
+    protected void setToolbar(String title, boolean isShowNavigationIcon, int resId) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        assert toolbar != null;
+        toolbar.setTitle(title);
+        if (resId != 0) {
+            toolbar.setNavigationIcon(resId);
+        }
+        setSupportActionBar(toolbar);
+        ActionBar bar = getSupportActionBar();
+        assert bar != null;
+        bar.setDisplayHomeAsUpEnabled(isShowNavigationIcon);
     }
 }

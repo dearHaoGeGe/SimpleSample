@@ -13,9 +13,9 @@ import android.view.View;
 
 /**
  * 循环显示超长图片
- *
+ * <p>
  * 参考：http://blog.csdn.net/sahadev_/article/details/51694026
- *
+ * <p>
  * Created by YJH on 2016/7/12.
  */
 public class CylinderImageView extends View {
