@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.my.simplesampletest">
 
     <!--网络-->
@@ -16,6 +17,10 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <!-- 自定义相机，自动对焦 -->
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 这是5.0之后的权限，使用统计的权限，由于该权限默认只授予系统应用，所以添加了ignore属性。然后通过代码进而手动打开权限 -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
 
 
     <application
@@ -175,19 +180,25 @@
             android:name=".coordinator_layout.CoordinatorLayoutAct"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- Fragment跳转传值、Fragment覆盖Fragment -->
-        <activity android:name=".tablayout.FragmentToFragmentAct"/>
+        <activity android:name=".tablayout.FragmentToFragmentAct" />
         <!-- 观察者模式 -->
-        <activity android:name=".observer_mode.ObserverActivity"/>
+        <activity android:name=".observer_mode.ObserverActivity" />
         <!-- 树形结构关系View（类似于多层ExpandableListView效果） -->
-        <activity android:name=".org_tree_view.OrgTreeActivity"/>
+        <activity android:name=".org_tree_view.OrgTreeActivity" />
         <!-- 自定义相机 -->
-        <activity android:name=".camera.CameraActivity"/>
+        <activity android:name=".camera.CameraActivity" />
         <!-- Android 仿QQ联系人，分组悬浮，展开停至特定项 -->
-        <activity android:name=".pinned_header.PinnedHeaderActivity"/>
+        <activity android:name=".pinned_header.PinnedHeaderActivity" />
+        <!-- 禁用其他APP -->
+        <activity android:name=".disable_other_app.DisableOtherAPPActivity"/>
+        <!-- 禁用其他APP（提示） -->
+        <activity android:name=".disable_other_app.DisableAPPTipActivity"/>
 
 
         <!-- Service的生命周期 -->
         <service android:name=".servicelife.TestService" />
+        <!-- 禁用其他APP -->
+        <service android:name=".disable_other_app.MonitorService"/>
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

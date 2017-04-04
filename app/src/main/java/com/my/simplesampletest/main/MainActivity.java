@@ -27,6 +27,8 @@ import com.my.simplesampletest.camera.CameraActivity;
 import com.my.simplesampletest.coordinator_layout.CoordinatorLayoutAct;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
+import com.my.simplesampletest.disable_other_app.DisableAPPTipActivity;
+import com.my.simplesampletest.disable_other_app.DisableOtherAPPActivity;
 import com.my.simplesampletest.download_apk.DownloadAPKAct;
 import com.my.simplesampletest.eventbus.EventBusActivity;
 import com.my.simplesampletest.girdview.GridViewActivity;
@@ -239,6 +241,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("树形结构关系View（类似于多层ExpandableListView效果）");
         data.add("自定义相机");
         data.add("Android 仿QQ联系人，分组悬浮，展开停至特定项");
+        data.add("禁用其他APP");
     }
 
     @Override
@@ -441,6 +444,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 45://Android 仿QQ联系人，分组悬浮，展开停至特定项
                 startActivity(new Intent(this, PinnedHeaderActivity.class));
+                break;
+
+            case 46:
+                startActivity(new Intent(this, DisableOtherAPPActivity.class));
                 break;
         }
     }

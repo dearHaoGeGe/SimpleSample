@@ -102,9 +102,8 @@ public class LoadActivity extends AppCompatActivity {
         try {
             //2.从包的管理者对象中，获取指定包名的基本信息（版本名称，版本号）传0代表获取基本信息
             PackageInfo info = packageManager.getPackageInfo(getPackageName(), 0);
-            String versionName = info.versionName;
 
-            return versionName;
+            return info.versionName;
 
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
