@@ -1,6 +1,5 @@
 package com.my.simplesampletest.disable_other_app;
 
-import android.annotation.TargetApi;
 import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
@@ -22,6 +21,10 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
+ * Android 使用记录访问权限(获取使用过的APP包名集合)
+ * 禁用其他APP
+ * <a href = "http://www.jianshu.com/p/e11cdfaf15dc"/>
+ * <p>
  * Created by YJH on 2017/4/4 18:00.
  */
 
@@ -40,6 +43,7 @@ public class DisableOtherAPPActivity extends BaseActivity implements View.OnClic
 
         initView();
         initData();
+        Log.e("应用包名-------", getPackageName());
     }
 
     @Override
@@ -55,6 +59,7 @@ public class DisableOtherAPPActivity extends BaseActivity implements View.OnClic
 
     @Override
     public void initData() {
+        //判断版本是否 >=21 (Android 5.1)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getHistoryApps();
         } else {
@@ -97,7 +102,8 @@ public class DisableOtherAPPActivity extends BaseActivity implements View.OnClic
     }
 
     /**
-     * 获取此设备从当前时间向前一年内使用过的app的包名集合（其中包括系统级别的）
+     * 获取此设备从当前时间向前一年内使用过的app的包名集合
+     * （其中包括系统级别的）
      */
     private void getHistoryApps() {
         Calendar calendar = Calendar.getInstance();

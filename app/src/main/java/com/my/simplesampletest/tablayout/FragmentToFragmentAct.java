@@ -22,7 +22,6 @@ import java.util.List;
 
 public class FragmentToFragmentAct extends BaseActivity implements View.OnClickListener {
 
-    private final String TAG = getClass().getSimpleName() + "--->";
     private TextView tv_one;
     private TextView tv_two;
     private FragmentManager manager;

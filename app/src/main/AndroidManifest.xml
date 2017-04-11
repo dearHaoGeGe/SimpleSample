@@ -189,16 +189,16 @@
         <activity android:name=".camera.CameraActivity" />
         <!-- Android 仿QQ联系人，分组悬浮，展开停至特定项 -->
         <activity android:name=".pinned_header.PinnedHeaderActivity" />
-        <!-- 禁用其他APP -->
-        <activity android:name=".disable_other_app.DisableOtherAPPActivity"/>
+        <!-- 禁用其他APP,使用记录访问权限(获取使用过的APP包名集合) -->
+        <activity android:name=".disable_other_app.DisableOtherAPPActivity" />
         <!-- 禁用其他APP（提示） -->
-        <activity android:name=".disable_other_app.DisableAPPTipActivity"/>
+        <activity android:name=".disable_other_app.DisableAPPTipActivity" />
 
 
         <!-- Service的生命周期 -->
         <service android:name=".servicelife.TestService" />
         <!-- 禁用其他APP -->
-        <service android:name=".disable_other_app.MonitorService"/>
+        <service android:name=".disable_other_app.MonitorService" />
 
         <!-- 在AndroidManifest中注册广播 -->
         <receiver android:name=".broadcast.AirPlaneModeReceiver">

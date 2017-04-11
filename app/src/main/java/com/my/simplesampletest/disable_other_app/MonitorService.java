@@ -11,8 +11,10 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import java.util.List;
+import java.util.SortedMap;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.TreeMap;
 
 /**
  * Created by YJH on 2017/4/4 20:59.
@@ -59,23 +61,31 @@ public class MonitorService extends Service {
         List<UsageStats> usageStatsList = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST, time - 2000, time);
 
         if (usageStatsList != null && !usageStatsList.isEmpty()) {
-            //获取List中最后一个的包名
-            String topPackageName = usageStatsList.get(usageStatsList.size() - 1).getPackageName();
-            if (getLauncherPackageName(this).equals(topPackageName) || "com.my.simplesampletest".equals(topPackageName)) {
-                return;
+            SortedMap<Long, UsageStats> usageStatsMap = new TreeMap<>();
+            for (UsageStats usageStats : usageStatsList) {
+                usageStatsMap.put(usageStats.getLastTimeUsed(), usageStats);
             }
-            Log.i("TopPackageName", topPackageName);
+            if (!usageStatsMap.isEmpty()) {
+                String topPackageName = usageStatsMap.get(usageStatsMap.lastKey()).getPackageName();
 
-            //模拟home键点击
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            startActivity(intent);
+                if (getLauncherPackageName(this).equals(topPackageName)
+                        || "com.my.simplesampletest".equals(topPackageName)) {
+                    return;
+                }
 
-            //启动提示页面
-            Intent intent1 = new Intent(this, DisableAPPTipActivity.class);
-            intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent1);
+                Log.e("TopPackage Name", topPackageName);
+
+                //模拟home键点击
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(intent);
+
+                //启动提示页面
+                Intent intent1 = new Intent(this, DisableAPPTipActivity.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent1);
+            }
         }
     }
 

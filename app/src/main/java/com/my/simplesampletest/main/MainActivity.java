@@ -241,7 +241,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("树形结构关系View（类似于多层ExpandableListView效果）");
         data.add("自定义相机");
         data.add("Android 仿QQ联系人，分组悬浮，展开停至特定项");
-        data.add("禁用其他APP");
+        data.add("禁用其他APP,使用记录访问权限(获取使用过的APP包名集合)");
     }
 
     @Override
@@ -446,7 +446,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
                 startActivity(new Intent(this, PinnedHeaderActivity.class));
                 break;
 
-            case 46:
+            case 46://禁用其他APP,使用记录访问权限(获取使用过的APP包名集合)
                 startActivity(new Intent(this, DisableOtherAPPActivity.class));
                 break;
         }

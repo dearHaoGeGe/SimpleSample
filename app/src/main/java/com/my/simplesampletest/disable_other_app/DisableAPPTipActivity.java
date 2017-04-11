@@ -32,6 +32,6 @@ public class DisableAPPTipActivity extends BaseActivity {
     }
 
     public void close(View view) {
-
+        finish();
     }
 }

@@ -17,7 +17,7 @@
         android:text="@string/disable_open_other_app"
         android:textColor="@android:color/holo_red_light" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
