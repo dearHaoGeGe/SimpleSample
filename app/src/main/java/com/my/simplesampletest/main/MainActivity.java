@@ -48,6 +48,7 @@ import com.my.simplesampletest.material_text_field.MaterialTextFieldAct;
 import com.my.simplesampletest.mvp.view.LoginMVPActivity;
 import com.my.simplesampletest.observer_mode.ObserverActivity;
 import com.my.simplesampletest.okhttp.OKHttpActivity;
+import com.my.simplesampletest.open_external_app.OpenExternalAPPAct;
 import com.my.simplesampletest.org_tree_view.OrgTreeActivity;
 import com.my.simplesampletest.orientation_rc_view.OrientationRCViewAct;
 import com.my.simplesampletest.ormlitedemo.ORMLiteActivity;
@@ -242,6 +243,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("自定义相机");
         data.add("Android 仿QQ联系人，分组悬浮，展开停至特定项");
         data.add("禁用其他APP,使用记录访问权限(获取使用过的APP包名集合)");
+        data.add("打开外部APP");
     }
 
     @Override
@@ -448,6 +450,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 46://禁用其他APP,使用记录访问权限(获取使用过的APP包名集合)
                 startActivity(new Intent(this, DisableOtherAPPActivity.class));
+                break;
+
+            case 47://打开外部APP
+                startActivity(new Intent(this, OpenExternalAPPAct.class));
                 break;
         }
     }
