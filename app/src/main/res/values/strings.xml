@@ -28,6 +28,8 @@
     <string name="stop_service">关闭服务</string>
     <string name="disable_open_other_app">禁止使用其它App！！！</string>
     <string name="close">关闭</string>
+    <string name="analyze_pinyin">转换拼音</string>
     <string name="open_external_app">打开外部APP</string>
+    <string name="please_enter_chinese">请输入汉字</string>
 
 </resources>

@@ -56,4 +56,5 @@ dependencies {
     //RecyclerView侧滑菜单，RecyclerView滑动删除，RecyclerView长按拖拽
     compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile files('libs/pinyin4j-2.5.0.jar')
 }

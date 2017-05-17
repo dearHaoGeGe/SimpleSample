@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_16"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_16"
+        android:text="@string/please_enter_chinese"
+        android:textSize="@dimen/sp_18" />
+
+    <EditText
+        android:id="@+id/et_pinyin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/please_enter_chinese" />
+
+    <Button
+        android:id="@+id/btn_pinyin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/analyze_pinyin"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:textSize="@dimen/sp_14"
+        android:id="@+id/tv_context"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

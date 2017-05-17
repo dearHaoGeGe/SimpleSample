@@ -24,6 +24,7 @@ import com.my.simplesampletest.base.MPermissionListener;
 import com.my.simplesampletest.blurred_view.BlurredViewAct;
 import com.my.simplesampletest.broadcast.BroadCastActivity;
 import com.my.simplesampletest.camera.CameraActivity;
+import com.my.simplesampletest.chinese_to_pinyi.ChineseToPinyinActivity;
 import com.my.simplesampletest.coordinator_layout.CoordinatorLayoutAct;
 import com.my.simplesampletest.coupondisplayview.CouponDisplayActivity;
 import com.my.simplesampletest.cylinderImage_view.CylinderImageViewAct;
@@ -244,6 +245,7 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
         data.add("Android 仿QQ联系人，分组悬浮，展开停至特定项");
         data.add("禁用其他APP,使用记录访问权限(获取使用过的APP包名集合)");
         data.add("打开外部APP");
+        data.add("汉字转拼音");
     }
 
     @Override
@@ -454,6 +456,10 @@ public class MainActivity extends BaseActivity implements MainActAdapter.MyItemO
 
             case 47://打开外部APP
                 startActivity(new Intent(this, OpenExternalAPPAct.class));
+                break;
+
+            case 48://汉字转拼音
+                startActivity(new Intent(this, ChineseToPinyinActivity.class));
                 break;
         }
     }

@@ -196,6 +196,8 @@
             android:launchMode="singleTop"/>
         <!-- 打开外部APP -->
         <activity android:name=".open_external_app.OpenExternalAPPAct"/>
+        <!-- 汉字转拼音 -->
+        <activity android:name=".chinese_to_pinyi.ChineseToPinyinActivity"/>
 
 
         <!-- Service的生命周期 -->
